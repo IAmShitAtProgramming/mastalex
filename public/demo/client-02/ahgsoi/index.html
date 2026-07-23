@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MegaDent</title>
+<meta name="description" content="Gabinet Stomatologiczny Czarnoleska 6 MEGA-DENT">
+<link rel="icon" href="assets/megadentlogo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FBFDFE;            /* porcelana */
+  --bg-2:#F1F7F9;          /* mgła akwamarynowa */
+  --surface:#FFFFFF;
+  --ink:#102B33;           /* głęboki morski granat — 12.6:1 na bieli */
+  --ink-dim:#54696F;       /* 5.6:1 */
+  --aqua:#0E7C86;          /* akcent — 4.9:1 na bieli */
+  --aqua-bright:#14A0AC;
+  --aqua-soft:rgba(14,124,134,.16);
+  --aqua-line:rgba(14,124,134,.22);
+  --serif:"Cormorant Garamond",Georgia,serif;
+  --sans:"Jost","Segoe UI",system-ui,sans-serif;
+  --fs-xs:.8125rem; --fs-sm:.9375rem; --fs-md:1.125rem; --fs-lg:1.375rem;
+  --shadow:0 24px 60px -28px rgba(16,43,51,.25);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+section{scroll-margin-top:84px}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-weight:400;
+  font-size:1rem;line-height:1.7;overflow-x:hidden;text-rendering:optimizeLegibility}
+::selection{background:var(--aqua);color:#fff}
+:focus-visible{outline:2px solid var(--aqua);outline-offset:3px;border-radius:2px}
+img{max-width:100%;display:block}
+p{max-width:68ch}
+
+/* ---------- nav ---------- */
+nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;
+  gap:1rem;padding:.8rem 4vw;background:linear-gradient(rgba(251,253,254,.94),rgba(251,253,254,0));
+  transition:background .3s ease,border-color .3s ease,box-shadow .3s ease;border-bottom:1px solid transparent}
+nav.solid{background:rgba(251,253,254,.92);border-bottom-color:var(--aqua-line);
+  backdrop-filter:blur(10px);box-shadow:0 8px 30px -18px rgba(16,43,51,.18)}
+.brand{display:flex;align-items:center;gap:.7rem;text-decoration:none}
+.brand img{height:34px;width:auto}
+nav ul{display:flex;gap:2rem;list-style:none;flex-wrap:wrap;justify-content:flex-end}
+nav ul a{display:block;color:var(--ink-dim);text-decoration:none;font-size:var(--fs-xs);letter-spacing:.22em;
+  text-transform:uppercase;transition:color .2s ease;padding:.7rem 0;position:relative}
+nav ul a::after{content:"";position:absolute;left:0;right:100%;bottom:.45rem;height:2px;
+  background:var(--aqua-bright);transition:right .3s ease}
+nav ul a:hover,nav ul a:focus-visible{color:var(--aqua)}
+nav ul a:hover::after{right:0}
+@media(max-width:820px){
+  nav{flex-wrap:wrap;padding:.5rem 4vw .35rem}
+  nav .brand img{height:26px}
+  nav ul{order:3;width:100%;gap:.5rem 1rem;justify-content:space-between;flex-wrap:nowrap}
+  nav ul a{font-size:.6875rem;letter-spacing:.04em;padding:.45rem 0;white-space:nowrap}
+  nav ul a::after{display:none}
+  section{scroll-margin-top:104px}
+}
+
+/* ---------- hero z taflą wody ---------- */
+.hero{position:relative;min-height:94svh;display:flex;align-items:center;overflow:hidden;
+  padding:7.5rem 6vw 4.5rem;background:linear-gradient(165deg,#EAF4F6 0%,#FBFDFE 55%,#F3FAFB 100%)}
+#water{position:absolute;inset:0;width:100%;height:100%;display:block}
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;
+  background:linear-gradient(90deg,transparent,var(--aqua-line),transparent)}
+.hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.05fr .95fr;gap:4rem;
+  align-items:center;max-width:1200px;margin:0 auto;width:100%;pointer-events:none}
+.hero-grid a{pointer-events:auto}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr;gap:2.5rem}}
+.eyebrow{font-size:var(--fs-xs);letter-spacing:.42em;text-transform:uppercase;color:var(--aqua);margin-bottom:1.1rem;font-weight:500}
+h1{font-family:var(--serif);font-weight:500;font-size:clamp(2.6rem,5.6vw,4.9rem);line-height:1.04;letter-spacing:.01em}
+h1 span{color:var(--aqua)}
+.hero .names{margin-top:1.3rem;font-family:var(--serif);font-size:clamp(1.15rem,2vw,1.5rem);font-style:italic;color:var(--ink)}
+.hero .addr{margin-top:.5rem;color:var(--ink-dim);letter-spacing:.18em;text-transform:uppercase;font-size:var(--fs-xs)}
+.hero-cta{margin-top:2.4rem;display:flex;gap:1.1rem;flex-wrap:wrap}
+.hero-photo{position:relative}
+.hero-photo::before{content:"";position:absolute;inset:-14px 14px 14px -14px;border:1px solid var(--aqua-line);border-radius:6px;z-index:0}
+.hero-photo img{position:relative;z-index:1;width:100%;height:auto;border-radius:6px;box-shadow:var(--shadow)}
+.hero-hint{position:absolute;z-index:2;bottom:1.4rem;left:50%;transform:translateX(-50%);
+  font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-dim);opacity:.7;pointer-events:none}
+@media(max-width:820px){#water,.hero-hint{display:none}}
+
+/* przyciski */
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:.9rem 2.4rem;
+  background:var(--aqua);color:#fff;font-family:var(--sans);font-weight:500;font-size:var(--fs-xs);
+  letter-spacing:.24em;text-transform:uppercase;text-decoration:none;border:none;cursor:pointer;border-radius:3px;
+  transition:background .2s ease,transform .15s ease,box-shadow .2s ease}
+.btn:hover,.btn:focus-visible{background:var(--aqua-bright);box-shadow:0 12px 30px -12px rgba(14,124,134,.5)}
+.btn.ghost{background:transparent;color:var(--aqua);border:1px solid var(--aqua-line)}
+.btn.ghost:hover{border-color:var(--aqua);box-shadow:none;background:var(--aqua-soft)}
+.btn:active{transform:scale(.98)}
+
+/* marquee */
+.marquee{overflow:hidden;border-top:1px solid var(--aqua-line);border-bottom:1px solid var(--aqua-line);
+  background:var(--surface);padding:.95rem 0}
+.marquee .track{display:flex;gap:3.5rem;width:max-content;animation:marq 30s linear infinite}
+.marquee span{font-family:var(--serif);font-style:italic;font-size:1.05rem;color:var(--aqua);
+  letter-spacing:.06em;white-space:nowrap;display:flex;align-items:center;gap:3.5rem}
+.marquee span::after{content:"✦";font-style:normal;font-size:.65rem;color:var(--aqua-line)}
+@keyframes marq{to{transform:translateX(-50%)}}
+@media(max-width:820px){.marquee .track{animation-duration:22s}}
+
+/* ---------- sekcje ---------- */
+.block{position:relative;padding:5.5rem 6vw;max-width:1200px;margin:0 auto}
+@media(min-width:821px){.block{padding:7rem 6vw}}
+.band{background:var(--bg-2)}
+.band-inner{max-width:1200px;margin:0 auto;padding:5.5rem 6vw}
+@media(min-width:821px){.band-inner{padding:7rem 6vw}}
+.rule{display:flex;align-items:baseline;gap:1.2rem;margin-bottom:2.4rem}
+.rule::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,var(--aqua),transparent);opacity:.5}
+h2{font-family:var(--serif);font-weight:500;font-size:clamp(1.9rem,3.4vw,2.7rem);letter-spacing:.02em;line-height:1.2;white-space:nowrap}
+h2 em{color:var(--aqua);font-style:normal}
+.lede{font-family:var(--serif);font-size:clamp(1.25rem,2vw,1.55rem);line-height:1.5;max-width:44ch}
+.cols{display:grid;grid-template-columns:1.05fr .95fr;gap:3.5rem;align-items:center}
+@media(max-width:900px){.cols{grid-template-columns:1fr;gap:2.2rem}}
+.cols img{border-radius:6px;box-shadow:var(--shadow)}
+
+/* licznik roku */
+.since{display:flex;align-items:baseline;gap:1.2rem;margin-top:2rem;padding-top:1.6rem;border-top:1px solid var(--aqua-line)}
+.since .year{font-family:var(--serif);font-weight:500;font-size:clamp(2.6rem,4.5vw,3.8rem);color:var(--aqua);
+  font-variant-numeric:tabular-nums;line-height:1}
+.since .lbl{color:var(--ink-dim);font-size:var(--fs-sm);letter-spacing:.14em;text-transform:uppercase}
+
+/* zespół — karty tilt 3D */
+.team{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;margin-top:1rem}
+@media(max-width:820px){.team{grid-template-columns:1fr}}
+.tcard{position:relative;background:var(--surface);border:1px solid var(--aqua-line);border-radius:8px;
+  padding:2.4rem;transform-style:preserve-3d;will-change:transform;transition:box-shadow .3s ease}
+.tcard .layer{transform-style:preserve-3d}
+.tcard img{width:170px;height:auto;margin-bottom:1.4rem;border-radius:6px;
+  box-shadow:0 14px 30px -16px rgba(16,43,51,.35);transform:translateZ(var(--tz,0px))}
+.tcard h3{font-family:var(--serif);font-weight:500;font-size:1.5rem;margin-bottom:.6rem;transform:translateZ(var(--tz2,0px))}
+.tcard p{color:var(--ink-dim);font-size:var(--fs-sm);transform:translateZ(var(--tz3,0px))}
+html.anim .tcard:hover{box-shadow:var(--shadow)}
+
+/* galeria — parallax pasy */
+.gal{display:grid;grid-template-columns:repeat(4,1fr);gap:.9rem;margin-top:.5rem}
+@media(max-width:980px){.gal{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:640px){.gal{grid-template-columns:repeat(2,1fr)}}
+.gal a{position:relative;display:block;aspect-ratio:1;overflow:hidden;border-radius:6px;
+  will-change:transform;box-shadow:0 10px 26px -16px rgba(16,43,51,.28)}
+.gal a::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(14,124,134,.28));
+  opacity:0;transition:opacity .3s ease}
+.gal img{width:100%;height:100%;object-fit:cover;transition:transform .55s cubic-bezier(.22,.61,.36,1)}
+html.anim .gal a:hover::after{opacity:1}
+html.anim .gal a:hover img{transform:scale(1.07)}
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:80;background:rgba(9,26,31,.9);display:none;
+  align-items:center;justify-content:center;padding:4vh 4vw;backdrop-filter:blur(6px)}
+.lb.open{display:flex}
+.lb img{max-width:92vw;max-height:84vh;width:auto;height:auto;border-radius:6px;box-shadow:0 40px 90px -30px rgba(0,0,0,.7)}
+.lb button{position:absolute;background:rgba(251,253,254,.08);border:1px solid rgba(251,253,254,.3);color:#fff;
+  width:48px;height:48px;font-size:1.2rem;cursor:pointer;border-radius:50%;transition:background .2s ease}
+.lb button:hover{background:rgba(251,253,254,.22)}
+.lb .x{top:1.2rem;right:1.2rem}
+.lb .prev{left:1.2rem;top:50%;transform:translateY(-50%)}
+.lb .next{right:1.2rem;top:50%;transform:translateY(-50%)}
+
+/* cennik — spotlight */
+.pricing-intro{color:var(--ink-dim);max-width:62ch;margin-bottom:2.6rem}
+.pricing-intro p+p{margin-top:1rem}
+.pgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.4rem}
+@media(max-width:900px){.pgrid{grid-template-columns:1fr}}
+.pcard{position:relative;background:var(--surface);border:1px solid var(--aqua-line);border-radius:8px;
+  padding:2.2rem;overflow:hidden;transition:box-shadow .3s ease,border-color .3s ease}
+.pcard::before{content:"";position:absolute;inset:0;opacity:0;transition:opacity .3s ease;pointer-events:none;
+  background:radial-gradient(240px circle at var(--mx,50%) var(--my,50%), rgba(20,160,172,.13), transparent 70%)}
+html.anim .pcard:hover{box-shadow:var(--shadow);border-color:var(--aqua)}
+html.anim .pcard:hover::before{opacity:1}
+.pcard h3{font-family:var(--serif);font-weight:500;font-size:1.45rem;margin-bottom:1.2rem;color:var(--aqua)}
+.pcard table{width:100%;border-collapse:collapse;font-size:var(--fs-sm)}
+.pcard th{text-align:left;font-weight:500;color:var(--ink);letter-spacing:.1em;text-transform:uppercase;
+  font-size:var(--fs-xs);padding:.5rem 0;border-bottom:1px solid var(--aqua-line)}
+.pcard th:last-child,.pcard td:last-child{text-align:right;white-space:nowrap;color:var(--aqua);font-weight:500}
+.pcard td{padding:.55rem 0;border-bottom:1px solid rgba(14,124,134,.1);color:var(--ink-dim);vertical-align:top}
+.pcard td:first-child{padding-right:1rem}
+.pcard tr:last-child td{border-bottom:none}
+
+/* kontakt */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:stretch}
+@media(max-width:820px){.contact-grid{grid-template-columns:1fr}}
+.cpanel{background:var(--surface);border:1px solid var(--aqua-line);border-radius:8px;padding:2.4rem;
+  transition:box-shadow .3s ease}
+html.anim .cpanel:hover{box-shadow:var(--shadow)}
+.cpanel h3{font-family:var(--serif);font-weight:500;font-size:1.4rem;margin-bottom:1.2rem;color:var(--aqua)}
+address{font-style:normal;font-family:var(--serif);font-size:var(--fs-lg);line-height:1.55}
+.clines{margin-top:1.4rem;display:grid;gap:.55rem;color:var(--ink-dim);font-size:var(--fs-sm)}
+.clines a{color:var(--aqua);text-decoration:underline;text-decoration-color:var(--aqua-line);
+  text-underline-offset:4px;transition:text-decoration-color .2s ease}
+.clines a:hover{text-decoration-color:currentColor}
+.hours{width:100%;border-collapse:collapse;font-size:var(--fs-sm)}
+.hours td{padding:.6rem 0;border-bottom:1px solid rgba(14,124,134,.1);color:var(--ink-dim)}
+.hours td:last-child{text-align:right;color:var(--aqua);font-weight:500}
+.hours tr:last-child td{border-bottom:none}
+
+footer{border-top:1px solid var(--aqua-line);padding:2rem 6vw;text-align:center;
+  color:var(--ink-dim);font-size:var(--fs-xs);letter-spacing:.1em;background:var(--surface)}
+
+/* reveal — domyślnie widoczne; animacje włącza html.anim (desktop) */
+.reveal{opacity:1;transform:none}
+html.anim .reveal{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease}
+html.anim .reveal.in{opacity:1;transform:none}
+html.anim .hero .eyebrow,html.anim .hero h1,html.anim .hero .names,html.anim .hero .addr,html.anim .hero .hero-cta{
+  opacity:0;transform:translateY(24px);animation:heroIn .9s cubic-bezier(.22,.61,.36,1) forwards}
+html.anim .hero h1{animation-delay:.1s}
+html.anim .hero .names{animation-delay:.2s}
+html.anim .hero .addr{animation-delay:.28s}
+html.anim .hero .hero-cta{animation-delay:.38s}
+html.anim .hero-photo{opacity:0;transform:translateY(30px) scale(.98);animation:heroIn 1s .25s cubic-bezier(.22,.61,.36,1) forwards}
+@keyframes heroIn{to{opacity:1;transform:none}}
+@media (prefers-reduced-motion: reduce){
+  .marquee .track{animation:none}
+  html.anim .reveal,html.anim .hero *{opacity:1!important;transform:none!important;animation:none!important;transition:none!important}
+}
+</style>
+</head>
+<body>
+
+<nav id="nav" aria-label="Nawigacja">
+  <a class="brand" href="#top" aria-label="Mega Dent — start"><img src="assets/megadentlogo.png" alt="Mega Dent"></a>
+  <ul>
+    <li><a href="#top">Start</a></li>
+    <li><a href="#onas">O nas</a></li>
+    <li><a href="#galeria">Galeria</a></li>
+    <li><a href="#cennik">Cennik</a></li>
+    <li><a href="#kontakt">Kontakt</a></li>
+  </ul>
+</nav>
+
+<!-- HERO: tafla wody -->
+<header class="hero" id="top">
+  <canvas id="water" aria-hidden="true"></canvas>
+  <div class="hero-grid">
+    <div>
+      <p class="eyebrow">Przychodnia stomatologiczna</p>
+      <h1>Mega <span>Dent</span></h1>
+      <p class="names">Jarosław Połomski &amp; Wojciech Połomski</p>
+      <p class="addr">Czarnoleska 6, Radom</p>
+      <div class="hero-cta">
+        <a class="btn magnetic" href="#kontakt">Kontakt</a>
+        <a class="btn ghost magnetic" href="#cennik">Cennik</a>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <img src="assets/megadentbudynek.png" alt="Budynek przychodni Mega Dent" width="734" height="542">
+    </div>
+  </div>
+  <p class="hero-hint" aria-hidden="true">Poruszaj myszką — tafla wody reaguje</p>
+</header>
+
+<!-- MARQUEE -->
+<div class="marquee" aria-hidden="true">
+  <div class="track">
+    <span>Uśmiech i zadowolenie pacjenta jest naszym priorytetem.</span>
+    <span>Uśmiech i zadowolenie pacjenta jest naszym priorytetem.</span>
+    <span>Uśmiech i zadowolenie pacjenta jest naszym priorytetem.</span>
+    <span>Uśmiech i zadowolenie pacjenta jest naszym priorytetem.</span>
+  </div>
+</div>
+
+<!-- O NAS -->
+<section class="block" id="onas">
+  <div class="rule reveal"><h2>O <em>nas</em></h2></div>
+  <div class="cols">
+    <div class="reveal">
+      <h3 style="font-family:var(--serif);font-weight:500;font-size:1.6rem;margin-bottom:1rem">Przychodnia</h3>
+      <p class="lede">Nasza Przychodnia Stomatologiczna funkcjonuje nieprzerwanie od 1999 roku. Nasze gabinety wyposażone są w najnowocześniejszy sprzęt, co w połączeniu z naszą wiedzą i doświadczeniem przekłada się na najwyższą jakość usług.</p>
+      <div class="since">
+        <span class="year" id="since" data-year="1999">1999</span>
+        <span class="lbl">funkcjonuje nieprzerwanie od</span>
+      </div>
+    </div>
+    <div class="reveal">
+      <img src="assets/galeria5.jpg" alt="Gabinet stomatologiczny Mega Dent" loading="lazy">
+    </div>
+  </div>
+
+  <div class="rule reveal" style="margin-top:4.5rem"><h2>Nasz <em>Zespół</em></h2></div>
+  <p class="reveal" style="color:var(--ink-dim);margin-bottom:2rem">W naszym gabinecie przyjmuje Jarosław Połomski oraz Wojciech Połomski.</p>
+  <div class="team">
+    <div class="tcard reveal" data-tilt>
+      <div class="layer">
+        <img src="assets/twarzj.png" alt="Jarosław Połomski" style="--tz:36px" loading="lazy">
+        <h3 style="--tz2:26px">Jarosław Połomski</h3>
+        <p style="--tz3:18px">Jarosław Połomski ukończył Warszawski Uniwersytet Medyczny w 1984 roku. Jest współzałożycielem i właścicielem naszej przychodni.</p>
+      </div>
+    </div>
+    <div class="tcard reveal" data-tilt>
+      <div class="layer">
+        <img src="assets/twarzw2.png" alt="Wojciech Połomski" style="--tz:36px" loading="lazy">
+        <h3 style="--tz2:26px">Wojciech Połomski</h3>
+        <p style="--tz3:18px">Wojciech Połomski ukończył Uniwersytet Medyczny w Lublinie w roku 2011. Zawodowo szczególnie interesuje się chirurgią stomatologiczną, stomatologią zachowawczą, oraz protetyką.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALERIA -->
+<div class="band">
+<section class="band-inner" id="galeria">
+  <div class="rule reveal"><h2><em>Galeria</em></h2></div>
+  <div class="gal reveal" id="gal">
+    <a href="assets/galeria1.jpg" data-px="-1"><img src="assets/galeria1.jpg" alt="Galeria Mega Dent — zdjęcie 1" loading="lazy"></a>
+    <a href="assets/galeria2.jpg" data-px="1"><img src="assets/galeria2.jpg" alt="Galeria Mega Dent — zdjęcie 2" loading="lazy"></a>
+    <a href="assets/galeria3.jpg" data-px="-1"><img src="assets/galeria3.jpg" alt="Galeria Mega Dent — zdjęcie 3" loading="lazy"></a>
+    <a href="assets/galeria4.jpg" data-px="1"><img src="assets/galeria4.jpg" alt="Galeria Mega Dent — zdjęcie 4" loading="lazy"></a>
+    <a href="assets/galeria5.jpg" data-px="1"><img src="assets/galeria5.jpg" alt="Galeria Mega Dent — zdjęcie 5" loading="lazy"></a>
+    <a href="assets/galeria6.jpg" data-px="-1"><img src="assets/galeria6.jpg" alt="Galeria Mega Dent — zdjęcie 6" loading="lazy"></a>
+    <a href="assets/galeria7.jpg" data-px="1"><img src="assets/galeria7.jpg" alt="Galeria Mega Dent — zdjęcie 7" loading="lazy"></a>
+    <a href="assets/galeria8.jpg" data-px="-1"><img src="assets/galeria8.jpg" alt="Galeria Mega Dent — zdjęcie 8" loading="lazy"></a>
+    <a href="assets/galeria9.jpg" data-px="-1"><img src="assets/galeria9.jpg" alt="Galeria Mega Dent — zdjęcie 9" loading="lazy"></a>
+    <a href="assets/galeria10.jpg" data-px="1"><img src="assets/galeria10.jpg" alt="Galeria Mega Dent — zdjęcie 10" loading="lazy"></a>
+    <a href="assets/galeria11.jpg" data-px="-1"><img src="assets/galeria11.jpg" alt="Galeria Mega Dent — zdjęcie 11" loading="lazy"></a>
+    <a href="assets/galeria12.jpg" data-px="1"><img src="assets/galeria12.jpg" alt="Galeria Mega Dent — zdjęcie 12" loading="lazy"></a>
+  </div>
+</section>
+</div>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Podgląd zdjęcia">
+  <button class="x" id="lbX" aria-label="Zamknij">✕</button>
+  <button class="prev" id="lbP" aria-label="Poprzednie">‹</button>
+  <img id="lbImg" src="" alt="Powiększone zdjęcie galerii">
+  <button class="next" id="lbN" aria-label="Następne">›</button>
+</div>
+
+<!-- CENNIK -->
+<section class="block" id="cennik">
+  <div class="rule reveal"><h2><em>Cennik</em></h2></div>
+  <div class="pricing-intro reveal">
+    <p>Zapraszamy serdecznie do zapoznania się z cennikiem oferowanych przez nas usług.</p>
+    <p>Każdy zabieg przed wykonaniem jest omawiamy z Państwem na miejscu w gabinecie w celu rozwiania wszelkich wątpliwości.</p>
+    <p>Podane ceny mają charakter orientacyjny. W przypadku zastosowania innych, dodatkowych materiałów, bądź przeprowadzania bardziej skomplikowanych zabiegów ceny mogą ulec zmianie. Są one zawsze ustalane na pierwszej wizycie konsultacyjnej z lekarzem prowadzącym.</p>
+  </div>
+  <div class="pgrid">
+    <div class="pcard reveal">
+      <h3>Profilaktyka</h3>
+      <table>
+        <thead><tr><th>Profilaktyka - Usługi</th><th>Cena</th></tr></thead>
+        <tbody>
+          <tr><td>Badanie kontrolne, porada lekarska</td><td>50 zł</td></tr>
+          <tr><td>Lakierowanie</td><td>50-100 zł</td></tr>
+          <tr><td>Lakowanie</td><td>150 zł</td></tr>
+          <tr><td>Skaling (usuwanie kamienia)</td><td>150 zł</td></tr>
+          <tr><td>Piaskowanie (usuwanie osadu)</td><td>150 zł</td></tr>
+          <tr><td>pakiet higienizacyjny (skaling+piaskowanie+lakierowanie)</td><td>300 zł</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="pcard reveal">
+      <h3>Stomatologia zachowawcza</h3>
+      <table>
+        <thead><tr><th>Stomatologia zachowawcza - Usługi</th><th>Cena</th></tr></thead>
+        <tbody>
+          <tr><td>Znieczulenie</td><td>gratis do zabiegu</td></tr>
+          <tr><td>Wypełnienie Światłoutwardzalne</td><td>250 - 300 zł</td></tr>
+          <tr><td>Odbudowa zęba na 3 powierzchniach</td><td>350 zł</td></tr>
+          <tr><td>Odbudowa zęba na wkładzie z włókna szklanego</td><td>500 zł</td></tr>
+          <tr><td>Opatrunek leczniczy</td><td>100 zł</td></tr>
+          <tr><td>wypełnienie zęba mlecznego</td><td>150 zł</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="pcard reveal">
+      <h3>Endodoncja</h3>
+      <table>
+        <thead><tr><th>Endodoncja - Usługi</th><th>Cena</th></tr></thead>
+        <tbody>
+          <tr><td>Dewitalizacja (zatrucie zęba)</td><td>150 zł</td></tr>
+          <tr><td>Leczenie kanałowe zęba siecznego</td><td>500 zł</td></tr>
+          <tr><td>Leczenie kanałowe zęba przedtrzonowego</td><td>600 zł</td></tr>
+          <tr><td>Leczenie kanałowe zęba trzonowego</td><td>800 zł</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="pcard reveal">
+      <h3>Chirurgia</h3>
+      <table>
+        <thead><tr><th>Chirurgia - Usługi</th><th>Cena</th></tr></thead>
+        <tbody>
+          <tr><td>Ekstrakcja zęba rozchwianego</td><td>100 zł</td></tr>
+          <tr><td>Ekstrakcja zęba siecznego</td><td>200 zł</td></tr>
+          <tr><td>Ekstrakcja zęba przedtrzonowego lub trzonowego</td><td>250 zł</td></tr>
+          <tr><td>Ekstrakcja zęba przez dłutowanie</td><td>300 zł</td></tr>
+          <tr><td>Ekstrakcja Ósemek (zębów mądrości)</td><td>300-400 zł</td></tr>
+          <tr><td>Ekstrakcja zęba mlecznego</td><td>150 zł</td></tr>
+          <tr><td>Nacięcie ropnia</td><td>100 zł</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="pcard reveal" style="grid-column:1/-1">
+      <h3>Protetyka</h3>
+      <table>
+        <thead><tr><th>Protetyka - Usługi</th><th>Cena</th></tr></thead>
+        <tbody>
+          <tr><td>Wkład koronowo-korzeniowy</td><td>250 zł</td></tr>
+          <tr><td>Korona porcelanowa na podbudowie metalowej</td><td>1100 zł</td></tr>
+          <tr><td>Most porcelanowy (punkt)</td><td>1100 zł</td></tr>
+          <tr><td>korona pełnoceramiczna (cyrkonowa)</td><td>1700 zł</td></tr>
+          <tr><td>Korona tymczasowa</td><td>50 zł</td></tr>
+          <tr><td>Proteza akrylowa</td><td>1100 zł</td></tr>
+          <tr><td>Proteza szkieletowa (płyta)</td><td>1100 zł</td></tr>
+          <tr><td>proteza akronowa (elastyczna) płyta</td><td>1100 zł</td></tr>
+          <tr><td>ząb w protezie akronowej</td><td>160 zł</td></tr>
+          <tr><td>Naprawa protezy</td><td>od 150 zł</td></tr>
+          <tr><td>Cementowanie prac protetycznych wykonanych poza naszym gabinetem</td><td>150 zł</td></tr>
+          <tr><td>szyna relaksacyjna</td><td>400 zł</td></tr>
+          <tr><td>proteza akrylowa 1- zębowa</td><td>500 zł</td></tr>
+          <tr><td>proteza akrylowa 2- zębowa</td><td>550 zł</td></tr>
+          <tr><td>proteza akrylowa 3- zębowa</td><td>600 zł</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- KONTAKT -->
+<div class="band">
+<section class="band-inner" id="kontakt">
+  <div class="rule reveal"><h2><em>Kontakt</em></h2></div>
+  <div class="contact-grid">
+    <div class="cpanel reveal">
+      <h3>Dane kontaktowe</h3>
+      <address>
+        MEGA-DENT<br>
+        ul. Czarnoleska 6A<br>
+        26-600 Radom
+      </address>
+      <div class="clines">
+        <p>Wojciech Połomski: <a href="tel:797608670">797-608-670</a></p>
+        <p>Jarosław Połomski: <a href="tel:602753656">602-753-656</a></p>
+        <p>Telefon: <a href="tel:+48331 8706">+48 331-87-06</a></p>
+      </div>
+    </div>
+    <div class="cpanel reveal">
+      <h3>Godziny otwarcia</h3>
+      <table class="hours">
+        <tr><td>Poniedziałek</td><td>9-19</td></tr>
+        <tr><td>Wtorek</td><td>9-19</td></tr>
+        <tr><td>Środa</td><td>9-19</td></tr>
+        <tr><td>Czwartek</td><td>9-19</td></tr>
+        <tr><td>Piątek</td><td>9-19</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+</div>
+
+<footer>© 2026 Mastalex. Wszelkie prawa zastrzeżone.</footer>
+
+<script>
+(function(){
+  "use strict";
+
+  /* tło nav po scrollu */
+  var nav = document.getElementById("nav");
+  addEventListener("scroll", function(){ nav.classList.toggle("solid", scrollY > 40); }, {passive:true});
+
+  /* lightbox galerii */
+  var links = [].slice.call(document.querySelectorAll("#gal a"));
+  var lb = document.getElementById("lb"), lbImg = document.getElementById("lbImg"), cur = 0;
+  function openLb(i){ cur = (i+links.length)%links.length; lbImg.src = links[cur].href; lb.classList.add("open"); }
+  function closeLb(){ lb.classList.remove("open"); lbImg.src = ""; }
+  links.forEach(function(a,i){ a.addEventListener("click", function(e){ e.preventDefault(); openLb(i); }); });
+  document.getElementById("lbX").addEventListener("click", closeLb);
+  document.getElementById("lbP").addEventListener("click", function(){ openLb(cur-1); });
+  document.getElementById("lbN").addEventListener("click", function(){ openLb(cur+1); });
+  lb.addEventListener("click", function(e){ if(e.target === lb) closeLb(); });
+  addEventListener("keydown", function(e){
+    if(!lb.classList.contains("open")) return;
+    if(e.key === "Escape") closeLb();
+    if(e.key === "ArrowLeft") openLb(cur-1);
+    if(e.key === "ArrowRight") openLb(cur+1);
+  });
+
+  /* efekty tylko desktop bez reduced-motion; mobile zawsze clean */
+  var mobile = matchMedia("(max-width:820px)").matches || matchMedia("(pointer:coarse)").matches;
+  var reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if(mobile || reduced) return;
+
+  document.documentElement.classList.add("anim");
+
+  /* reveal przy scrollu */
+  var reveals = [].slice.call(document.querySelectorAll(".reveal"));
+  function checkReveal(){
+    var vh = innerHeight;
+    reveals = reveals.filter(function(el){
+      var r = el.getBoundingClientRect();
+      if(r.top < vh*0.9 && r.bottom > 0){ el.classList.add("in"); return false; }
+      return true;
+    });
+  }
+  addEventListener("scroll", checkReveal, {passive:true});
+  addEventListener("resize", checkReveal, {passive:true});
+  checkReveal();
+
+  /* licznik roku 1999 — startuje gdy sekcja w widoku */
+  var since = document.getElementById("since");
+  var counted = false;
+  function checkCounter(){
+    if(counted) return;
+    var r = since.getBoundingClientRect();
+    if(r.top < innerHeight*0.85){
+      counted = true;
+      var target = 1999, from = 1900, t0 = performance.now(), dur = 1400;
+      (function step(now){
+        var p = Math.min(1, (now-t0)/dur);
+        var e = 1 - Math.pow(1-p, 3);
+        since.textContent = Math.round(from + (target-from)*e);
+        if(p < 1) requestAnimationFrame(step);
+      })(t0);
+    }
+  }
+  addEventListener("scroll", checkCounter, {passive:true});
+  checkCounter();
+
+  /* TAFLA WODY — port Mastalex WaterRippleShowcase (2 bufory, tłumienie, refrakcja) */
+  (function(){
+    var canvas = document.getElementById("water");
+    if(!canvas) return;
+    var W = 480, H = 300, SIZE = W*H;
+    var buf1 = new Float32Array(SIZE), buf2 = new Float32Array(SIZE);
+    var DAMPING = 0.88, BRUSH = 5;
+    var ctx = canvas.getContext("2d");
+
+    /* tekstura: jasny akwamarynowy gradient + delikatne kręgi */
+    var tc = document.createElement("canvas"); tc.width = W; tc.height = H;
+    var t = tc.getContext("2d");
+    var g = t.createLinearGradient(0,0,W,H);
+    g.addColorStop(0,"#E3F1F4"); g.addColorStop(.55,"#F7FCFD"); g.addColorStop(1,"#E9F5F7");
+    t.fillStyle = g; t.fillRect(0,0,W,H);
+    t.strokeStyle = "rgba(14,124,134,.12)"; t.lineWidth = 1.2;
+    [70,110,150,195].forEach(function(r){ t.beginPath(); t.arc(W*0.72, H*0.38, r, 0, Math.PI*2); t.stroke(); });
+    var texture = t.getImageData(0,0,W,H);
+    var output = ctx.createImageData(W,H);
+
+    function resize(){
+      var r = canvas.parentElement.getBoundingClientRect();
+      canvas.width = W; canvas.height = H;
+      canvas.style.width = r.width+"px"; canvas.style.height = r.height+"px";
+    }
+    resize(); addEventListener("resize", resize, {passive:true});
+
+    function drop(cx, cy, radius, strength){
+      for(var dy=-radius; dy<=radius; dy++)
+        for(var dx=-radius; dx<=radius; dx++){
+          var nx=cx+dx, ny=cy+dy;
+          if(nx>0 && nx<W-1 && ny>0 && ny<H-1){
+            var d = Math.sqrt(dx*dx+dy*dy);
+            if(d<radius) buf1[ny*W+nx] += Math.cos((d/radius)*Math.PI*0.5)*strength;
+          }
+        }
+    }
+
+    var hero = canvas.parentElement;
+    hero.addEventListener("mousemove", function(e){
+      var r = canvas.getBoundingClientRect();
+      drop(Math.floor((e.clientX-r.left)/r.width*W), Math.floor((e.clientY-r.top)/r.height*H), BRUSH, 1.6);
+    }, {passive:true});
+    hero.addEventListener("click", function(e){
+      var r = canvas.getBoundingClientRect();
+      drop(Math.floor((e.clientX-r.left)/r.width*W), Math.floor((e.clientY-r.top)/r.height*H), 10, 5);
+    });
+
+    /* auto-krople: strona żyje bez myszki */
+    setInterval(function(){
+      if(document.hidden) return;
+      drop(30+Math.random()*(W-60), 30+Math.random()*(H-60), 6, 2.4);
+    }, 1900);
+
+    var tex = texture.data, out = output.data;
+    function frame(){
+      requestAnimationFrame(frame);
+      for(var i=W; i<SIZE-W; i++){
+        buf2[i] = ((buf1[i-1]+buf1[i+1]+buf1[i-W]+buf1[i+W])/2 - buf2[i]) * DAMPING;
+      }
+      var tmp = buf1; buf1 = buf2; buf2 = tmp;
+      for(var y=1; y<H-1; y++){
+        for(var x=1; x<W-1; x++){
+          var idx = y*W+x;
+          var offX = (buf1[idx-1]-buf1[idx+1])|0;
+          var offY = (buf1[idx-W]-buf1[idx+W])|0;
+          var sx = x+offX, sy = y+offY;
+          if(sx<0)sx=0; if(sx>=W)sx=W-1; if(sy<0)sy=0; if(sy>=H)sy=H-1;
+          var src = (sy*W+sx)*4, dst = idx*4;
+          var shade = (offX-offY)*1.4;
+          out[dst]   = tex[src]   + shade;
+          out[dst+1] = tex[src+1] + shade;
+          out[dst+2] = tex[src+2] + shade;
+          out[dst+3] = 255;
+        }
+      }
+      ctx.putImageData(output, 0, 0);
+    }
+    frame();
+  })();
+
+  /* Karta 3D (tilt + paralaksa) — Mastalex TiltCardShowcase */
+  var MAX_TILT = 12;
+  [].slice.call(document.querySelectorAll("[data-tilt]")).forEach(function(card){
+    card.style.perspective = "900px";
+    var inner = card.querySelector(".layer");
+    card.addEventListener("mousemove", function(e){
+      var r = card.getBoundingClientRect();
+      var x = e.clientX - r.left - r.width/2;
+      var y = e.clientY - r.top - r.height/2;
+      inner.style.transform = "rotateX(" + (y/(r.height/2))*-MAX_TILT + "deg) rotateY(" + (x/(r.width/2))*MAX_TILT + "deg)";
+    });
+    card.addEventListener("mouseleave", function(){
+      inner.style.transition = "transform .4s ease";
+      inner.style.transform = "rotateX(0deg) rotateY(0deg)";
+      setTimeout(function(){ inner.style.transition = ""; }, 400);
+    });
+  });
+
+  /* Latarka (spotlight) — karty cennika */
+  [].slice.call(document.querySelectorAll(".pcard")).forEach(function(card){
+    card.addEventListener("mousemove", function(e){
+      var r = card.getBoundingClientRect();
+      card.style.setProperty("--mx", (e.clientX - r.left) + "px");
+      card.style.setProperty("--my", (e.clientY - r.top) + "px");
+    });
+  });
+
+  /* Pole magnetyczne — przyciski hero */
+  [].slice.call(document.querySelectorAll(".magnetic")).forEach(function(btn){
+    btn.addEventListener("mousemove", function(e){
+      var r = btn.getBoundingClientRect();
+      var dx = e.clientX - (r.left + r.width/2);
+      var dy = e.clientY - (r.top + r.height/2);
+      btn.style.transform = "translate(" + dx*0.24 + "px," + dy*0.24 + "px)";
+    });
+    btn.addEventListener("mouseleave", function(){
+      btn.style.transition = "transform .35s cubic-bezier(.22,.61,.36,1)";
+      btn.style.transform = "";
+      setTimeout(function(){ btn.style.transition = ""; }, 350);
+    });
+  });
+
+  /* Parallax galerii — kafle płyną z różną prędkością przy scrollu */
+  var pxTiles = [].slice.call(document.querySelectorAll(".gal a[data-px]"));
+  function parallax(){
+    var vh = innerHeight;
+    pxTiles.forEach(function(tile){
+      var r = tile.getBoundingClientRect();
+      if(r.bottom < 0 || r.top > vh) return;
+      var mid = (r.top + r.height/2 - vh/2) / vh;   /* -0.5..0.5 */
+      tile.style.transform = "translateY(" + (mid * 26 * +tile.dataset.px) + "px)";
+    });
+  }
+  addEventListener("scroll", parallax, {passive:true});
+  parallax();
+})();
+</script>
+</body>
+</html>

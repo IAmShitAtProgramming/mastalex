@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: 'Cormorant Garamond', serif;
+  --font-sans: 'Inter', sans-serif;
+  
+  --color-gold-50: #fbf8f0;
+  --color-gold-100: #f5ecd2;
+  --color-gold-200: #e7d4a4;
+  --color-gold-300: #d3b56c;
+  --color-gold-400: #be9742;
+  --color-gold-500: #a57d30;
+  --color-gold-600: #886224;
+  --color-gold-700: #6c4b1d;
+  --color-gold-800: #553a1a;
+  --color-gold-900: #452e18;
+  
+  --color-cream-50: #fdfdfc;
+  --color-cream-100: #fcfbf7;
+  --color-cream-200: #f6f4ed;
+  --color-cream-300: #eae7db;
+  --color-cream-400: #d0cabb;
+  
+  --color-premium-gold: #c5a880;
+  --color-premium-gold-dark: #a68759;
+  --color-premium-cream: #FCFBF7;
+  --color-premium-beige: #F6F4ED;
+  --color-premium-charcoal: #1C1917;
+  --color-premium-bronze: #8E7A5F;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes floatGlow {
+  0%, 100% { opacity: 0.2; transform: translateY(0px) scale(1); }
+  50% { opacity: 0.5; transform: translateY(-10px) scale(1.03); }
+}
+
+@utility animate-shimmer {
+  animation: shimmer 6s infinite linear;
+}
+
+@utility glassmorphism {
+  background: rgba(252, 251, 247, 0.75);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(197, 168, 128, 0.15);
+}
+
+@utility glassmorphism-dark {
+  background: rgba(10, 9, 8, 0.85);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(197, 168, 128, 0.2);
+}
+
+@utility gold-text-shine {
+  background: linear-gradient(90deg, #c5a880 0%, #fff5db 30%, #e2e8f0 50%, #c5a880 70%, #9e8259 100%);
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: shimmer 6s linear infinite;
+}
+
+@utility silver-text-shine {
+  background: linear-gradient(90deg, #cbd5e1 0%, #ffffff 40%, #94a3b8 70%, #cbd5e1 100%);
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: shimmer 7s linear infinite;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cormorant Garamond', serif;
+  }
+}

@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="pl" data-lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kancelaria Adwokacka Adwokat Tomasz Zakrzewski — Żyrardów</title>
+<meta name="description" content="Kancelaria Adwokacka Adwokat Tomasz Zakrzewski w Żyrardowie. Prawo karne, cywilne, gospodarcze, pracy, rodzinne, sprawy karno-celne. Porady prawne online.">
+<link rel="icon" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#070b14;
+  --bg-2:#0b1120;
+  --ink:#e9e4d8;
+  --ink-dim:#b0a99c;          /* 8:1 na --bg */
+  --gold:#c9a227;             /* 7.9:1 na --bg */
+  --gold-bright:#e8c766;
+  --gold-line:rgba(201,162,39,.28);
+  --serif:"EB Garamond",Georgia,"Times New Roman",serif;
+  --sans:"Lato","Segoe UI",system-ui,sans-serif;
+
+  /* skala typograficzna 13/15/16/18/22 + nagłówki płynne */
+  --fs-xs:.8125rem; --fs-sm:.9375rem; --fs-base:1rem; --fs-md:1.125rem; --fs-lg:1.375rem;
+
+  /* rytm 4/8 */
+  --sp-1:.5rem; --sp-2:1rem; --sp-3:1.5rem; --sp-4:2rem; --sp-6:3rem; --sp-8:4rem;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}   /* skok do zakładki natychmiast, bez przewijania przez całą stronę */
+section.block{scroll-margin-top:96px}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-weight:400;
+  font-size:var(--fs-base);line-height:1.7;overflow-x:hidden;
+  font-variant-numeric:tabular-nums;text-rendering:optimizeLegibility}
+::selection{background:var(--gold);color:var(--bg)}
+
+/* focus widoczny wszędzie */
+:focus-visible{outline:2px solid var(--gold-bright);outline-offset:3px;border-radius:2px}
+
+.skip{position:absolute;left:-9999px;top:0;z-index:100;background:var(--gold);color:#141005;
+  padding:.85rem 1.4rem;font-size:var(--fs-sm);letter-spacing:.12em;text-transform:uppercase;text-decoration:none}
+.skip:focus{left:var(--sp-2);top:var(--sp-2)}
+
+/* przełącznik języka — pokazuje tylko aktywny język, drugi ukryty */
+[data-lang="pl"] .en{display:none !important}
+[data-lang="en"] .pl{display:none !important}
+.langsw{display:flex;gap:.15rem;align-items:center;font-size:var(--fs-xs);letter-spacing:.14em}
+.langsw button{background:none;border:none;color:var(--ink-dim);font:inherit;letter-spacing:inherit;
+  cursor:pointer;padding:.5rem .35rem;text-transform:uppercase;transition:color .2s ease}
+.langsw button[aria-pressed="true"]{color:var(--gold-bright)}
+.langsw button:hover{color:var(--gold-bright)}
+.langsw .sep{color:var(--ink-dim);opacity:.5}
+
+/* baner cookies */
+.cookie{position:fixed;left:0;right:0;bottom:0;z-index:60;background:rgba(7,11,20,.97);
+  border-top:1px solid var(--gold-line);padding:1rem 4vw;display:flex;gap:1.2rem;align-items:center;
+  justify-content:center;flex-wrap:wrap;font-size:var(--fs-sm);color:var(--ink-dim);backdrop-filter:blur(8px)}
+.cookie a{color:var(--gold-bright)}
+.cookie p{max-width:none}
+.cookie button{background:var(--gold);color:#141005;border:none;min-height:44px;padding:.6rem 1.8rem;
+  font:inherit;font-weight:700;letter-spacing:.16em;text-transform:uppercase;font-size:var(--fs-xs);
+  cursor:pointer;transition:background .2s ease}
+.cookie button:hover{background:var(--gold-bright)}
+.cookie[hidden]{display:none}
+
+/* ---------- nav ---------- */
+nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;
+  gap:var(--sp-2);padding:.85rem 4vw;background:linear-gradient(rgba(7,11,20,.94),rgba(7,11,20,0));
+  transition:background .3s ease,border-color .3s ease;border-bottom:1px solid transparent}
+nav.solid{background:rgba(7,11,20,.96);border-bottom-color:var(--gold-line);backdrop-filter:blur(8px)}
+.brand{font-family:var(--serif);font-size:1.15rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ink);text-decoration:none;white-space:nowrap;padding:.5rem 0}
+.brand b{color:var(--gold);font-weight:600}
+nav ul{display:flex;gap:2.2rem;list-style:none;flex-wrap:wrap;justify-content:flex-end}
+nav ul a{display:block;color:var(--ink-dim);text-decoration:none;font-size:var(--fs-xs);letter-spacing:.2em;
+  text-transform:uppercase;transition:color .2s ease;padding:.7rem 0;position:relative}
+nav ul a::after{content:"";position:absolute;left:0;right:100%;bottom:.45rem;height:1px;
+  background:var(--gold-bright);transition:right .3s ease}
+nav ul a:hover,nav ul a:focus-visible{color:var(--gold-bright);cursor:pointer}
+nav ul a:hover::after{right:0}
+/* mobile: nawigacja NIE znika — schodzi pod logo w zwarty rząd */
+@media(max-width:820px){
+  nav{flex-wrap:wrap;align-items:center;gap:.1rem .5rem;padding:.45rem 4vw .3rem}
+  nav .brand{font-size:1rem;padding:.3rem 0}
+  nav .langsw{margin-left:auto}
+  nav ul{order:3;gap:.4rem .9rem;justify-content:space-between;width:100%;flex-wrap:wrap}
+  nav ul li:first-child{display:none}   /* Strona główna/Home — logo już wraca na górę */
+  nav ul a{font-size:.6875rem;letter-spacing:.02em;padding:.4rem 0;white-space:nowrap}
+  nav ul a::after{display:none}
+  section.block{scroll-margin-top:132px}
+}
+@media (prefers-reduced-motion: reduce){nav ul a::after{transition:none}}
+
+/* ---------- hero ---------- */
+.hero{position:relative;min-height:88svh;display:flex;align-items:center;overflow:hidden;
+  padding:8rem 6vw 5rem;
+  background:radial-gradient(115% 85% at 50% -8%, rgba(201,162,39,.12), transparent 58%), var(--bg)}
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;
+  background:linear-gradient(90deg,transparent,var(--gold-line),transparent)}
+.hero-inner{max-width:60rem;margin:0 auto;text-align:center}
+.hero-cta{margin-top:2.4rem;display:flex;justify-content:center}
+
+.eyebrow{font-size:var(--fs-xs);letter-spacing:.4em;text-transform:uppercase;color:var(--gold);
+  margin-bottom:1.2rem;font-weight:400}
+h1{font-family:var(--serif);font-weight:500;font-size:clamp(2.4rem,5.5vw,4.6rem);line-height:1.1;letter-spacing:.01em}
+h1 span{color:var(--gold-bright)}
+.sub{margin-top:1.5rem;margin-left:auto;margin-right:auto;max-width:44ch;color:var(--ink);
+  font-size:var(--fs-md);line-height:1.6}
+
+/* wejście hero — tylko gdy JS włączy animacje (html.anim = desktop, nie reduced) */
+html.anim .hero .eyebrow,html.anim .hero h1,html.anim .hero .sub,html.anim .hero .hero-cta{
+  opacity:0;transform:translateY(24px);animation:heroIn .9s cubic-bezier(.22,.61,.36,1) forwards}
+html.anim .hero h1{animation-delay:.10s}
+html.anim .hero .sub{animation-delay:.22s}
+html.anim .hero .hero-cta{animation-delay:.34s}
+@keyframes heroIn{to{opacity:1;transform:none}}
+
+/* ---------- content sections ---------- */
+section.block{position:relative;padding:var(--sp-8) 6vw;max-width:1200px;margin:0 auto}
+@media(min-width:821px){section.block{padding:7rem 6vw}}
+.rule{display:flex;align-items:baseline;gap:1.2rem;margin-bottom:var(--sp-4)}
+.rule::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,var(--gold),transparent);opacity:.7}
+h2{font-family:var(--serif);font-weight:500;font-size:clamp(1.85rem,3.4vw,2.6rem);letter-spacing:.02em;
+  line-height:1.2;white-space:nowrap}
+h2 em{color:var(--gold);font-style:normal}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-6)}
+@media(max-width:820px){.cols{grid-template-columns:1fr;gap:var(--sp-4)}}
+.cols p+p{margin-top:1.1rem}
+p{max-width:68ch}                     /* długość wiersza 65–75 znaków */
+.lede{font-family:var(--serif);font-size:var(--fs-lg);line-height:1.45;color:var(--ink);max-width:38ch}
+.intro{max-width:62ch;margin-bottom:var(--sp-6);color:var(--ink-dim);font-size:var(--fs-md)}
+.meta{margin-top:var(--sp-4);padding-top:1.4rem;border-top:1px solid var(--gold-line);
+  color:var(--ink-dim);font-size:var(--fs-sm);display:grid;gap:.45rem}
+.meta b{color:var(--gold);font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:var(--fs-xs)}
+
+/* oferta */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--gold-line)}
+@media(max-width:980px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){.grid{grid-template-columns:1fr}}
+.cell{background:var(--bg-2);padding:2.4rem 2rem;position:relative;
+  transition:background .25s ease,transform .25s ease,box-shadow .25s ease}
+.cell::before{content:"";position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--gold);
+  transform:scaleY(0);transform-origin:top;transition:transform .3s ease}
+.cell h3{font-family:var(--serif);font-weight:500;font-size:var(--fs-lg);margin-bottom:.4rem;line-height:1.25}
+.cell .num{font-size:var(--fs-xs);letter-spacing:.3em;color:var(--gold);display:block;margin-bottom:.9rem;
+  font-weight:700;font-variant-numeric:tabular-nums}
+.cell ul{list-style:none;margin-top:1.1rem}
+.cell li{padding:.35rem 0 .35rem 1.15rem;position:relative;color:var(--ink-dim);
+  font-size:var(--fs-sm);line-height:1.55}
+.cell li::before{content:"";position:absolute;left:0;top:.82em;width:.4rem;height:1px;background:var(--gold);opacity:.85}
+/* hover TYLKO tam gdzie jest wskaźnik (desktop) — na telefonie karta statyczna */
+@media(hover:hover) and (pointer:fine){
+  .cell:hover{background:#0e1730;transform:translateY(-4px);box-shadow:0 18px 40px -24px rgba(0,0,0,.8)}
+  .cell:hover::before{transform:scaleY(1)}
+}
+@media (prefers-reduced-motion: reduce){.cell,.cell::before{transition:none}}
+
+/* porady / kontakt */
+.split{display:grid;grid-template-columns:1.1fr .9fr;gap:var(--sp-8);align-items:start}
+@media(max-width:820px){.split{grid-template-columns:1fr;gap:var(--sp-6)}}
+form{display:grid;gap:1.05rem}
+.field label{display:block;font-size:var(--fs-xs);letter-spacing:.2em;text-transform:uppercase;
+  color:var(--ink-dim);margin-bottom:.4rem;font-weight:700}
+.req{color:var(--gold);margin-left:.15rem}
+input,textarea{width:100%;background:transparent;border:1px solid var(--gold-line);color:var(--ink);
+  padding:.8rem .95rem;min-height:44px;font-family:var(--sans);font-size:var(--fs-base);line-height:1.5;
+  transition:border-color .2s ease,background-color .2s ease}
+input:focus,textarea:focus{outline:none;border-color:var(--gold-bright);box-shadow:0 0 0 2px rgba(201,162,39,.18)}
+/* walidacja dopiero po wyjściu z pola — nie przy każdym znaku */
+input:user-invalid,textarea:user-invalid{border-color:#d4756a}
+textarea{min-height:8.5rem;resize:vertical}
+.hint-text{font-size:var(--fs-xs);color:var(--ink-dim);letter-spacing:.04em}
+button.cta,a.cta{display:inline-flex;align-items:center;justify-content:center;min-height:48px;
+  background:var(--gold);color:#141005;border:none;padding:.95rem 2.6rem;
+  font-family:var(--sans);font-size:var(--fs-xs);font-weight:700;letter-spacing:.26em;text-transform:uppercase;
+  cursor:pointer;text-decoration:none;text-align:center;transition:background .2s ease,transform .12s ease}
+button.cta:hover,a.cta:hover,button.cta:focus-visible,a.cta:focus-visible{background:var(--gold-bright)}
+button.cta:active,a.cta:active{transform:scale(.98)}
+address{font-style:normal;font-family:var(--serif);font-size:var(--fs-lg);line-height:1.55}
+.contact-line{margin-top:1.6rem;color:var(--ink-dim);font-size:var(--fs-sm);display:grid;gap:.5rem}
+.contact-line a{color:var(--gold-bright);text-decoration:underline;text-decoration-color:var(--gold-line);
+  text-underline-offset:4px;transition:text-decoration-color .2s ease}
+.contact-line a:hover{text-decoration-color:currentColor}
+
+footer{border-top:1px solid var(--gold-line);padding:var(--sp-4) 6vw;text-align:center;
+  color:var(--ink-dim);font-size:var(--fs-xs);letter-spacing:.1em}
+footer a{color:var(--gold-bright)}
+@media (prefers-reduced-motion: reduce){button.cta:active,a.cta:active{transform:none}}
+
+/* reveal przy scrollu — domyślnie wszystko widoczne (bez JS / mobile / reduced = clean).
+   Animację włącza JS klasą html.anim tylko na desktopie. */
+.reveal{opacity:1;transform:none}
+html.anim .reveal{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease}
+html.anim .reveal.in{opacity:1;transform:none}
+html.anim .grid .cell.reveal:nth-child(2){transition-delay:.06s}
+html.anim .grid .cell.reveal:nth-child(3){transition-delay:.12s}
+html.anim .grid .cell.reveal:nth-child(4){transition-delay:.06s}
+html.anim .grid .cell.reveal:nth-child(5){transition-delay:.12s}
+html.anim .grid .cell.reveal:nth-child(6){transition-delay:.18s}
+</style>
+</head>
+<body>
+
+<a class="skip" href="#kancelaria"><span class="pl">Przejdź do treści</span><span class="en">Skip to content</span></a>
+
+<nav id="nav" aria-label="Nawigacja główna">
+  <a class="brand" href="#top">Zakrzewski <b>Adwokat</b></a>
+  <ul>
+    <li><a href="#top"><span class="pl">Strona główna</span><span class="en">Home</span></a></li>
+    <li><a href="#kancelaria"><span class="pl">O kancelarii</span><span class="en">About us</span></a></li>
+    <li><a href="#oferta"><span class="pl">Oferta</span><span class="en">Our offer</span></a></li>
+    <li><a href="#porady"><span class="pl">Porady online</span><span class="en">Online legal advisory</span></a></li>
+    <li><a href="#kontakt"><span class="pl">Kontakt</span><span class="en">Contact</span></a></li>
+  </ul>
+  <div class="langsw" role="group" aria-label="Język / Language">
+    <button type="button" data-setlang="pl" aria-pressed="true">PL</button>
+    <span class="sep" aria-hidden="true">/</span>
+    <button type="button" data-setlang="en" aria-pressed="false">EN</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero" id="top">
+  <div class="hero-inner">
+    <p class="eyebrow"><span class="pl">Kancelaria Adwokacka · Żyrardów</span><span class="en">Lawyer's Office · Żyrardów</span></p>
+    <h1>Adwokat<br><span>Tomasz Zakrzewski</span></h1>
+    <p class="sub"><span class="pl">Kancelaria Adwokacka Adwokat Tomasz Zakrzewski świadczy profesjonalną obsługę prawną zarówno przedsiębiorców jak i Klientów indywidualnych.</span><span class="en">The Tomasz Zakrzewski Law Office offers professional legal services to both corporate and individual clients.</span></p>
+    <div class="hero-cta">
+      <a class="cta" href="#kontakt"><span class="pl">Kontakt</span><span class="en">Contact</span></a>
+    </div>
+  </div>
+</header>
+
+<!-- O KANCELARII / ABOUT US -->
+<section class="block" id="kancelaria">
+  <div class="rule reveal"><h2><span class="pl">O <em>kancelarii</em></span><span class="en">About <em>us</em></span></h2></div>
+  <div class="cols">
+    <div class="reveal">
+      <p class="lede"><span class="pl">Kancelaria Adwokacka Adwokat Tomasz Zakrzewski świadczy profesjonalną obsługę prawną zarówno przedsiębiorców jak i Klientów indywidualnych.</span><span class="en">The Tomasz Zakrzewski Law Office offers professional legal services to both corporate and individual clients.</span></p>
+      <p style="margin-top:1.4rem"><span class="pl">Kancelaria zorientowana jest na świadczenie usług wysokiej jakości dla najbardziej wymagających Klientów. Jej największymi atutami są rzetelność, fachowość i szybkość w działaniu.</span><span class="en">We are committed to providing high quality services to satisfy even the most demanding Clients. Our main values are reliability, professionalism and time-effective legal solutions.</span></p>
+      <p><span class="pl">Właścicielem i założycielem Kancelarii jest Adwokat Tomasz Zakrzewski, który w 2004 r. ukończył Wydział Prawa i Administracji w Łodzi, a aplikację adwokacką odbył przy Okręgowej Radzie Adwokackiej w Warszawie.</span><span class="en">The owner and founder of the Law Office is Tomasz Zakrzewski, attorney-at-law, who graduated from the Faculty of Law and Administration at the University of Łódź in 2004 and completed attorney's training period at the District Bar Council in Warsaw.</span></p>
+      <p><span class="pl">Adwokat Tomasz Zakrzewski przez wiele lat związany był z kancelarią Kulikowska &amp; Kulikowski, która jest renomowaną na polskim rynku firmą, świadczącą obsługę podmiotów gospodarczych w zakresie szeroko pojętego prawa własności intelektualnej. Aplikację ukończył pod patronatem adwokata Włodzimierza Szoszuka, starszego wspólnika w kancelarii Wardyński i Wspólnicy, z którym współpracował w czasie odbywania aplikacji w zakresie zastępstwa procesowego.</span><span class="en">For many years Tomasz Zakrzewski was a corporate lawyer at Kulikowska &amp; Kulikowski, a patent law firm which enjoys excellent reputation in the Polish market in the field of protection of Intellectual Property. Tomasz Zakrzewski completed his attorney's training period under the auspices of Włodzimierz Szoszuk, attorney at law and senior associate at the Wardyński i Wspólnicy Law Firm, with whom Zakrzewski cooperated during the training period with respect to court representation.</span></p>
+    </div>
+    <div class="reveal">
+      <p><span class="pl">Poza zagadnieniami związanymi z własnością intelektualną i dochodzeniem roszczeń z naruszenia dóbr osobistych, czy innych naruszeń na dobrach niematerialnych, adwokat Tomasz Zakrzewski posiada doświadczenie w prowadzeniu spraw z zakresu szeroko pojętego prawa cywilnego, prawa pracy, jak również prawa karnego.</span><span class="en">Apart from matters related to Intellectual Property and pursuing claims for damages due to infringement of personal rights or other types of violations of intangible property, Tomasz Zakrzewski also holds extensive experience in civil law, labor law and penal law cases.</span></p>
+      <p><span class="pl">Wpisany na listę adwokatów przy Okręgowej Radzie Adwokackiej w Łodzi.</span><span class="en">He was called to the bar at the District Bar Council in Lódź.</span></p>
+      <p><span class="pl">Prywatnie jest człowiekiem wszechstronnych zainteresowań. Jego największą pasją są podróże. Jest współzałożycielem Klubu Przygody Darien - www.darien.pl, z którym organizuje wyprawy i ekspedycje w najdalsze zakątki świata. Jest częstym prelegentem festiwali podróżniczych, jak również autorem artykułów o tej tematyce.</span><span class="en">In private life, Tomasz Zakrzewski is a man of many interests. His greatest passion is traveling. He is a co-founder of the Adventure Club "Darien" - www.darien.pl, which organizes trekking trips and expeditions to the farthest points in the world. He is also a frequent speaker at tourist events and an author of several articles in this field.</span></p>
+      <p class="meta">
+        <span class="pl"><b>Języki:</b> angielski, hiszpański (w mowie i piśmie)</span><span class="en"><b>Languages:</b> English, Spanish (fluent spoken and written)</span>
+        <span class="pl"><b>Tel.</b> +(0048) 501 703 082</span><span class="en"><b>Telephone</b> +(0048) 501 703 082</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- OFERTA / OUR OFFER -->
+<section class="block" id="oferta">
+  <div class="rule reveal"><h2><span class="pl"><em>Oferta</em></span><span class="en"><em>Our</em> offer</span></h2></div>
+  <div class="reveal intro">
+    <p><span class="pl">Kancelaria świadczy usługi prawne w dość szerokim spektrum. Zapewniamy kompleksową pomoc prawną w zakresie obsługi podmiotów gospodarczych, jak również świadczymy pomoc prawną podmiotom indywidualnym.</span><span class="en">The Law Office offers a broad array of legal services. We render comprehensive legal advisory for individual and business clients.</span></p>
+    <p style="margin-top:1rem"><span class="pl">Zapraszamy do zapoznania się ze szczegółowym zakresem usług dostępnym w menu po prawej stronie.</span><span class="en">You are welcome to look through our detailed offer available on the right-side menu.</span></p>
+  </div>
+  <div class="grid">
+    <div class="cell reveal">
+      <span class="num">01</span><h3><span class="pl">Prawo karne</span><span class="en">Criminal law</span></h3>
+      <ul class="pl">
+        <li>obrona przed Sądem we wszystkich instancjach,</li>
+        <li>sporządzanie pism procesowych, wniosków dowodowych, apelacji, kasacji i wszelkich innych pism w zakresie postępowania karnego,</li>
+        <li>udział w procesach w charakterze oskarżyciela,</li>
+        <li>reprezentacja pokrzywdzonego, powoda i skazanego w procesach karnych,</li>
+        <li>pomoc prawna dla podejrzanych lub oskarżonych,</li>
+        <li>doradztwo w zakresie prawa karnego, prawa wykroczeń, kodeksu karnego wykonawczego.</li>
+      </ul>
+      <ul class="en">
+        <li>defense before the Court of all instances,</li>
+        <li>drafting of pleadings, motions for evidence, appeals, cassation statements and any other documents in criminal proceedings,</li>
+        <li>participation in court cases as a private accuser,</li>
+        <li>legal representation of the wronged party, plaintiff and persons convicted in criminal proceedings,</li>
+        <li>criminal legal aid for the suspects or accused,</li>
+        <li>legal advisory services in criminal law, misdemeanors law, the executive penal code.</li>
+      </ul>
+    </div>
+    <div class="cell reveal">
+      <span class="num">02</span><h3><span class="pl">Prawo cywilne</span><span class="en">Civil law</span></h3>
+      <ul class="pl">
+        <li>opracowywanie i negocjowanie umów,</li>
+        <li>przygotowywanie opinii prawnych,</li>
+        <li>dochodzenie odszkodowań,</li>
+        <li>prowadzenie spraw o naruszenie dóbr osobistych,</li>
+        <li>dochodzenie kar umownych,</li>
+        <li>wszelka pomoc w zakresie spraw spadkowych,</li>
+        <li>sprawy z zakresu prawa rzeczowego,</li>
+        <li>prowadzenie spraw w zakresie odzyskiwania wierzytelności,</li>
+        <li>kompleksowe doradztwo prawne w zakresie prawa cywilnego.</li>
+      </ul>
+      <ul class="en">
+        <li>drafting and negotiating contracts,</li>
+        <li>preparation of legal opinions,</li>
+        <li>pursuing claims for damages,</li>
+        <li>handling of cases involving infringement of personal interests,</li>
+        <li>seeking contractual penalties,</li>
+        <li>legal aid in succession cases,</li>
+        <li>handling of cases involving property rights,</li>
+        <li>handling of cases involving debt collection,</li>
+        <li>comprehensive legal advisory services in the field of civil law.</li>
+      </ul>
+    </div>
+    <div class="cell reveal">
+      <span class="num">03</span><h3><span class="pl">Prawo gospodarcze</span><span class="en">Commercial law</span></h3>
+      <ul class="pl">
+        <li>kompleksowa obsługa prawna przedsiębiorców,</li>
+        <li>przygotowywanie projektów umów,</li>
+        <li>zakładanie spółek handlowych, rejestracja spółek w Krajowym Rejestrze Sądowym,</li>
+        <li>ochrona przed roszczeniami konsumentów,</li>
+        <li>prowadzenie spraw sądowych,</li>
+        <li>doradztwo w zakresie prawa gospodarczego,</li>
+        <li>windykacja należności.</li>
+      </ul>
+      <ul class="en">
+        <li>comprehensive legal services to entrepreneurs,</li>
+        <li>preparation of draft contracts,</li>
+        <li>establishment of commercial companies, registration of companies at the National Court Registry,</li>
+        <li>protection against consumer claims,</li>
+        <li>handling of court cases,</li>
+        <li>legal advisory services in the filed of commercial law,</li>
+        <li>debt collection.</li>
+      </ul>
+    </div>
+    <div class="cell reveal">
+      <span class="num">04</span><h3><span class="pl">Prawo pracy</span><span class="en">Labor law</span></h3>
+      <ul class="pl">
+        <li>opracowywanie i opiniowanie umów (np. umowy o pracę, czy umowy o zakazie konkurencji),</li>
+        <li>analiza i opiniowanie zawartych umów o pracę w zakresie wynikających z nich praw i obowiązków stron,</li>
+        <li>doradztwo w zakresie prawa pracy dla pracowników i pracodawców,</li>
+        <li>reprezentacja w postępowaniach przed sądami pracy wszystkich instancji,</li>
+        <li>prowadzenie spraw o ustalenie istnienia stosunku pracy, przywrócenie do pracy, wypłatę zaległego wynagrodzenia, a także wypłaty odszkodowania czy zadośćuczynią w sytuacji zaistnienia mobbingu,</li>
+        <li>dochodzenie odszkodowań w przypadku rozwiązania stosunku pracy niezgodnie z przepisami,</li>
+        <li>dochodzenie odszkodowań z tytułu wypadku przy pracy,</li>
+        <li>doradztwo w zakresie prawa ubezpieczeń społecznych.</li>
+      </ul>
+      <ul class="en">
+        <li>drafting and assessment of contracts (e.g. employment contracts, non-competition contracts),</li>
+        <li>analysis and assessment of employment contracts with respect to rights and obligations of the parties thereto,</li>
+        <li>legal advisory services in the field of labor law to employees and employers,</li>
+        <li>legal representation in court proceedings before labor courts of all instances,</li>
+        <li>handling of cases involving proving of an employment relationship, reinstatement to work, payment of outstanding remuneration and legal remedy for mobbing,</li>
+        <li>pursuing claims for damages for unlawful termination of employment contract,</li>
+        <li>pursuing claims for damages for occupational accidents,</li>
+        <li>legal advisory services in the field of social insurance.</li>
+      </ul>
+    </div>
+    <div class="cell reveal">
+      <span class="num">05</span><h3><span class="pl">Prawo rodzinne</span><span class="en">Family law</span></h3>
+      <ul class="pl">
+        <li>prowadzenie spraw o rozwód i separację,</li>
+        <li>prowadzenie spraw o alimenty: dochodzenie alimentów, zmiana wysokości alimentów, uchylenie obowiązku alimentacyjnego,</li>
+        <li>przeprowadzanie podziału majątku wspólnego małżonków, redagowanie umów o podział majątku wspólnego,</li>
+        <li>sprawy o przyznanie, pozbawienie, ograniczenie lub zawieszenie władzy rodzicielskiej,</li>
+        <li>sprawy związane z uregulowaniem kontaktów z dziećmi,</li>
+        <li>ustalanie rodzicielstwa,</li>
+        <li>doradztwo w sprawach z zakresu opieki i kurateli.</li>
+      </ul>
+      <ul class="en">
+        <li>handling of divorce and separation cases,</li>
+        <li>handling cases for maintenance: enforcement of maintenance, change of the amount of maintenance, revocation of the maintenance obligation,</li>
+        <li>handling of cases involving division of joint property of spouses, drafting of agreements on division of joint property,</li>
+        <li>handling of cases involving the exercise, termination, limitation or suspension of parental authority,</li>
+        <li>handling of cases involving regulation of contact with a child,</li>
+        <li>determination of parenthood,</li>
+        <li>legal advisory services in cases cases involving the care and guardianship.</li>
+      </ul>
+    </div>
+    <div class="cell reveal">
+      <span class="num">06</span><h3><span class="pl">Sprawy karno-celne</span><span class="en">Criminal and customs cases</span></h3>
+      <ul class="pl">
+        <li>sporządzenie wniosku o ochronę na granicy albo o odnowienie ochrony na granicy,</li>
+        <li>sporządzenie wniosku o zniszczenie towarów,</li>
+        <li>przygotowanie listu do naruszyciela z wezwaniem do zaprzestania naruszeń i podpisania deklaracji o powstrzymaniu się od dokonywania naruszeń w przyszłości,</li>
+        <li>przygotowanie porozumienia z naruszycielem,</li>
+        <li>nadzorowanie jak również asystowanie przy procedurze zniszczenia zatrzymanych towarów,</li>
+        <li>kontakty z organami celnymi, naruszycielem czy innym podmiotami niezbędnymi do skutecznego przeciwdziałania naruszeniom,</li>
+        <li>sporządzanie zawiadomienia o popełnieniu przestępstwa wraz z wnioskiem o ściganie,</li>
+        <li>reprezentacja przed prokuraturą i organami ścigania,</li>
+        <li>występowanie w roli oskarżyciela posiłkowego,</li>
+        <li>formułowanie pism procesowych,</li>
+        <li>prowadzenie negocjacji z naruszycielem w celu wyegzekwowania odpowiedniej kwoty odszkodowania,</li>
+        <li>prowadzenie spaw cywilnych w zakresie dochodzenia odszkodowania z powodu powstałego naruszenia.</li>
+      </ul>
+      <ul class="en">
+        <li>drafting motions for border protection or for renewal of border protection,</li>
+        <li>drafting of motions to destroy goods,</li>
+        <li>preparation of cease and desist letters to the infringing party along with the declaration to stop further infringements,</li>
+        <li>drafting of agreements with the infringing party,</li>
+        <li>supervising and assisting in the procedure for destroying the seized goods,</li>
+        <li>contacts with customs authorities, infringing party or other entities necessary for the purpose of efficient prevention of infringements,</li>
+        <li>preparation of notification of crime along with the motion for prosecution,</li>
+        <li>legal representation before the public prosecutor's office and prosecuting authorities,</li>
+        <li>participation as subsidiary accuser,</li>
+        <li>drafting of all kinds of pleadings,</li>
+        <li>negotiating with the infringing party to recover a relevant amount of damages,</li>
+        <li>handling of civil cases involving pursuing of claims for damages due to infringement.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- PORADY ONLINE / ONLINE LEGAL ADVISORY -->
+<section class="block" id="porady">
+  <div class="rule reveal"><h2><span class="pl">Porady <em>online</em></span><span class="en">Online legal <em>advisory</em></span></h2></div>
+  <div class="split">
+    <div class="reveal">
+      <p class="lede"><span class="pl">Oferujemy Państwu możliwość skorzystania z porad prawnych online. Do Państwa dyspozycji pozostawiamy formularz, za pomocą którego mogą Państwo złożyć zapytanie. Wycenimy koszt udzielenia porady, a Państwo zdecydujecie, czy skorzystać z naszych usług. Porady udzielamy najdalej w ciągu 48 godzin od otrzymania potwierdzenia wpłaty ustalonej wcześniej kwoty.</span><span class="en">You are welcome to use our legal advisory services online. For your convenience, please use our Online Inquiry Form to submit your questions. We will provide you with the fees for legal advice and it is up to you to decide whether you wish to accept our offer. We provide legal advisory within 48 hours from the receipt of payment of the previously agreed amount.</span></p>
+      <p style="margin-top:1.4rem"><span class="pl">Zapraszamy do wypełnienia i przesłania formularza wyceny porady:</span><span class="en">Please feel free to complete and send the quote form:</span></p>
+    </div>
+    <form class="reveal" action="mailto:kancelaria@adwokat-zakrzewski.pl" method="post" enctype="multipart/form-data">
+      <div class="field"><label for="f-name"><span class="pl">Imię i nazwisko</span><span class="en">Name and last name</span> <span class="req" aria-hidden="true">*</span></label>
+        <input id="f-name" name="imie_nazwisko" autocomplete="name" required></div>
+      <div class="field"><label for="f-mail">Email <span class="req" aria-hidden="true">*</span></label>
+        <input id="f-mail" name="email" type="email" inputmode="email" autocomplete="email" required></div>
+      <div class="field"><label for="f-tel"><span class="pl">Telefon</span><span class="en">Telephone</span></label>
+        <input id="f-tel" name="telefon" type="tel" inputmode="tel" autocomplete="tel"></div>
+      <div class="field"><label for="f-subj"><span class="pl">Temat wiadomości</span><span class="en">Subject</span> <span class="req" aria-hidden="true">*</span></label>
+        <input id="f-subj" name="temat" required></div>
+      <div class="field"><label for="f-msg"><span class="pl">Treść wiadomości</span><span class="en">Content</span> <span class="req" aria-hidden="true">*</span></label>
+        <textarea id="f-msg" name="tresc" required></textarea></div>
+      <div class="field"><label for="f-file"><span class="pl">Załącz plik</span><span class="en">Submit file</span></label>
+        <input id="f-file" name="plik" type="file"></div>
+      <button class="cta" type="submit"><span class="pl">Wyślij</span><span class="en">Send</span></button>
+    </form>
+  </div>
+</section>
+
+<!-- KONTAKT / CONTACT -->
+<section class="block" id="kontakt">
+  <div class="rule reveal"><h2><span class="pl">Kontakt</span><span class="en">Contact</span></h2></div>
+  <div class="split">
+    <div class="reveal">
+      <address class="pl">
+        Kancelaria Adwokacka<br>
+        Adwokat Tomasz Zakrzewski<br>
+        ul. Aleja Partyzantów 7,<br>
+        96-300 Żyrardów
+      </address>
+      <address class="en">
+        Lawyer's Office<br>
+        Tomasz Zakrzewski, Attorney-at-Law<br>
+        ul. Aleja Partyzantów 7,<br>
+        96-300 Żyrardów
+      </address>
+      <div class="contact-line">
+        <p class="pl">tel. <a href="tel:+48501703082">501 703 082</a></p>
+        <p class="en">Telephone <a href="tel:+48501703082">501 703 082</a></p>
+        <p>e-mail: <a href="mailto:kancelaria@adwokat-zakrzewski.pl">kancelaria@adwokat-zakrzewski.pl</a></p>
+      </div>
+      <p style="margin-top:1.8rem;font-size:var(--fs-sm);color:var(--ink-dim)"><span class="pl">Mapa dojazdowa:</span><span class="en">Location map:</span></p>
+    </div>
+    <div class="reveal">
+      <iframe title="Mapa dojazdu / Location map" width="100%" height="320" style="border:1px solid rgba(201,162,39,.35);filter:grayscale(.4) invert(.92) hue-rotate(180deg)"
+        loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.openstreetmap.org/export/embed.html?bbox=20.4380%2C52.0470%2C20.4580%2C52.0570&layer=mapnik&marker=52.052%2C20.448"></iframe>
+    </div>
+  </div>
+</section>
+
+<footer>Copyright © 2026 Kancelaria Adwokacka Tomasz Zakrzewski projekt i realizacja <a href="https://mastalex.pl/" target="_blank" rel="noopener">mastalex.pl</a></footer>
+
+<div class="cookie" id="cookie" role="region" aria-label="Cookies">
+  <p class="pl">Strona wykorzystuje pliki cookies w celu świadczenia usług na najwyższym poziomie. Ustawienia przechowywania cookies możesz zmienić w przeglądarce. <a href="https://adwokat-zakrzewski.pl/media/plg_system_info_ciacho/polityka_cookies.pdf" target="_blank" rel="noopener">Więcej informacji...</a></p>
+  <p class="en">We use cookies to ensure you get the best experience on our website. <a href="https://adwokat-zakrzewski.pl/media/plg_system_info_ciacho/polityka_cookies.pdf" target="_blank" rel="noopener">Read more...</a></p>
+  <button type="button" id="cookieOk">OK</button>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  /* przełącznik języka PL/EN */
+  var root = document.documentElement;
+  var langBtns = document.querySelectorAll("[data-setlang]");
+  function setLang(l){
+    root.setAttribute("data-lang", l);
+    root.setAttribute("lang", l);
+    langBtns.forEach(function(b){ b.setAttribute("aria-pressed", String(b.dataset.setlang === l)); });
+    try{ localStorage.setItem("lang", l); }catch(e){}
+  }
+  langBtns.forEach(function(b){ b.addEventListener("click", function(){ setLang(b.dataset.setlang); }); });
+  try{ var saved = localStorage.getItem("lang"); if(saved === "en" || saved === "pl") setLang(saved); }catch(e){}
+
+  /* baner cookies */
+  var cookie = document.getElementById("cookie");
+  try{ if(localStorage.getItem("cookieOk") === "1") cookie.hidden = true; }catch(e){}
+  document.getElementById("cookieOk").addEventListener("click", function(){
+    cookie.hidden = true;
+    try{ localStorage.setItem("cookieOk", "1"); }catch(e){}
+  });
+
+  /* tło nav po scrollu */
+  var nav = document.getElementById("nav");
+  addEventListener("scroll", function(){ nav.classList.toggle("solid", scrollY > 40); }, {passive:true});
+
+  /* animacje tylko na desktopie bez reduced-motion; inaczej treść w pełni widoczna (clean) */
+  var mobile = matchMedia("(max-width:820px)").matches;
+  var reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if(!mobile && !reduced){
+    root.classList.add("anim");
+    var reveals = [].slice.call(document.querySelectorAll(".reveal"));
+    function checkReveal(){
+      var vh = innerHeight;
+      reveals = reveals.filter(function(el){
+        var r = el.getBoundingClientRect();
+        if(r.top < vh*0.9 && r.bottom > 0){ el.classList.add("in"); return false; }
+        return true;
+      });
+    }
+    addEventListener("scroll", checkReveal, {passive:true});
+    addEventListener("resize", checkReveal, {passive:true});
+    checkReveal();  /* elementy już w widoku pokaż od razu */
+  }
+})();
+</script>
+</body>
+</html>
