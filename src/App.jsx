@@ -9,7 +9,10 @@ import ModernShowcase from './variants/modern/ModernShowcase'
 import ShowcaseView from './components/Showcase/ShowcaseView'
 
 // Helper to extract style variant from URL hash or pathname
-function parseRoute() {
+export function parseRoute() {
+  // Prerender (build time, no window): default homepage
+  if (typeof window === 'undefined') return { style: 'premium', tab: 'home' }
+
   const hash = window.location.hash.toLowerCase()
   const path = window.location.pathname.toLowerCase()
   const full = hash + path

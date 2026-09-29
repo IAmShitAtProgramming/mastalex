@@ -1,0 +1,6 @@
+# Wszystkie wyszukiwarki i asystenci AI (Googlebot, Bingbot, OAI-SearchBot, GPTBot,
+# ClaudeBot, PerplexityBot, Google-Extended itd.) mają pełny dostęp.
+User-agent: *
+Allow: /
+
+Sitemap: https://mastalex.pl/sitemap.xml
