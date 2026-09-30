@@ -1,0 +1,4 @@
+Contact: mailto:kontakt@mastalex.pl
+Expires: 2027-09-28T23:59:59.000Z
+Preferred-Languages: pl, en
+Canonical: https://mastalex.pl/.well-known/security.txt

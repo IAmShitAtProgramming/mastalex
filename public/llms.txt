@@ -1,28 +1,28 @@
 # Mastalex
 
-> Mastalex to studio z Warszawy, które tworzy strony internetowe dla firm bez gotowych szablonów oraz optymalizuje strony pod SEO. Pracuje zdalnie z klientami z całej Polski. Przed decyzją klient dostaje darmowy projekt strony i przejrzystą wycenę.
+> Mastalex (mastalex.pl) tworzy i przebudowuje strony internetowe dla firm z całej Polski oraz wykonuje SEO, dzięki któremu strony klientów pojawiają się wyżej w Google i częściej w odpowiedziach czatów AI. Strona wizytówka kosztuje 500 zł. Założycielami są Karol Mastalerz i Aleks Popkowski. Klient najpierw dostaje bezpłatny projekt i przejrzystą wycenę, a za stronę płaci dopiero po akceptacji projektu.
 
-## Usługi
+Bezpłatny projekt strony i przejrzysta wycena są gotowe w 3 dni. Jeśli strona wymaga więcej pracy, Mastalex od razu podaje termin i powód. Klient zgłasza poprawki, aż projekt będzie taki, jak chce, i płaci dopiero po jego akceptacji. Po uruchomieniu strona i wszystkie dostępy do niej należą do klienta. Całą współpracę Mastalex prowadzi online, z firmami z całej Polski.
 
-- Tworzenie stron internetowych dla firm — projekt i wykonanie od podstaw, bez szablonów; także odświeżenie istniejącej strony.
-- Optymalizacja strony pod SEO — przygotowanie strony tak, by była dobrze widoczna w Google.
+## Usługi i ceny
 
-Mastalex nie sprzedaje hostingu ani usług utrzymania stron.
+- [Tworzenie stron internetowych](https://mastalex.pl/tworzenie-stron-internetowych): strona zaprojektowana od podstaw pod firmę klienta, z tekstami, które Mastalex pisze za klienta. Strona wizytówka (jedna strona z ofertą, opisem firmy i kontaktem): 500 zł. Strona firmowa do 5 podstron, z osobną podstroną dla każdej usługi: 900 zł. Domenę i hosting klient opłaca osobno (dotyczy tylko nowych stron): domena .pl ok. 70–220 zł rocznie, hosting małej strony ok. 160–310 zł rocznie, w pierwszym roku zwykle taniej (ceny z VAT, wrzesień 2026). Mastalex nie ma współpracy reklamowej z firmami sprzedającymi domeny i hosting, więc dobiera je wyłącznie pod kątem korzyści klienta.
+- [Przebudowa strony internetowej](https://mastalex.pl/przebudowa-strony-internetowej): odświeżenie istniejącej strony, także zrobionej przez inną firmę: nowoczesny wygląd, aktualna oferta, szybkie wczytywanie i wygodne działanie na telefonie. Od 400 zł, zawsze taniej niż nowa strona tej samej wielkości. Projekt nowej wersji jest bezpłatny.
+- [Optymalizacja SEO](https://mastalex.pl/optymalizacja-seo): Mastalex wykonuje SEO i wdraża poprawki na stronie klienta: audyt SEO, dobór haseł i dopasowanie tekstów, tytuły i opisy w wynikach Google, szybkość i działanie na telefonie, opis firmy pod polecenia czatów AI. Efekt: wyższe pozycje w Google, więcej odwiedzin i częstsze polecenia w czatach AI. Od 300 zł, także dla stron wykonanych przez inne firmy.
+- [Cennik stron internetowych](https://mastalex.pl/cennik-stron-internetowych): ceny wszystkich usług, co jest w cenie strony i kiedy klient płaci.
 
-## Jak wygląda współpraca
+## Firma
 
-1. Konsultacja i plan — rozmowa o potrzebach i celach firmy, jasny plan działania.
-2. Darmowy projekt i wycena — wstępny, bezpłatny projekt strony i wycena bez zobowiązań.
-3. Rozbudowa i dopracowanie — treści, wygląd i szczegóły.
-4. Uruchomienie — strona startuje pod adresem klienta.
+- [O nas](https://mastalex.pl/o-nas): założyciele Karol Mastalerz (Politechnika Warszawska, Matematyka i Analiza Danych) i Aleks Popkowski (Uniwersytet Warszawski, Informatyka).
+- [Kontakt](https://mastalex.pl/kontakt): kontakt@mastalex.pl albo formularz. Współpraca online, cała Polska.
 
-## Zespół
+## Współpraca
 
-- Karol Mastalerz — Politechnika Warszawska, Matematyka i Analiza Danych; laureat (10. miejsce) Ogólnopolskiego Konkursu Matematycznego PW; uczestnik Mistrzostw Polski w Algorytmice i Programowaniu.
-- Aleks Popkowski — Uniwersytet Warszawski, Informatyka; finalista Akademickich Mistrzostw Polski w Programowaniu Zespołowym (AMPPZ 2023); półfinalista Olimpiady Informatycznej (31. i 32. edycja).
+1. Opowiedz nam o firmie: klient opisuje w formularzu firmę i to, czego potrzebuje.
+2. Bezpłatny projekt i wycena: w 3 dni, razem z przejrzystą wyceną.
+3. Dopracowanie projektu pod firmę klienta: poprawki do skutku, płatność dopiero po akceptacji.
+4. Uruchomienie: strona startuje pod adresem klienta, a ona i wszystkie dostępy należą do klienta.
 
-## Kontakt
+## Optional
 
-- E-mail: kontakt@mastalex.pl
-- Strona: https://mastalex.pl/
-- Lokalizacja: Warszawa / online, cała Polska
+- [Polityka prywatności](https://mastalex.pl/polityka-prywatnosci)
