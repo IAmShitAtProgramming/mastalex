@@ -1,6 +1,6 @@
 // <head> każdej podstrony + graf JSON-LD (audyt schema SCH-01..04, badania 01 sekcja E).
 // Do danych strukturalnych trafiają wyłącznie fakty z data.js: bez ocen i FAQPage; ceny „od” tylko te widoczne na stronie.
-import { DEFINITION, EMAIL, FOUNDERS, NOT_FOUND, ROUTES, SERVICES, SITE } from './data.js'
+import { AUTORZY, DEFINITION, EMAIL, FOUNDERS, NOT_FOUND, ROUTES, SERVICES, SITE, trail } from './data.js'
 
 const ORG = `${SITE}/#organization`
 const WEBSITE = `${SITE}/#website`
@@ -78,10 +78,25 @@ export function graph(path) {
     nodes.push({
       '@type': 'BreadcrumbList',
       '@id': `${url(path)}#breadcrumb`,
-      itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Strona główna', item: `${SITE}/` },
-        { '@type': 'ListItem', position: 2, name: r.crumb, item: url(path) },
-      ],
+      itemListElement: trail(path).map((c, i) => ({ '@type': 'ListItem', position: i + 1, name: c.name, item: url(c.path) })),
+    })
+  }
+  // Wpis w Poradnikach: autor i daty takie same jak widoczne pod tytułem.
+  if (r.article) {
+    const author = AUTORZY.find((p) => p.id === r.article.author)
+    nodes.push({
+      '@type': 'Article',
+      '@id': `${url(path)}#article`,
+      headline: r.h1 ? r.h1.join(' ') : r.title,
+      description: r.description,
+      datePublished: r.article.published,
+      dateModified: r.article.modified,
+      author: { '@type': 'Person', '@id': `${SITE}/poradniki/#${author.id}`, name: author.name, description: author.bio, url: `${url(path)}#autor` },
+      publisher: { '@id': ORG },
+      mainEntityOfPage: { '@id': `${url(path)}#webpage` },
+      isPartOf: { '@id': `${url(r.parent)}#webpage` },
+      image: `${SITE}/og.png`,
+      inLanguage: 'pl-PL',
     })
   }
   // Pełne opisy usług i osób tam, gdzie są na stronie widoczne; na innych podstronach tylko odwołania @id.
@@ -105,7 +120,8 @@ export function head(path) {
   lines.push(
     `<link rel="canonical" href="${url(path)}" />`,
     '<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />',
-    '<meta property="og:type" content="website" />',
+    `<meta property="og:type" content="${r.article ? 'article' : 'website'}" />`,
+    ...(r.article ? [`<meta property="article:published_time" content="${r.article.published}" />`, `<meta property="article:modified_time" content="${r.article.modified}" />`] : []),
     '<meta property="og:locale" content="pl_PL" />',
     '<meta property="og:site_name" content="Mastalex" />',
     `<meta property="og:url" content="${url(path)}" />`,

@@ -51,14 +51,16 @@ for (const route of routes) {
   const rendered = render(route)
   const hash = fingerprint(rendered)
   lastmod[route] = known[route]?.hash === hash ? known[route] : { hash, date: today }
-  const file = route === '/' ? 'index.html' : `${route.slice(1)}.html`
+  // /poradniki/ -> poradniki/index.html, /poradniki/wpis -> poradniki/wpis.html
+  const file = route.endsWith('/') ? `${route.slice(1)}index.html` : `${route.slice(1)}.html`
+  fs.mkdirSync(path.dirname(path.join(dist, file)), { recursive: true })
   fs.writeFileSync(path.join(dist, file), page(route, rendered))
   console.log(`prerender: ${route} -> dist/${file} (lastmod ${lastmod[route].date})`)
 }
 fs.writeFileSync(LASTMOD, `${JSON.stringify(lastmod, null, 2)}\n`)
 fs.writeFileSync(path.join(dist, '404.html'), page('/404'))
 
-const urls = routes.map((r) => `  <url><loc>${SITE}${r === '/' ? '/' : r}</loc><lastmod>${lastmod[r].date}</lastmod></url>`)
+const urls = routes.map((r) => `  <url><loc>${SITE}${r}</loc><lastmod>${lastmod[r].date}</lastmod></url>`)
 fs.writeFileSync(path.join(dist, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.join('\n')}\n</urlset>\n`)
 fs.rmSync(path.resolve('dist-ssr'), { recursive: true, force: true })
 console.log(`prerender: ${routes.length} podstron + 404.html + sitemap.xml`)

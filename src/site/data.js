@@ -36,6 +36,16 @@ export const FOUNDERS = [
   },
 ]
 
+// Autorzy poradników. Opis od właściciela (30.09.2026): bloger i specjalista od tworzenia i pozycjonowania stron.
+export const AUTORZY = [
+  {
+    id: 'kosma-mastalerz',
+    name: 'Kosma Mastalerz',
+    rola: 'bloger i specjalista od tworzenia i pozycjonowania stron',
+    bio: 'Bloger i specjalista od tworzenia i pozycjonowania stron internetowych. W poradnikach Mastalex zbiera dane z cenników i pokazuje, z czego wynika cena strony.',
+  },
+]
+
 // Zdanie definicyjne (audyt GEO A1): kto, co, dla kogo, co wyróżnia. Trafia do danych strukturalnych.
 export const DEFINITION =
   'Mastalex tworzy i przebudowuje strony internetowe dla firm z całej Polski oraz wykonuje SEO, dzięki któremu strony klientów pojawiają się wyżej w Google i częściej w odpowiedziach czatów AI. Strona wizytówka kosztuje 500 zł. Założycielami są Karol Mastalerz i Aleks Popkowski. Klient najpierw dostaje bezpłatny projekt i przejrzystą wycenę, a za stronę płaci dopiero po akceptacji projektu.'
@@ -171,6 +181,31 @@ export const ROUTES = {
       'Dowiedz się, jakie dane zbieramy przez formularz kontaktowy i e-mail, po co je wykorzystujemy, jak długo je przechowujemy i jakie prawa Ci przysługują.',
     crumb: 'Polityka prywatności',
   },
+  // Poradniki (blog). Adres działu kończy się ukośnikiem, bo GitHub Pages serwuje go z poradniki/index.html.
+  // Wpis: parent daje trzeci poziom okruszków, article daje daty i autora (widoczne na stronie i w danych strukturalnych).
+  '/poradniki/': {
+    title: 'Poradniki o stronach internetowych dla firm | Mastalex',
+    description:
+      'Poradniki dla właścicieli firm: ile kosztuje strona internetowa, co jest w cenie i na co patrzeć w cenniku. Każda liczba ma źródło i datę sprawdzenia.',
+    crumb: 'Poradniki',
+    type: 'CollectionPage',
+  },
+  '/poradniki/ile-kosztuje-strona-internetowa': {
+    // title: krótki, do wyników Google (do 60 znaków); h1: nagłówek na stronie i w danych wpisu.
+    title: 'Ile kosztuje strona internetowa w 2026? Ceny ponad 50 firm',
+    h1: ['Ile kosztuje strona internetowa w 2026?', 'Przeanalizowaliśmy cenniki ponad 50 polskich firm'],
+    description:
+      'Sprawdziliśmy 52 cenniki polskich firm. Zobacz, ile kosztuje wizytówka, strona firmowa i przebudowa oraz co jest w cenie, a za co płacisz osobno.',
+    crumb: 'Ile kosztuje strona internetowa',
+    parent: '/poradniki/',
+    article: { published: '2026-09-30', modified: '2026-09-30', author: 'kosma-mastalerz' },
+  },
+}
+
+// Ścieżka okruszków: strona główna, dział (jeśli jest) i bieżąca podstrona. Te same poziomy trafiają do danych strukturalnych.
+export function trail(path) {
+  const parent = ROUTES[path].parent
+  return [{ path: '/', name: 'Strona główna' }, ...(parent ? [{ path: parent, name: ROUTES[parent].crumb }] : []), { path, name: ROUTES[path].crumb }]
 }
 
 export const NOT_FOUND = {
@@ -183,5 +218,6 @@ export const NAV = [
   { href: '/przebudowa-strony-internetowej', label: 'Przebudowa' },
   { href: '/optymalizacja-seo', label: 'Optymalizacja SEO' },
   { href: '/cennik-stron-internetowych', label: 'Cennik' },
+  { href: '/poradniki/', label: 'Poradniki' },
   { href: '/o-nas', label: 'O nas' },
 ]

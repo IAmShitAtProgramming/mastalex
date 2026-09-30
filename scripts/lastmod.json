@@ -1,34 +1,42 @@
 {
   "/": {
-    "hash": "8324b1fc75ae9f47ed5c1af1dde2fd362786ae1f597c2e9a677f1c4d9f1fd43a",
+    "hash": "9eae71b2266f831893ba892168b9154e3251c58ce0b2844da839085f9b740cef",
     "date": "2026-09-30"
   },
   "/tworzenie-stron-internetowych": {
-    "hash": "0dd9620a75065af078f6d6738a9a15680544b3e735cf137a847c3fd469770d68",
+    "hash": "2709701d6131d9fc7d6c533edc29a620f9d1cd34dfbd08e0ef91c99ecfa9eb75",
     "date": "2026-09-30"
   },
   "/przebudowa-strony-internetowej": {
-    "hash": "b1d045ad19c8a3b7695c3fcd18780124a47f677e006ccabc4967be603c0c377a",
+    "hash": "8815b9026e02ed111f914acc6a3362443110114a85d75e51a82518bead1bdce8",
     "date": "2026-09-30"
   },
   "/optymalizacja-seo": {
-    "hash": "02dcb480b58c84d5b294a5a2bd0bc215e07a7c5fe56ecbcf3ce6f1250d60ddef",
+    "hash": "4f401a2794166c67d01507e9dd3f2a02ec7f15c443a5af7bbe3bcad31fec57b8",
     "date": "2026-09-30"
   },
   "/cennik-stron-internetowych": {
-    "hash": "b70c2661e1cc7dd1f938d15440dffa7b7653a4e716aba1423a2d2e3708728d59",
+    "hash": "ea811463936a7e353b0923c98436a3207aa04e76a94fa7d27bc5c54b521a984e",
     "date": "2026-09-30"
   },
   "/o-nas": {
-    "hash": "7fc6285a18b2fc183862037729776cc6a4e38ca24b36b49087f4b69a4db5caec",
+    "hash": "2896c5ab9aacce126e6886e7fec32722c6e1849a25370c04a49ab2e61180c63c",
     "date": "2026-09-30"
   },
   "/kontakt": {
-    "hash": "f6cee681d8b40c746c63b954f00f5ad67295a1024fdfab3c97efb626efe7190c",
+    "hash": "caa9eec67d71fc0e31b3039365516f9aad721aa6c87a42cadfe2d89ded6c6c5a",
     "date": "2026-09-30"
   },
   "/polityka-prywatnosci": {
-    "hash": "0e23dcfceaa771083496e3e86a1bef2232046f3fe326b89e41876f246a52e065",
+    "hash": "f383d808eb1d1ea1a2059e56bf40e58a75ac77bb2acef179b838af33abc2edf4",
+    "date": "2026-09-30"
+  },
+  "/poradniki/": {
+    "hash": "a92832e566c028c4920651ddf97821bad1471da28c33da2e94536d71f0072c4e",
+    "date": "2026-09-30"
+  },
+  "/poradniki/ile-kosztuje-strona-internetowa": {
+    "hash": "e1dd4b7fd605870517744615f9b05981a9a491a5d9da0cc7b3485f843fd7aee4",
     "date": "2026-09-30"
   }
 }

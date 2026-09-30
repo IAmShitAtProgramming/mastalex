@@ -2,6 +2,7 @@ import { ROUTES } from './data.js'
 import { Breadcrumbs, Footer, Header } from './ui.jsx'
 import Home from './pages/Home.jsx'
 import { Cennik, Kontakt, NotFound, ONas, Polityka, Przebudowa, Seo, Tworzenie } from './pages/Pages.jsx'
+import { Poradniki, WpisIleKosztuje } from './pages/Poradniki.jsx'
 
 const PAGES = {
   '/': Home,
@@ -12,11 +13,14 @@ const PAGES = {
   '/o-nas': ONas,
   '/kontakt': Kontakt,
   '/polityka-prywatnosci': Polityka,
+  '/poradniki/': Poradniki,
+  '/poradniki/ile-kosztuje-strona-internetowa': WpisIleKosztuje,
 }
 
+// Działy (np. /poradniki/) mają adres z ukośnikiem na końcu, pozostałe podstrony bez.
 export function normalize(path) {
-  const p = (path || '/').replace(/\.html$/, '').replace(/\/+$/, '') || '/'
-  return p === '/index' ? '/' : p
+  const p = (path || '/').replace(/\.html$/, '').replace(/\/index$/, '/').replace(/\/+$/, '') || '/'
+  return ROUTES[`${p}/`] ? `${p}/` : p
 }
 
 export default function App({ path }) {

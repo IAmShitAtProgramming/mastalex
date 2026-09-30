@@ -1,4 +1,4 @@
-import { EMAIL, NAV, ROUTES, SERVICES } from './data.js'
+import { EMAIL, NAV, SERVICES, trail } from './data.js'
 
 export function Logo({ className = '' }) {
   return (
@@ -18,6 +18,9 @@ export function LogoMark({ size = 32 }) {
   )
 }
 
+// Pozycja menu jest zaznaczona na swojej podstronie i na podstronach swojego działu (np. wpis w Poradnikach).
+const current = (path, href) => (path === href ? 'page' : href.endsWith('/') && path.startsWith(href) ? 'true' : undefined)
+
 export function Header({ path }) {
   return (
     <header className="sticky top-0 z-40 bg-cream/85 backdrop-blur-md border-b border-line/70">
@@ -27,8 +30,8 @@ export function Header({ path }) {
           <ul className="flex items-center gap-1">
             {NAV.map((n) => (
               <li key={n.href}>
-                <a href={n.href} aria-current={path === n.href ? 'page' : undefined}
-                  className={`px-3 py-2 rounded-full text-[15px] font-medium no-underline transition-colors ${path === n.href ? 'bg-brand-soft text-brand-deep' : 'text-body hover:text-ink hover:bg-paper'}`}>
+                <a href={n.href} aria-current={current(path, n.href)}
+                  className={`px-3 py-2 rounded-full text-[15px] font-medium no-underline transition-colors ${current(path, n.href) ? 'bg-brand-soft text-brand-deep' : 'text-body hover:text-ink hover:bg-paper'}`}>
                   {n.label}
                 </a>
               </li>
@@ -44,7 +47,7 @@ export function Header({ path }) {
             <nav aria-label="Menu mobilne" className="absolute right-0 top-14 w-[min(88vw,320px)] rounded-2xl bg-paper border border-line shadow-xl p-2">
               <ul>
                 {NAV.concat([{ href: '/kontakt', label: 'Kontakt' }]).map((n) => (
-                  <li key={n.href}><a href={n.href} aria-current={path === n.href ? 'page' : undefined} className="block px-4 py-3 rounded-xl text-[17px] font-medium text-ink no-underline hover:bg-cream aria-[current=page]:bg-brand-soft aria-[current=page]:text-brand-deep">{n.label}</a></li>
+                  <li key={n.href}><a href={n.href} aria-current={current(path, n.href)} className="block px-4 py-3 rounded-xl text-[17px] font-medium text-ink no-underline hover:bg-cream aria-[current]:bg-brand-soft aria-[current]:text-brand-deep">{n.label}</a></li>
                 ))}
               </ul>
               <a href="/kontakt" className="btn btn-primary w-full mt-2">Zamów bezpłatny projekt</a>
@@ -93,12 +96,13 @@ function FooterCol({ title, links }) {
 }
 
 export function Breadcrumbs({ path }) {
+  const items = trail(path)
   return (
     <nav aria-label="Okruszki" className="mx-auto max-w-[1200px] px-4 sm:px-6 pt-6 text-[14px] text-body">
       <ol className="flex flex-wrap items-center gap-2">
-        <li><a href="/" className="inline-block py-3.5 -my-3.5 text-body underline underline-offset-4">Strona główna</a></li>
-        <li aria-hidden="true">›</li>
-        <li aria-current="page" className="text-ink font-medium">{ROUTES[path].crumb}</li>
+        {items.map((c, i) => (i < items.length - 1
+          ? [<li key={c.path}><a href={c.path} className="inline-block py-3.5 -my-3.5 text-body underline underline-offset-4">{c.name}</a></li>, <li key={`${c.path}›`} aria-hidden="true">›</li>]
+          : <li key={c.path} aria-current="page" className="text-ink font-medium">{c.name}</li>))}
       </ol>
     </nav>
   )
