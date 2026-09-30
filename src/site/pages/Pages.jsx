@@ -1,4 +1,4 @@
-import { ADMIN, EMAIL, FOUNDERS, MARKET_MIN_WIZYTOWKA, PRICES, UPDATED_LABEL } from '../data.js'
+import { ADMIN, EMAIL, FOUNDERS, MARKET_WIZYTOWKA, PRICES, UPDATED_LABEL } from '../data.js'
 import { ContactForm, Cta, CtaBand, DevSlot, Faq, PageHero, Process, ServiceCards } from '../ui.jsx'
 import { Founders } from './shared.jsx'
 
@@ -72,10 +72,10 @@ function StepsDetailed({ steps }) {
   )
 }
 
-// Karty z cenami, dane z PRICES (data.js).
-function PriceCards({ items }) {
+// Karty z cenami, dane z PRICES (data.js). `wide`: pełna szerokość strony, 4 karty w rzędzie.
+function PriceCards({ items, wide }) {
   return (
-    <ul className="not-prose mt-6 grid gap-4 sm:grid-cols-2">
+    <ul className={`not-prose mt-6 grid gap-4 sm:grid-cols-2${wide ? ' lg:grid-cols-4' : ''}`}>
       {items.map((p) => (
         <li key={p.id} className="rounded-[24px] bg-paper border border-line p-6 flex flex-col">
           <h3 className="text-[20px] font-bold leading-tight">{p.name}</h3>
@@ -273,11 +273,13 @@ export function Cennik() {
         lead="Strona wizytówka kosztuje 500 zł. Sprawdź ceny wszystkich usług i to, co dostajesz w cenie.">
         <Cta />
       </PageHero>
-      <Body>
-        <h2>Ceny usług</h2>
-        <PriceCards items={PRICES} />
-        <p className="text-[16px]">Dla porównania: w cennikach innych firm, które sprawdziliśmy we wrześniu 2026, strona wizytówka kosztowała co najmniej {MARKET_MIN_WIZYTOWKA}.</p>
-
+      {/* Karty na pełną szerokość, reszta w Body z kartą boczną: bez pustego pasa po prawej (uwaga właściciela 30.09.2026). */}
+      <section className="mx-auto max-w-[1200px] px-4 sm:px-6 mt-10" aria-labelledby="ceny-h">
+        <h2 id="ceny-h" className="text-[28px] sm:text-[34px] leading-[1.1] font-bold tracking-[-0.02em]">Ceny usług</h2>
+        <PriceCards items={PRICES} wide />
+        <p className="mt-6 max-w-[68ch] text-[16px] leading-[1.6] text-body">Dla porównania: w ponad połowie z {MARKET_WIZYTOWKA.cenniki} cenników innych firm, które sprawdziliśmy we wrześniu 2026, strona wizytówka kosztuje co najmniej {MARKET_WIZYTOWKA.prog}.</p>
+      </section>
+      <Body aside={<StickyCard />}>
         <h2>Co jest w cenie strony</h2>
         <Included items={['Bezpłatny projekt i przejrzysta wycena w 3 dni', 'Teksty napisane za Ciebie', 'Poprawki projektu, aż będzie taki, jak chcesz', 'Uruchomienie strony pod Twoim adresem', 'Strona i wszystkie dostępy należą do Ciebie']} />
 

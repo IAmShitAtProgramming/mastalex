@@ -49,8 +49,9 @@ export const PRICES = [
   { id: 'przebudowa', name: 'Przebudowa strony', price: 400, from: true, text: 'Wizytówka 400 zł, strona firmowa do 5 podstron 1200 zł. Nowy wygląd i aktualna oferta.', href: '/przebudowa-strony-internetowej', link: 'Więcej o przebudowie' },
   { id: 'seo', name: 'Optymalizacja SEO', price: 300, from: true, text: 'Wyżej w Google, więcej odwiedzin i częstsze polecenia w czatach AI.', href: '/optymalizacja-seo', link: 'Więcej o SEO' },
 ]
-// Porównanie z rynkiem: najniższa cena wejścia za wizytówkę w badanych cennikach (badania/wyniki/03, 29.09.2026).
-export const MARKET_MIN_WIZYTOWKA = '1500 zł netto'
+// Porównanie z rynkiem: opieka/raporty/2026-09-30/weryfikacja-cen-wizytowek.md (każda cena sprawdzona u źródła 30.09.2026).
+// 24 cenniki wizytówek, w 14 cena wejścia wynosi co najmniej 1500 zł.
+export const MARKET_WIZYTOWKA = { cenniki: 24, prog: '1500 zł' }
 
 // short: karta na stronie głównej (problem klienta → rozwiązanie); other: karta „Pozostałe usługi”;
 // about: opis usługi w danych strukturalnych i llms.txt; priceFrom: cena „od” na karcie i w danych strukturalnych.
