@@ -40,17 +40,17 @@ export const FOUNDERS = [
 export const DEFINITION =
   'Mastalex tworzy i przebudowuje strony internetowe dla firm z całej Polski oraz wykonuje SEO, dzięki któremu strony klientów pojawiają się wyżej w Google i częściej w odpowiedziach czatów AI. Strona wizytówka kosztuje 500 zł. Założycielami są Karol Mastalerz i Aleks Popkowski. Klient najpierw dostaje bezpłatny projekt i przejrzystą wycenę, a za stronę płaci dopiero po akceptacji projektu.'
 
-// Cennik (30.09.2026). Strona wizytówka 500 zł: decyzja właściciela, motyw przewodni strony.
-// SEO od 300 zł: właściciel, 29.09.2026. Strona firmowa 900 zł i przebudowa od 400 zł:
-// PROPOZYCJA Claude'a na podstawie badania cen konkurencji (badania/wyniki/03), czeka na akceptację.
+// Cennik. Wszystkie ceny od właściciela: wizytówka 500 zł (motyw przewodni strony), SEO od 300 zł (29.09.2026),
+// strona firmowa do 5 podstron 1500 zł, przebudowa wizytówki 400 zł i strony firmowej 1200 zł (30.09.2026).
+// Ceny nie obejmują domeny ani hostingu (dotyczy tylko nowych stron).
 export const PRICES = [
   { id: 'wizytowka', name: 'Strona wizytówka', price: 500, text: 'Jedna strona z ofertą, opisem firmy i kontaktem. Dobry start dla małej firmy.', href: '/tworzenie-stron-internetowych#jak-powstaje', link: 'Jak powstaje Twoja strona' },
-  { id: 'firmowa', name: 'Strona firmowa', price: 900, text: 'Do 5 podstron, z osobną podstroną dla każdej usługi. Klient z Google trafia prosto do oferty, której szuka.' },
-  { id: 'przebudowa', name: 'Przebudowa strony', price: 400, from: true, text: 'Nowy wygląd, aktualna oferta i strona na miarę dzisiejszych standardów.', href: '/przebudowa-strony-internetowej', link: 'Więcej o przebudowie' },
+  { id: 'firmowa', name: 'Strona firmowa', price: 1500, text: 'Do 5 podstron, z osobną podstroną dla każdej usługi. Klient z Google trafia prosto do oferty, której szuka.' },
+  { id: 'przebudowa', name: 'Przebudowa strony', price: 400, from: true, text: 'Wizytówka 400 zł, strona firmowa do 5 podstron 1200 zł. Nowy wygląd i aktualna oferta.', href: '/przebudowa-strony-internetowej', link: 'Więcej o przebudowie' },
   { id: 'seo', name: 'Optymalizacja SEO', price: 300, from: true, text: 'Wyżej w Google, więcej odwiedzin i częstsze polecenia w czatach AI.', href: '/optymalizacja-seo', link: 'Więcej o SEO' },
 ]
 // Porównanie z rynkiem: najniższa cena wejścia za wizytówkę w badanych cennikach (badania/wyniki/03, 29.09.2026).
-export const MARKET_MIN_WIZYTOWKA = '1 500 zł netto'
+export const MARKET_MIN_WIZYTOWKA = '1500 zł netto'
 
 // short: karta na stronie głównej (problem klienta → rozwiązanie); other: karta „Pozostałe usługi”;
 // about: opis usługi w danych strukturalnych i llms.txt; priceFrom: cena „od” na karcie i w danych strukturalnych.
@@ -61,7 +61,7 @@ export const SERVICES = [
     name: 'Tworzenie stron internetowych',
     short: 'Nie masz jeszcze strony albo nie wiesz, od czego zacząć? Zaprojektujemy ją pod Twoją firmę i napiszemy teksty za Ciebie.',
     other: 'Nowa strona zaprojektowana pod Twoją firmę, z tekstami, które napiszemy za Ciebie.',
-    about: 'Projektowanie i tworzenie stron internetowych dla firm, z tekstami przygotowanymi dla klienta. Strona wizytówka 500 zł, strona firmowa do 5 podstron 900 zł. Bezpłatny projekt i przejrzysta wycena w 3 dni, płatność dopiero po akceptacji projektu.',
+    about: 'Projektowanie i tworzenie stron internetowych dla firm, z tekstami przygotowanymi dla klienta. Strona wizytówka 500 zł, strona firmowa do 5 podstron 1500 zł. Bezpłatny projekt i przejrzysta wycena w 3 dni, płatność dopiero po akceptacji projektu.',
     serviceType: 'Projektowanie i tworzenie stron internetowych',
     priceFrom: 500,
     tint: 'lav',
@@ -72,7 +72,7 @@ export const SERVICES = [
     name: 'Przebudowa strony internetowej',
     short: 'Strona wygląda na starą, a oferta jest nieaktualna? Odświeżymy ją według najnowszych standardów, żeby Twoja firma dogoniła i wyprzedziła konkurencję.',
     other: 'Nowy wygląd, aktualna oferta i strona na miarę dzisiejszych standardów. Taniej niż nowa strona.',
-    about: 'Przebudowa i odświeżenie strony internetowej: nowy wygląd, aktualna oferta i dostosowanie do najnowszych standardów. Od 400 zł, zawsze taniej niż nowa strona tej samej wielkości. Bezpłatny projekt nowej wersji.',
+    about: 'Przebudowa i odświeżenie strony internetowej: nowy wygląd, aktualna oferta i dostosowanie do najnowszych standardów. Przebudowa wizytówki 400 zł, strony firmowej do 5 podstron 1200 zł, zawsze taniej niż nowa strona tej samej wielkości. Bezpłatny projekt nowej wersji.',
     serviceType: 'Przebudowa i odświeżenie strony internetowej',
     priceFrom: 400,
     tint: 'mint',
@@ -146,7 +146,7 @@ export const ROUTES = {
   '/cennik-stron-internetowych': {
     title: 'Ile kosztuje strona internetowa? Od 500 zł | Mastalex',
     description:
-      'Strona wizytówka 500 zł, strona firmowa do 5 podstron 900 zł, przebudowa od 400 zł, SEO od 300 zł. Projekt dostajesz za darmo, płacisz po akceptacji.',
+      'Strona wizytówka 500 zł, strona firmowa do 5 podstron 1500 zł, przebudowa od 400 zł, SEO od 300 zł. Projekt dostajesz za darmo, płacisz po akceptacji.',
     crumb: 'Cennik stron internetowych',
     service: 'service-websites',
   },

@@ -208,7 +208,7 @@ export function Przebudowa() {
         </ul>
 
         <h2>Ile kosztuje przebudowa strony</h2>
-        <p>Przebudowa zawsze kosztuje mniej niż nowa strona tej samej wielkości. Dokładną cenę poznasz razem z projektem nowej wersji, bo zależy od tego, ile trzeba zmienić. Ceny wszystkich usług znajdziesz w <a href="/cennik-stron-internetowych">cenniku</a>.</p>
+        <p>Przebudowa wizytówki kosztuje 400 zł, a strony firmowej do 5 podstron 1200 zł. To zawsze mniej niż nowa strona tej samej wielkości. Większą stronę wycenimy razem z projektem nowej wersji. Ceny wszystkich usług znajdziesz w <a href="/cennik-stron-internetowych">cenniku</a>.</p>
       </Body>
       <Process steps={STEPS_PRZEBUDOWA} title="Jak wygląda przebudowa" />
       <Faq items={[
