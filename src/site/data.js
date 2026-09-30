@@ -46,10 +46,15 @@ export const AUTORZY = [
   },
 ]
 
+// Sklepy wstrzymane 30.09.2026 do czasu współpracy z prawnikiem (decyzja właściciela).
+// true przywraca wszystko naraz: podstronę, menu, kartę usługi, ceny w cenniku i wzmianki w tekstach.
+// Przy przywróceniu wróć też opis sklepów do public/llms.txt (tekst w opieka/sklepy-na-pozniej.md).
+export const SHOP_ON = false
+
 // Zdanie definicyjne (audyt GEO A1): kto, co, dla kogo, co wyróżnia. Trafia do danych strukturalnych.
 // Wygląd od zera, bez gotowych szablonów: potwierdził właściciel 30.09.2026 (Gemini zgadywał „szablon”).
 export const DEFINITION =
-  'Mastalex tworzy strony i sklepy internetowe, przebudowuje strony dla firm z całej Polski oraz wykonuje SEO, dzięki któremu strony klientów pojawiają się wyżej w Google i częściej w odpowiedziach czatów AI. Wygląd każdej strony projektuje od zera, bez gotowych szablonów. Strona wizytówka kosztuje 500 zł. Założycielami są Karol Mastalerz i Aleks Popkowski. Klient najpierw dostaje bezpłatny projekt i przejrzystą wycenę, a za stronę płaci dopiero po akceptacji projektu.'
+  (SHOP_ON ? 'Mastalex tworzy strony i sklepy internetowe, przebudowuje strony dla firm' : 'Mastalex tworzy i przebudowuje strony internetowe dla firm') + ' z całej Polski oraz wykonuje SEO, dzięki któremu strony klientów pojawiają się wyżej w Google i częściej w odpowiedziach czatów AI. Wygląd każdej strony projektuje od zera, bez gotowych szablonów. Strona wizytówka kosztuje 500 zł. Założycielami są Karol Mastalerz i Aleks Popkowski. Klient najpierw dostaje bezpłatny projekt i przejrzystą wycenę, a za stronę płaci dopiero po akceptacji projektu.'
 
 // Cennik. Wszystkie ceny od właściciela: wizytówka 500 zł (motyw przewodni strony), SEO od 300 zł (29.09.2026),
 // strona firmowa do 5 podstron 1500 zł, przebudowa wizytówki 400 zł i strony firmowej 1200 zł (30.09.2026).
@@ -115,7 +120,7 @@ export const SERVICES = [
     priceFrom: 500,
     tint: 'lav',
   },
-  {
+  ...(SHOP_ON ? [{
     id: 'service-shop',
     path: '/tworzenie-sklepow-internetowych',
     name: 'Tworzenie sklepów internetowych',
@@ -125,7 +130,7 @@ export const SERVICES = [
     serviceType: 'Projektowanie i tworzenie sklepów internetowych',
     priceFrom: SHOP.from,
     tint: 'peach',
-  },
+  }] : []),
   {
     id: 'service-redesign',
     path: '/przebudowa-strony-internetowej',
@@ -189,13 +194,13 @@ export const ROUTES = {
     crumb: 'Tworzenie stron internetowych',
     service: 'service-websites',
   },
-  '/tworzenie-sklepow-internetowych': {
+  ...(SHOP_ON && { '/tworzenie-sklepow-internetowych': {
     title: `Sklep internetowy dla Twojej firmy od ${SHOP.from} zł | Mastalex`,
     description:
       `Sklep internetowy od ${SHOP.from} zł z płatnościami BLIK, przelewem i kartą oraz wysyłką. Bezpłatny projekt w 3 dni, a płacisz dopiero po akceptacji.`,
     crumb: 'Tworzenie sklepów internetowych',
     service: 'service-shop',
-  },
+  } }),
   '/przebudowa-strony-internetowej': {
     title: 'Przebudowa i odświeżenie strony internetowej | Mastalex',
     description:
@@ -271,7 +276,7 @@ export const NOT_FOUND = {
 
 export const NAV = [
   { href: '/tworzenie-stron-internetowych', label: 'Tworzenie stron' },
-  { href: '/tworzenie-sklepow-internetowych', label: 'Sklepy' },
+  ...(SHOP_ON ? [{ href: '/tworzenie-sklepow-internetowych', label: 'Sklepy' }] : []),
   { href: '/przebudowa-strony-internetowej', label: 'Przebudowa' },
   { href: '/optymalizacja-seo', label: 'Optymalizacja SEO' },
   { href: '/cennik-stron-internetowych', label: 'Cennik' },

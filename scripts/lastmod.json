@@ -1,46 +1,42 @@
 {
   "/": {
-    "hash": "fe54230197560233fede02f33d0ab3905d1015f72a0fd73835ab1d295b3b0924",
+    "hash": "cb8aceeb1cff301526c85bf91a4499726a38b6a09746b3c302e916d140215763",
     "date": "2026-09-30"
   },
   "/tworzenie-stron-internetowych": {
-    "hash": "b3ee5dff7d0f1eac0126a7f4eec6275df8730fc593f647b709280187106a91ce",
-    "date": "2026-09-30"
-  },
-  "/tworzenie-sklepow-internetowych": {
-    "hash": "c3d39652eee0e398a1d0aa06aef2689cc3b14e68f17034510ce1da66ad9cdcf1",
+    "hash": "3989b9afd9e7335c2cae2a62da60f07228bed6859477bfde4a63b6176c801185",
     "date": "2026-09-30"
   },
   "/przebudowa-strony-internetowej": {
-    "hash": "0d36cac2557c1bf501fd08940e010bbedd896f18ddf53f78ccb75dc9982731b0",
+    "hash": "0237da5943d1225a934427d8be787937a8de8dd85272baec4a724f509de170da",
     "date": "2026-09-30"
   },
   "/optymalizacja-seo": {
-    "hash": "37a6a19c4db4fb565d661dd24a8a8d46aa3fb462a52a04ce337f05ab7ab9ee67",
+    "hash": "1742eabcf1877b01f1cae61b7b8503b96c76b217eda8febe494838d1ff5ac410",
     "date": "2026-09-30"
   },
   "/cennik-stron-internetowych": {
-    "hash": "80889509217e14df583ae81d66ab14666d88b4b13d5a904dd983198f6ede68eb",
+    "hash": "45a8cced03fce962a4f381ede43830685d9689698d68c2cd17c4bf7abc01e371",
     "date": "2026-09-30"
   },
   "/o-nas": {
-    "hash": "0148516eab960d580d2833b3617cc114eaa980cb410124b32be16783065e08ce",
+    "hash": "7a1b0bc6d6cbc2a3192091e206bba2b1a0c004d616555d8f061e8238433d50ec",
     "date": "2026-09-30"
   },
   "/kontakt": {
-    "hash": "d8134143517bc334e08011a09c4069ba0341fe3b894017513c949f71adddfbcf",
+    "hash": "64793d7225fdaa63ce6ddc34f26348afed5f51b37eedb38a8aefb09d65794cb7",
     "date": "2026-09-30"
   },
   "/polityka-prywatnosci": {
-    "hash": "e37d6d9e3714aefcd36e0babc108e9032e8e58a3508ae3a369c725b1ba0bd119",
+    "hash": "4da8af94c3b174dbac8e3c90e59609c23a3e26f3a9c471e6172f57325cefd345",
     "date": "2026-09-30"
   },
   "/poradniki/": {
-    "hash": "7e541418fd65aa25a85608bbbb858cc7c999bc5b49e435cafb403807b230f271",
+    "hash": "612449aa5ccf64d723db178751ba8a9ca1006ba36a11a25071ec01d528513649",
     "date": "2026-09-30"
   },
   "/poradniki/ile-kosztuje-strona-internetowa": {
-    "hash": "ca0c458e403067be27dde7203f6d494b273c6b9c0b8116688739cc50b8a74452",
+    "hash": "69441f7e179a009999561cfe94143c2faee0de9ffac8de0f269854bbafdbfe45",
     "date": "2026-09-30"
   }
 }

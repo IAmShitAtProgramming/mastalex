@@ -1,4 +1,4 @@
-import { ADMIN, AFTER, EMAIL, FOUNDERS, MARKET_WIZYTOWKA, PRICES, SHOP, UPDATED_LABEL } from '../data.js'
+import { ADMIN, AFTER, EMAIL, FOUNDERS, MARKET_WIZYTOWKA, PRICES, SHOP, SHOP_ON, UPDATED_LABEL } from '../data.js'
 import { ContactForm, Cta, CtaBand, DevSlot, Faq, PageHero, Process, ServiceCards } from '../ui.jsx'
 import { Founders } from './shared.jsx'
 
@@ -341,9 +341,11 @@ export function Cennik() {
         <h2 id="ceny-h" className="text-[28px] sm:text-[34px] leading-[1.1] font-bold tracking-[-0.02em]">Ceny usług</h2>
         <PriceCards items={PRICES} wide />
         <p className="mt-6 max-w-[68ch] text-[16px] leading-[1.6] text-body">Dla porównania: w ponad połowie z {MARKET_WIZYTOWKA.cenniki} cenników innych firm, które sprawdziliśmy we wrześniu 2026, strona wizytówka kosztuje co najmniej {MARKET_WIZYTOWKA.prog}.</p>
-        <h2 id="sklepy" className="mt-16 text-[28px] sm:text-[34px] leading-[1.1] font-bold tracking-[-0.02em]">Ceny sklepów internetowych</h2>
-        <PriceCards items={SHOP.plans} />
-        <p className="mt-6 max-w-[68ch] text-[16px] leading-[1.6] text-body">Co dostajesz w cenie sklepu i ile kosztuje jego utrzymanie, sprawdzisz na stronie <a href="/tworzenie-sklepow-internetowych" className="text-brand-deep underline underline-offset-4">sklepy internetowe</a>.</p>
+        {SHOP_ON && <>
+          <h2 id="sklepy" className="mt-16 text-[28px] sm:text-[34px] leading-[1.1] font-bold tracking-[-0.02em]">Ceny sklepów internetowych</h2>
+          <PriceCards items={SHOP.plans} />
+          <p className="mt-6 max-w-[68ch] text-[16px] leading-[1.6] text-body">Co dostajesz w cenie sklepu i ile kosztuje jego utrzymanie, sprawdzisz na stronie <a href="/tworzenie-sklepow-internetowych" className="text-brand-deep underline underline-offset-4">sklepy internetowe</a>.</p>
+        </>}
       </section>
       <Body aside={<StickyCard />}>
         <h2>Co jest w cenie strony</h2>

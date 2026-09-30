@@ -1,4 +1,4 @@
-import { EMAIL, NAV, SERVICES, trail } from './data.js'
+import { EMAIL, NAV, SERVICES, SHOP_ON, trail } from './data.js'
 
 export function Logo({ className = '' }) {
   return (
@@ -26,7 +26,8 @@ export function Header({ path }) {
     <header className="sticky top-0 z-40 bg-cream/85 backdrop-blur-md border-b border-line/70">
       <div className="mx-auto max-w-[1200px] px-4 sm:px-6 h-16 flex items-center justify-between gap-4">
         <Logo />
-        <nav aria-label="Główna" className="hidden xl:block">
+        {/* 7 pozycji (ze sklepami) nie mieści się w 1024 px, dlatego pełne menu dopiero od 1280 px */}
+        <nav aria-label="Główna" className={SHOP_ON ? 'hidden xl:block' : 'hidden lg:block'}>
           <ul className="flex items-center gap-1">
             {NAV.map((n) => (
               <li key={n.href}>
@@ -40,7 +41,7 @@ export function Header({ path }) {
         </nav>
         <div className="flex items-center gap-2">
           <a href="/kontakt" className="btn btn-primary btn-sm hidden sm:inline-flex">Bezpłatny projekt</a>
-          <details className="mnav xl:hidden relative">
+          <details className={`mnav ${SHOP_ON ? 'xl:hidden' : 'lg:hidden'} relative`}>
             <summary className="w-12 h-12 grid place-items-center rounded-xl border-2 border-line bg-paper cursor-pointer" aria-label="Menu">
               <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 6h14M3 10h14M3 14h14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" /></svg>
             </summary>
@@ -65,7 +66,7 @@ export function Footer() {
       <div className="mx-auto max-w-[1200px] px-4 sm:px-6 py-16 grid gap-10 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
         <div>
           <a href="/" className="inline-flex min-h-12 items-center gap-2.5 font-bold text-[21px] tracking-tight text-white no-underline" aria-label="Mastalex – strona główna"><LogoMark size={34} /><span>mastalex</span></a>
-          <p className="mt-3 text-[15px] leading-relaxed max-w-[34ch]">Mastalex — strony internetowe od 500 zł, sklepy internetowe i SEO dla firm z całej Polski.</p>
+          <p className="mt-3 text-[15px] leading-relaxed max-w-[34ch]">Mastalex — strony internetowe od 500 zł{SHOP_ON && ', sklepy internetowe'} i SEO dla firm z całej Polski.</p>
           <p className="mt-2"><a className="inline-flex min-h-12 items-center text-white underline underline-offset-4" href={`mailto:${EMAIL}`}>{EMAIL}</a></p>
         </div>
         <FooterCol title="Usługi" links={SERVICES.map((s) => ({ href: s.path, label: s.name }))} />

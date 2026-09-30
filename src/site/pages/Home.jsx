@@ -1,4 +1,4 @@
-import { AFTER, EMAIL, FOUNDERS, STEPS } from '../data.js'
+import { AFTER, EMAIL, FOUNDERS, SHOP_ON, STEPS } from '../data.js'
 import { ContactForm, DevSlot, Eyebrow, Faq, Process, ServiceCards } from '../ui.jsx'
 import { Founders } from './shared.jsx'
 
@@ -25,7 +25,7 @@ export default function Home() {
             Strona internetowa dla firmy od 500 zł. <span className="serif text-brand tracking-[-0.02em]">Projekt zobaczysz za darmo.</span>
           </h1>
           <p className="mt-6 niski:mt-4 text-[19px] sm:text-[20px] niski:text-[18px] leading-[1.6] text-body max-w-[54ch]">
-            W Mastalex tworzymy strony i sklepy internetowe dla firm, przebudowujemy stare strony i wykonujemy SEO, dzięki któremu klienci łatwiej Cię znajdują. Projekt dostajesz razem z przejrzystą wyceną, zanim zdecydujesz się na dalszą współpracę.
+            W Mastalex {SHOP_ON ? 'tworzymy strony i sklepy internetowe dla firm, przebudowujemy stare strony i wykonujemy SEO' : 'tworzymy i przebudowujemy strony internetowe dla firm oraz wykonujemy SEO'}, dzięki któremu klienci łatwiej Cię znajdują. Projekt dostajesz razem z przejrzystą wyceną, zanim zdecydujesz się na dalszą współpracę.
           </p>
           <div className="mt-8 niski:mt-6 flex flex-wrap items-center gap-3">
             <a href="/kontakt" className="btn btn-primary">Zamów bezpłatny projekt</a>
