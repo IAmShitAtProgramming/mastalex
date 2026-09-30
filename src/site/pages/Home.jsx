@@ -1,14 +1,17 @@
-import { EMAIL, FOUNDERS, STEPS } from '../data.js'
+import { AFTER, EMAIL, FOUNDERS, STEPS } from '../data.js'
 import { ContactForm, DevSlot, Eyebrow, Faq, Process, ServiceCards } from '../ui.jsx'
 import { Founders } from './shared.jsx'
 
 // Teksty przepisane 30.09.2026 (Claude, bez Codexa): każdy fakt raz na stronę. Karty usług mówią,
 // co robimy, proces mówi o terminie, płatności i własności, a pytania tylko o resztę.
 const FAQ = [
-  { q: 'Co dostaję za 500 zł?', a: <>Stronę wizytówkę: jedną stronę z ofertą, opisem firmy i kontaktem, gotową do pokazania klientom. Domenę i hosting opłacasz osobno. Potrzebujesz osobnej podstrony dla każdej usługi? Zobacz <a href="/cennik-stron-internetowych">cennik</a>.</> },
+  { q: 'Co dostaję za 500 zł?', a: <>Stronę wizytówkę: jedną stronę z ofertą, opisem firmy i kontaktem, gotową do pokazania klientom. Wygląd projektujemy od zera dla Twojej firmy, bez gotowych szablonów. Potrzebujesz osobnej podstrony dla każdej usługi? Zobacz <a href="/cennik-stron-internetowych">cennik</a>.</> },
+  { q: 'Ile kosztuje utrzymanie strony?', a: <>Co roku opłacasz tylko domenę i hosting: w pierwszym roku razem ok. 60–120 zł, w kolejnych latach ok. 230–530 zł. Dobieramy hosting z bezpłatną kłódką bezpieczeństwa przy adresie strony (certyfikatem SSL). Szczegóły w <a href="/cennik-stron-internetowych#domena-i-hosting">cenniku</a>.</> },
+  { q: 'Co po uruchomieniu strony?', a: <>Przez {AFTER.wsparcie} miesięcy bezpłatnie naprawiamy każdy błąd strony. Stronę rozbudujesz, kiedy tylko zechcesz: kolejna podstrona kosztuje {AFTER.podstrona} zł, a drobna zmiana, np. nowego numeru telefonu, {AFTER.zmiana} zł. Szczegóły w <a href="/cennik-stron-internetowych#wsparcie">cenniku</a>.</> },
   { q: 'Czy projekt jest naprawdę bezpłatny?', a: 'Tak. Jeśli projekt Ci się nie spodoba, nic nie płacisz i niczym się nie zobowiązujesz.' },
   { q: 'Czy muszę się znać na stronach internetowych?', a: 'Nie. Wystarczy, że opowiesz nam o firmie. Wszystkim technicznym zajmujemy się my.' },
   { q: 'Czy przebudowa jest tańsza niż nowa strona?', a: <>Tak. Przebudowa zawsze kosztuje mniej niż nowa strona tej samej wielkości. Więcej: <a href="/przebudowa-strony-internetowej">przebudowa strony internetowej</a>.</> },
+  { q: 'Co obejmuje SEO?', a: <>Sprawdzamy całą stronę, dobieramy hasła, które wpisują Twoi klienci, i dopasowujemy do nich teksty. Poprawiamy tytuły w Google, szybkość, działanie na telefonie i opis firmy dla czatów AI. Efekty widzisz w bezpłatnym narzędziu Google. Więcej: <a href="/optymalizacja-seo">optymalizacja SEO</a>.</> },
   { q: 'Czy pracujecie z firmami z całej Polski?', a: 'Tak. Całą współpracę prowadzimy online, więc nie musisz nigdzie jechać.' },
 ]
 
@@ -22,7 +25,7 @@ export default function Home() {
             Strona internetowa dla firmy od 500 zł. <span className="serif text-brand tracking-[-0.02em]">Projekt zobaczysz za darmo.</span>
           </h1>
           <p className="mt-6 niski:mt-4 text-[19px] sm:text-[20px] niski:text-[18px] leading-[1.6] text-body max-w-[54ch]">
-            W Mastalex tworzymy i przebudowujemy strony internetowe dla firm oraz wykonujemy SEO, dzięki któremu klienci łatwiej Cię znajdują. Projekt dostajesz razem z przejrzystą wyceną, zanim zdecydujesz się na dalszą współpracę.
+            W Mastalex tworzymy strony i sklepy internetowe dla firm, przebudowujemy stare strony i wykonujemy SEO, dzięki któremu klienci łatwiej Cię znajdują. Projekt dostajesz razem z przejrzystą wyceną, zanim zdecydujesz się na dalszą współpracę.
           </p>
           <div className="mt-8 niski:mt-6 flex flex-wrap items-center gap-3">
             <a href="/kontakt" className="btn btn-primary">Zamów bezpłatny projekt</a>

@@ -26,12 +26,12 @@ export function Header({ path }) {
     <header className="sticky top-0 z-40 bg-cream/85 backdrop-blur-md border-b border-line/70">
       <div className="mx-auto max-w-[1200px] px-4 sm:px-6 h-16 flex items-center justify-between gap-4">
         <Logo />
-        <nav aria-label="Główna" className="hidden lg:block">
+        <nav aria-label="Główna" className="hidden xl:block">
           <ul className="flex items-center gap-1">
             {NAV.map((n) => (
               <li key={n.href}>
                 <a href={n.href} aria-current={current(path, n.href)}
-                  className={`px-3 py-2 rounded-full text-[15px] font-medium no-underline transition-colors ${current(path, n.href) ? 'bg-brand-soft text-brand-deep' : 'text-body hover:text-ink hover:bg-paper'}`}>
+                  className={`px-3 py-2 rounded-full text-[15px] font-medium whitespace-nowrap no-underline transition-colors ${current(path, n.href) ? 'bg-brand-soft text-brand-deep' : 'text-body hover:text-ink hover:bg-paper'}`}>
                   {n.label}
                 </a>
               </li>
@@ -40,7 +40,7 @@ export function Header({ path }) {
         </nav>
         <div className="flex items-center gap-2">
           <a href="/kontakt" className="btn btn-primary btn-sm hidden sm:inline-flex">Bezpłatny projekt</a>
-          <details className="mnav lg:hidden relative">
+          <details className="mnav xl:hidden relative">
             <summary className="w-12 h-12 grid place-items-center rounded-xl border-2 border-line bg-paper cursor-pointer" aria-label="Menu">
               <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 6h14M3 10h14M3 14h14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" /></svg>
             </summary>
@@ -65,7 +65,7 @@ export function Footer() {
       <div className="mx-auto max-w-[1200px] px-4 sm:px-6 py-16 grid gap-10 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
         <div>
           <a href="/" className="inline-flex min-h-12 items-center gap-2.5 font-bold text-[21px] tracking-tight text-white no-underline" aria-label="Mastalex – strona główna"><LogoMark size={34} /><span>mastalex</span></a>
-          <p className="mt-3 text-[15px] leading-relaxed max-w-[34ch]">Mastalex — strony internetowe od 500 zł i SEO dla firm z całej Polski.</p>
+          <p className="mt-3 text-[15px] leading-relaxed max-w-[34ch]">Mastalex — strony internetowe od 500 zł, sklepy internetowe i SEO dla firm z całej Polski.</p>
           <p className="mt-2"><a className="inline-flex min-h-12 items-center text-white underline underline-offset-4" href={`mailto:${EMAIL}`}>{EMAIL}</a></p>
         </div>
         <FooterCol title="Usługi" links={SERVICES.map((s) => ({ href: s.path, label: s.name }))} />
@@ -190,10 +190,12 @@ export function CtaBand({ title = 'Zobacz swoją stronę, zanim zapłacisz', tex
 
 // Na stronie głównej pełny opis usługi (short), na podstronach krótszy (other).
 export function ServiceCards({ exclude }) {
-  const tints = { lav: 'bg-brand-soft', mint: 'bg-mint', sky: 'bg-sky' }
+  const tints = { lav: 'bg-brand-soft', mint: 'bg-mint', sky: 'bg-sky', peach: 'bg-peach' }
+  const items = SERVICES.filter((s) => s.path !== exclude)
+  // 4 usługi na stronie głównej: 2×2, bo opisy są długie; 3 na podstronach: jeden rząd.
   return (
-    <ul className="mt-10 grid gap-4 md:grid-cols-3">
-      {SERVICES.filter((s) => s.path !== exclude).map((s) => (
+    <ul className={`mt-10 grid gap-4 ${items.length === 4 ? 'md:grid-cols-2' : 'md:grid-cols-3'}`}>
+      {items.map((s) => (
         <li key={s.id}>
           <a href={s.path} className={`group block h-full rounded-[28px] ${tints[s.tint]} p-7 no-underline text-ink transition-transform hover:-translate-y-1`}>
             <h3 className="text-[24px] font-bold leading-tight tracking-[-0.01em]">{s.name}</h3>

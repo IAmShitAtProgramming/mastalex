@@ -1,4 +1,4 @@
-import { ADMIN, EMAIL, FOUNDERS, MARKET_WIZYTOWKA, PRICES, UPDATED_LABEL } from '../data.js'
+import { ADMIN, AFTER, EMAIL, FOUNDERS, MARKET_WIZYTOWKA, PRICES, SHOP, UPDATED_LABEL } from '../data.js'
 import { ContactForm, Cta, CtaBand, DevSlot, Faq, PageHero, Process, ServiceCards } from '../ui.jsx'
 import { Founders } from './shared.jsx'
 
@@ -149,7 +149,7 @@ export function Tworzenie() {
         <h2>Wizytówka czy strona z podstronami?</h2>
         <p>Wybierz, ile miejsca potrzebuje Twoja oferta.</p>
         <PriceCards items={plans} />
-        <p>Potrzebujesz więcej niż 5 podstron? Cenę podamy razem z projektem. Domenę i hosting opłacasz osobno — ile kosztują, sprawdzisz w <a href="/cennik-stron-internetowych#domena-i-hosting">cenniku</a>.</p>
+        <p>Potrzebujesz więcej niż 5 podstron? Każda kolejna kosztuje {AFTER.podstrona} zł. Domenę i hosting opłacasz osobno — ile kosztują, sprawdzisz w <a href="/cennik-stron-internetowych#domena-i-hosting">cenniku</a>.</p>
       </Body>
       <section className="mx-auto max-w-[1200px] px-4 sm:px-6 mt-16">
         <DevSlot title="realizacje">Gdy będzie pierwsza realizacja, tu trafi jej opis z linkiem do /realizacje.</DevSlot>
@@ -160,6 +160,69 @@ export function Tworzenie() {
       ]} />
       <Related exclude="/tworzenie-stron-internetowych" />
       <CtaBand title="Zobacz projekt swojej strony za darmo" />
+    </>
+  )
+}
+
+/* ---------- /tworzenie-sklepow-internetowych ---------- */
+// Sklepy w ofercie od 30.09.2026 (właściciel: „pełen zestaw”). Ceny i koszty utrzymania: SHOP w data.js.
+const SHOP_GAINS = [
+  { title: 'Sprzedajesz całą dobę', text: 'Klient kupuje wtedy, kiedy ma czas, także wieczorem i w weekend. Rano czekają na Ciebie opłacone zamówienia.', tint: 'bg-brand-soft' },
+  { title: 'Szybkie płatności online', text: 'Klient płaci BLIKIEM, przelewem albo kartą, a pieniądze trafiają na Twoje konto.', tint: 'bg-mint' },
+  { title: 'Wygodne zakupy na telefonie', text: 'Sklep sprawnie działa na telefonie i komputerze, więc klient bez trudu kończy zakupy.', tint: 'bg-sky' },
+  { title: 'Produkty dodajesz samodzielnie', text: 'Nowy produkt, cenę albo zdjęcie zmieniasz w kilka minut, bez pomocy informatyka.', tint: 'bg-peach' },
+]
+
+const STEPS_SKLEP = [
+  { title: 'Opowiadasz nam o sklepie', rows: [
+    ['Ty', 'W formularzu piszesz, co sprzedajesz, ile masz produktów i jak chcesz je wysyłać.'],
+    ['My', 'Na tej podstawie planujemy układ sklepu i piszemy teksty.'],
+  ] },
+  { title: 'Bezpłatny projekt i wycena', tag: '3 dni', rows: [
+    ['My', 'Przygotowujemy wygląd sklepu, stronę produktu i koszyk. Jeśli sklep wymaga więcej pracy, od razu podamy termin i powód.'],
+    ['Ty', 'Oglądasz projekt razem z przejrzystą wyceną i decydujesz, czy chcesz iść dalej.'],
+  ] },
+  { title: 'Dopracowanie projektu pod Twoją firmę', rows: [
+    ['Ty', 'Mówisz, co zmienić: kolory, układ, zdjęcia albo teksty.'],
+    ['My', 'Poprawiamy projekt, aż będzie taki, jak chcesz. Płacisz dopiero po akceptacji.'],
+  ] },
+  { title: 'Uruchomienie sklepu', rows: [
+    ['My', 'Uruchamiamy sklep pod Twoim adresem, podłączamy płatności online i wysyłkę, a potem pokazujemy, jak dodawać produkty i obsługiwać zamówienia.'],
+    ['Ty', 'Przyjmujesz pierwsze zamówienia. Sklep i wszystkie dostępy do niego należą do Ciebie.'],
+  ] },
+]
+
+export function Sklep() {
+  return (
+    <>
+      <PageHero eyebrow="Usługa" title="Sklep internetowy" accent="dla Twojej firmy"
+        lead={`Zaprojektujemy sklep, w którym klient szybko znajduje produkt, płaci online i czeka na przesyłkę. Sklep kosztuje od ${SHOP.from} zł, a projekt zobaczysz za darmo.`}>
+        <Cta secondary={{ href: '/cennik-stron-internetowych', label: 'Zobacz cennik' }} />
+      </PageHero>
+      <Body aside={<StickyCard title="Projekt Twojego sklepu za darmo" />}>
+        <h2>Co zyskujesz dzięki sklepowi internetowemu</h2>
+        <ul className="not-prose mt-6 grid gap-4 sm:grid-cols-2">
+          {SHOP_GAINS.map((g) => (
+            <li key={g.title} className={`rounded-[24px] ${g.tint} p-6`}>
+              <h3 className="mt-0 text-[20px] font-bold leading-tight">{g.title}</h3>
+              <p className="mt-2 text-[16px] leading-[1.6] text-body">{g.text}</p>
+            </li>
+          ))}
+        </ul>
+
+        <h2>Ile kosztuje sklep internetowy</h2>
+        <PriceCards items={SHOP.plans} />
+        <Included items={SHOP.included} />
+
+        <h2 id="utrzymanie-sklepu">Ile kosztuje utrzymanie sklepu</h2>
+        <p>{SHOP.upkeep}</p>
+
+        <h2 id="jak-powstaje">Jak powstaje Twój sklep — krok po kroku</h2>
+        <StepsDetailed steps={STEPS_SKLEP} />
+      </Body>
+      <Faq items={SHOP.faq} />
+      <Related exclude="/tworzenie-sklepow-internetowych" />
+      <CtaBand title="Zobacz projekt swojego sklepu za darmo" text="Opisz, co sprzedajesz, a przygotujemy bezpłatny projekt sklepu i przejrzystą wycenę." />
     </>
   )
 }
@@ -278,25 +341,31 @@ export function Cennik() {
         <h2 id="ceny-h" className="text-[28px] sm:text-[34px] leading-[1.1] font-bold tracking-[-0.02em]">Ceny usług</h2>
         <PriceCards items={PRICES} wide />
         <p className="mt-6 max-w-[68ch] text-[16px] leading-[1.6] text-body">Dla porównania: w ponad połowie z {MARKET_WIZYTOWKA.cenniki} cenników innych firm, które sprawdziliśmy we wrześniu 2026, strona wizytówka kosztuje co najmniej {MARKET_WIZYTOWKA.prog}.</p>
+        <h2 id="sklepy" className="mt-16 text-[28px] sm:text-[34px] leading-[1.1] font-bold tracking-[-0.02em]">Ceny sklepów internetowych</h2>
+        <PriceCards items={SHOP.plans} />
+        <p className="mt-6 max-w-[68ch] text-[16px] leading-[1.6] text-body">Co dostajesz w cenie sklepu i ile kosztuje jego utrzymanie, sprawdzisz na stronie <a href="/tworzenie-sklepow-internetowych" className="text-brand-deep underline underline-offset-4">sklepy internetowe</a>.</p>
       </section>
       <Body aside={<StickyCard />}>
         <h2>Co jest w cenie strony</h2>
-        <Included items={['Bezpłatny projekt i przejrzysta wycena w 3 dni', 'Teksty napisane za Ciebie', 'Poprawki projektu, aż będzie taki, jak chcesz', 'Uruchomienie strony pod Twoim adresem', 'Strona i wszystkie dostępy należą do Ciebie']} />
+        <Included items={['Bezpłatny projekt i przejrzysta wycena w 3 dni', 'Wygląd zaprojektowany od zera, bez gotowych szablonów', 'Teksty napisane za Ciebie', 'Poprawki projektu, aż będzie taki, jak chcesz', 'Uruchomienie strony pod Twoim adresem', 'Strona i wszystkie dostępy należą do Ciebie']} />
 
         <h2 id="domena-i-hosting">Domena i hosting przy nowej stronie</h2>
-        <p>Nowa strona potrzebuje własnego adresu, czyli domeny (np. twojafirma.pl), i hostingu, czyli miejsca w internecie, w którym działa. Domenę i hosting opłacasz osobno. Przy przebudowie i SEO korzystasz z tych, które już masz.</p>
+        <p>Nowa strona potrzebuje własnego adresu, czyli domeny (np. twojafirma.pl), i hostingu, czyli miejsca w internecie, w którym działa. Domenę i hosting opłacasz osobno i to jedyne coroczne koszty strony. Przy przebudowie i SEO korzystasz z tych, które już masz.</p>
         <p>Orientacyjne ceny z VAT według cenników popularnych polskich firm (wrzesień 2026):</p>
         <ul>
           <li><strong>Domena .pl:</strong> w pierwszym roku <span className="whitespace-nowrap">ok. 1–20 zł</span>, w kolejnych latach <span className="whitespace-nowrap">ok. 70–220 zł</span> rocznie.</li>
           <li><strong>Hosting małej strony:</strong> w pierwszym roku <span className="whitespace-nowrap">ok. 60–100 zł</span>, w kolejnych latach <span className="whitespace-nowrap">ok. 160–310 zł</span> rocznie.</li>
         </ul>
-        <p>Nie mamy podpisanej współpracy reklamowej z żadną firmą, która sprzedaje domeny lub hosting. Dlatego dobieramy je wyłącznie pod kątem korzyści dla Ciebie.</p>
+        <p>Nie mamy podpisanej współpracy reklamowej z żadną firmą, która sprzedaje domeny lub hosting. Dlatego dobieramy je wyłącznie pod kątem korzyści dla Ciebie, np. hosting z bezpłatną kłódką bezpieczeństwa przy adresie strony (certyfikatem SSL).</p>
 
         <h2>Kiedy płacisz</h2>
-        <p>Dopiero po akceptacji projektu. Do tego momentu nic nie płacisz i niczym się nie zobowiązujesz.</p>
+        <p>Dopiero po akceptacji projektu. Do tego momentu nic nie płacisz i niczym się nie zobowiązujesz. Cena z wyceny się nie zmienia: bez Twojej zgody nic do niej nie dopiszemy.</p>
 
-        <h2>Większa strona?</h2>
-        <p>Jeśli potrzebujesz więcej niż 5 podstron, cenę podamy razem z projektem. Zależy ona głównie od liczby podstron i ilości tekstów.</p>
+        <h2 id="rozbudowa">Rozbudowa strony</h2>
+        <p>Stronę rozbudujesz, kiedy tylko zechcesz. Każda kolejna podstrona kosztuje {AFTER.podstrona} zł, także przy stronie większej niż 5 podstron.</p>
+
+        <h2 id="wsparcie">Wsparcie po uruchomieniu</h2>
+        <p>Przez {AFTER.wsparcie} miesięcy od uruchomienia bezpłatnie naprawiamy każdy błąd strony. Drobną zmianę, np. nowy numer telefonu, cenę albo zdjęcie, wprowadzimy za {AFTER.zmiana} zł. Zmiany możesz też zlecić, komu chcesz — to Ty decydujesz, kto zajmuje się Twoją stroną.</p>
       </Body>
       <Faq items={[
         { q: 'Czy SEO jest w cenie strony?', a: <>SEO to osobna usługa. Zaproponujemy ją po uruchomieniu strony, a decyzja należy do Ciebie. Więcej: <a href="/optymalizacja-seo">optymalizacja SEO</a>.</> },
