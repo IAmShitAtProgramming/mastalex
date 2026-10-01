@@ -2,7 +2,7 @@ import { ROUTES } from './data.js'
 import { Breadcrumbs, Footer, Header } from './ui.jsx'
 import Home from './pages/Home.jsx'
 import { Cennik, Kontakt, NotFound, ONas, Polityka, Przebudowa, Seo, Sklep, Tworzenie } from './pages/Pages.jsx'
-import { Poradniki, WpisIleKosztuje } from './pages/Poradniki.jsx'
+import { Poradniki, WpisIleKosztuje, WpisWyzejWGoogle } from './pages/Poradniki.jsx'
 
 const PAGES = {
   '/': Home,
@@ -15,6 +15,7 @@ const PAGES = {
   '/kontakt': Kontakt,
   '/polityka-prywatnosci': Polityka,
   '/poradniki/': Poradniki,
+  '/poradniki/jak-byc-wyzej-w-google': WpisWyzejWGoogle,
   '/poradniki/ile-kosztuje-strona-internetowa': WpisIleKosztuje,
 }
 

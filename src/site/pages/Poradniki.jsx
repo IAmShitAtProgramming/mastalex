@@ -15,7 +15,7 @@ export function Poradniki() {
   return (
     <>
       <PageHero eyebrow="Poradniki" title="Poradniki dla firm," accent="które zamawiają stronę"
-        lead="Sprawdzamy ceny i oferty na rynku, żeby łatwiej było Ci ocenić, ile zapłacić i na co patrzeć. Każda liczba ma źródło i datę sprawdzenia." />
+        lead="Sprawdzamy ceny na rynku i tłumaczymy, jak być wyżej w Google, żeby łatwiej było Ci zdecydować, co zrobić ze stroną. Każda liczba ma źródło i datę sprawdzenia." />
       <section className="mx-auto max-w-[1200px] px-4 sm:px-6 mt-6" aria-labelledby="wpisy-h">
         <h2 id="wpisy-h" className="sr-only">Wpisy</h2>
         <ul className="grid gap-4 md:grid-cols-2">
@@ -346,6 +346,294 @@ export function WpisIleKosztuje() {
         </div>
       </Wpis>
       <CtaBand title="Zobacz projekt swojej strony za darmo" />
+    </>
+  )
+}
+
+/* ---------- /poradniki/jak-byc-wyzej-w-google ---------- */
+// Treść poradnika „Twoja firma wyżej w Google” (opieka/reklamy/poradnik-google/poradnik.html), do którego prowadzi
+// wiadomość z Instagrama po komentarzu STRONA. Kroki 1–5 mają instrukcję, kroki 6–8 tłumaczą co i po co, bez „jak”.
+// Strony Google przeczytane u źródła 1 października 2026.
+const ZEW = { rel: 'nofollow noopener noreferrer', target: '_blank' }
+
+function Zrodlo({ children }) {
+  return <p className="!text-[15px] !leading-[1.55]">Źródło: {children}, przeczytane 1 października 2026.</p>
+}
+
+function Krok({ id, nr, trudne, children }) {
+  return (
+    <h2 id={id}>
+      <span className={`mb-3 block w-fit rounded-full px-3 py-1 text-[13px] font-semibold uppercase tracking-[0.06em] ${trudne ? 'bg-peach text-peach-ink' : 'bg-mint text-mint-ink'}`}>
+        Krok {nr}<span className="sr-only">:</span>
+      </span>{' '}
+      {children}
+    </h2>
+  )
+}
+
+function Uczciwie({ children }) {
+  return (
+    <aside className="not-prose mt-6 rounded-[20px] bg-brand-soft p-5 sm:p-6">
+      <p className="text-[17px] leading-[1.6] text-ink"><strong>Uczciwie:</strong> {children}</p>
+      <a href="/optymalizacja-seo" className="mt-3 inline-flex items-center gap-2 font-semibold text-brand-deep no-underline">Zrobimy to za Ciebie <span aria-hidden="true">→</span></a>
+    </aside>
+  )
+}
+
+function Kod({ podpis, children }) {
+  return (
+    <figure className="not-prose mt-6">
+      <pre className="overflow-x-auto rounded-[20px] bg-night p-5 font-mono text-[14px] leading-[1.6] text-white/90"><code>{children}</code></pre>
+      <figcaption className="mt-2 text-[14px] leading-[1.5] text-body">{podpis}</figcaption>
+    </figure>
+  )
+}
+
+const KOD_STRONY = `<head>
+  <title>Strona główna</title>
+  <meta name="robots" content="noindex">
+  <script src="slider.js"></script>
+</head>
+<body>
+  <img src="IMG_2041.jpg">
+  <div class="btn">…`
+
+const KOD_FIRMY = `<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HairSalon",
+  "name": "Salon Anna",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "ul. Długa 5",
+    "addressLocality": "Kraków"
+  },
+  "telephone": "+48 600 000 000",
+  "openingHoursSpecification": [ … ]
+}
+</script>`
+
+const ODHACZ = [
+  ['Zrobisz sam', ['Google widzi moją stronę', 'Profil Firmy założony, potwierdzony i uzupełniony', 'Zdjęcia: wejście, wnętrze, zespół, efekty pracy', 'Proszę klientów o opinie i odpowiadam na każdą', 'Firma w katalogach, wszędzie te same dane']],
+  ['Kod strony', ['Strona otwiera się od razu, wszystkie wyniki zielone', 'Google czyta każdą podstronę', 'Dane firmy zapisane w kodzie']],
+]
+
+function ListaDoOdhaczenia() {
+  return (
+    <div className="not-prose mt-6 grid gap-4 sm:grid-cols-2">
+      {ODHACZ.map(([t, punkty], g) => (
+        <div key={t} role="group" aria-labelledby={`odhacz-${g}`} className="rounded-[20px] border border-line bg-paper p-5">
+          <p id={`odhacz-${g}`} className="text-[13px] font-semibold uppercase tracking-[0.08em] text-brand-deep">{t}</p>
+          <ul className="mt-3 grid gap-2.5">
+            {punkty.map((p) => (
+              <li key={p}><label className="flex cursor-pointer gap-3 text-[16px] leading-[1.5] text-ink"><input type="checkbox" className="mt-0.5 h-5 w-5 shrink-0 accent-brand" />{p}</label></li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  )
+}
+
+const PYTANIA_GOOGLE = [
+  ['Czy mogę sam poprawić pozycję firmy w Google?', 'Tak, w dużej części. Kroki 1–5 z tego poradnika zrobisz sam, bez wiedzy technicznej: Profil Firmy, zdjęcia, opinie i wpisy w katalogach. Kroki 6–8 to praca w kodzie strony.'],
+  ['Po jakim czasie zobaczę efekty?', 'Według Google jedne zmiany widać po kilku godzinach, a inne dopiero po kilku miesiącach. Daj sobie kilka tygodni, zanim ocenisz wynik.'],
+  ['Czy mogę dać klientowi rabat za opinię?', 'Nie. Zasady Map Google zabraniają płacenia za opinie i dawania za nie rabatów, prezentów ani darmowych usług. Takie opinie Google usuwa.'],
+  ['Ile kosztuje poprawa kodu strony pod Google?', <>U nas optymalizacja SEO kosztuje od 300 zł. W 16 cennikach polskich firm, które sprawdziliśmy 30 września 2026, środkowa cena SEO bez abonamentu to 1500 zł. Więcej liczb znajdziesz w poradniku <a href="/poradniki/ile-kosztuje-strona-internetowa">Ile kosztuje strona internetowa w 2026?</a></>],
+  ['Moja strona ma kilka lat i w teście wypada na czerwono. Poprawiać czy zmienić?', <><strong>Wniosek:</strong> gdy strona jest stara, a test z kroku 6 pokazuje czerwone wyniki, często prościej jest ją przebudować, niż poprawiać po kawałku. Zobacz, jak wygląda <a href="/przebudowa-strony-internetowej">przebudowa strony internetowej</a>.</>],
+]
+
+export function WpisWyzejWGoogle() {
+  const path = '/poradniki/jak-byc-wyzej-w-google'
+  const toc = [
+    ['w-skrocie', 'W skrócie'], ['jak-google-wybiera', 'Jak Google wybiera firmy'], ['krok-1', '1. Czy Google widzi stronę'],
+    ['krok-2', '2. Profil Firmy w Google'], ['krok-3', '3. Zdjęcia'], ['krok-4', '4. Opinie'], ['krok-5', '5. Inne strony o Tobie'],
+    ['kod-strony', 'Czego nie widać: kod strony'], ['krok-6', '6. Szybka strona'], ['krok-7', '7. Każda podstrona w Google'],
+    ['krok-8', '8. Dane firmy w kodzie'], ['efekty', 'Kiedy zobaczysz efekty'], ['lista', 'Lista do odhaczenia'], ['pytania', 'Częste pytania'],
+  ]
+  return (
+    <>
+      <Wpis path={path} title={ROUTES[path].title} toc={toc}
+        lead="Google pokazuje wyżej firmy, które pasują do tego, czego ktoś szuka, i są dobrze znane. Oto 8 kroków opartych na oficjalnych poradach Google. Pięć zrobisz sam od razu, a trzy pozostałe dotyczą kodu strony: wyjaśniamy, co dają i co trzeba w nich zrobić.">
+        <h2 id="w-skrocie" className="!mt-0">W skrócie</h2>
+        <p>Na to, czy klient z okolicy znajdzie Twoją firmę, wpływają trafność, odległość i renoma. Na odległość nie masz wpływu, na pozostałe dwie masz. Kroki 1–5 zrobisz sam, nawet dziś. Kroki 6–8 to kod strony: najważniejsza część, bo od niego zależy, czy strona jest szybka i czy Google dobrze ją rozumie.</p>
+        <nav aria-label="Na skróty" className="not-prose mt-5">
+          <p className="text-[15px] font-semibold text-ink">Przejdź od razu do:</p>
+          <ul className="mt-2 flex flex-wrap gap-2 text-[15px] font-semibold">
+            <li><a href="#lista" className="block rounded-[12px] bg-brand px-3.5 py-2 text-white no-underline hover:bg-brand-deep">Lista do odhaczenia</a></li>
+            {[['krok-1', 'Kroki 1–5: zrobisz sam'], ['kod-strony', 'Kroki 6–8: kod strony'], ['pytania', 'Częste pytania']].map(([id, t]) => (
+              <li key={id}><a href={`#${id}`} className="block rounded-[12px] bg-brand-soft px-3.5 py-2 text-brand-deep no-underline hover:bg-brand/15">{t}</a></li>
+            ))}
+          </ul>
+        </nav>
+
+        <h2 id="jak-google-wybiera">Jak Google wybiera firmy z okolicy</h2>
+        <p>Gdy ktoś wpisuje „fryzjer” albo „mechanik w pobliżu”, Google bierze pod uwagę trzy rzeczy:</p>
+        <ul>
+          <li><strong>Trafność:</strong> czy Twoja firma pasuje do tego, czego ktoś szuka.</li>
+          <li><strong>Odległość:</strong> jak daleko jesteś od osoby, która szuka.</li>
+          <li><strong>Renoma:</strong> jak znana jest Twoja firma, czyli między innymi ile stron do niej prowadzi i ile masz opinii.</li>
+        </ul>
+        <Zrodlo><a href="https://support.google.com/business/answer/7091" {...ZEW}>Google, „Tips to improve your local ranking on Google”</a></Zrodlo>
+
+        <Krok id="krok-1" nr={1}>Sprawdź, czy Google w ogóle widzi Twoją stronę</Krok>
+        <p><strong>Dlaczego?</strong> Jeśli Google nie ma Twojej strony w swoich zbiorach, nikt jej tam nie znajdzie, nawet najładniejszej.</p>
+        <ol>
+          <li>Wpisz w Google: <strong>site:twojastrona.pl</strong> (z adresem swojej strony, bez spacji po dwukropku).</li>
+          <li>Policz wyniki. To są podstrony, które Google zna.</li>
+          <li>Porównaj z tym, ile podstron naprawdę masz: usługi, cennik, kontakt.</li>
+        </ol>
+        <p>Pusto albo brakuje ważnych podstron? To znak, że Google ma kłopot z czytaniem Twojej strony. Więcej o tym w <a href="#krok-7">kroku 7</a>. Nie masz jeszcze strony? Zobacz, jak <a href="/tworzenie-stron-internetowych">tworzymy strony internetowe</a>: najpierw dostajesz bezpłatny projekt.</p>
+        <Zrodlo><a href="https://developers.google.com/search/docs/fundamentals/seo-starter-guide" {...ZEW}>Google, „SEO Starter Guide”</a></Zrodlo>
+
+        <Krok id="krok-2" nr={2}>Załóż i uzupełnij Profil Firmy w Google</Krok>
+        <p><strong>Dlaczego?</strong> To wizytówka, którą klient widzi w Mapach i obok wyników wyszukiwania. Google pisze wprost: firmy z pełnymi i dokładnymi informacjami częściej pojawiają się w lokalnych wynikach.</p>
+        <ol>
+          <li>Wejdź na <a href="https://www.google.com/business/" {...ZEW}>google.com/business</a> i załóż profil albo przejmij ten, który już istnieje.</li>
+          <li>Potwierdź, że firma jest Twoja. Według Google dzięki temu profil częściej pokazuje się w wynikach.</li>
+          <li>Uzupełnij wszystko: adres, godziny otwarcia, telefon, stronę, kategorię i udogodnienia, np. parking albo płatność kartą.</li>
+          <li>Każdą zmianę wpisuj od razu: godziny w święta, nowy numer, nowa usługa.</li>
+        </ol>
+        <Zrodlo><a href="https://support.google.com/business/answer/7091" {...ZEW}>Google, „Tips to improve your local ranking on Google”</a></Zrodlo>
+
+        <Krok id="krok-3" nr={3}>Pokaż się na zdjęciach</Krok>
+        <p><strong>Dlaczego?</strong> Klient chce zobaczyć, dokąd idzie i co dostanie. Google zachęca, żeby zdjęciami i filmami pokazać, co oferujesz, i opowiedzieć historię firmy.</p>
+        <ol>
+          <li>Dodaj do Profilu Firmy zdjęcie wejścia z zewnątrz. Wtedy klient łatwo trafi na miejsce.</li>
+          <li>Pokaż wnętrze, zespół i efekty pracy: fryzury, naprawione auta, wykończone łazienki.</li>
+          <li>Nagraj krótki film z pracy. Wystarczy telefon.</li>
+          <li>Dorzucaj nowe zdjęcia co jakiś czas, np. raz w miesiącu. Aktualny profil wygląda na firmę, która działa.</li>
+        </ol>
+        <Zrodlo><a href="https://support.google.com/business/answer/7091" {...ZEW}>Google, „Tips to improve your local ranking on Google”</a></Zrodlo>
+
+        <Krok id="krok-4" nr={4}>Zbieraj opinie i odpowiadaj na każdą</Krok>
+        <p><strong>Dlaczego?</strong> Liczba opinii wpływa na to, jak znana jest Twoja firma w oczach Google. Według Google dobre opinie i pomocne odpowiedzi wyróżniają firmę.</p>
+        <ol>
+          <li>Proś zadowolonych klientów o opinię, najlepiej od razu po usłudze.</li>
+          <li>Wyślij im bezpośredni link do wystawienia opinii. Znajdziesz go w swoim Profilu Firmy.</li>
+          <li>Odpowiadaj na każdą opinię, także krytyczną: spokojnie i konkretnie. Google pisze, że odpowiedź pokazuje, że cenisz zdanie klientów.</li>
+          <li>Nie płać za opinie i nie dawaj za nie rabatów ani prezentów. Zasady Map Google tego zabraniają, a takie opinie są usuwane.</li>
+        </ol>
+        <Zrodlo><a href="https://support.google.com/business/answer/7091" {...ZEW}>Google, „Tips to improve your local ranking on Google”</a>; <a href="https://support.google.com/contributionpolicy/answer/7400114" {...ZEW}>zasady treści w Mapach Google</a></Zrodlo>
+
+        <Krok id="krok-5" nr={5}>Niech inne strony mówią o Tobie</Krok>
+        <p><strong>Dlaczego?</strong> Google ocenia, jak znana jest Twoja firma, między innymi po tym, ile stron do niej prowadzi.</p>
+        <ol>
+          <li>Wpisz firmę do katalogów firm, np. Panorama Firm i pkt.pl, oraz na portale swojej branży.</li>
+          <li>Poproś partnerów, dostawców i stowarzyszenia, do których należysz, o link do Twojej strony.</li>
+          <li>Daj znać lokalnym portalom i mediom o nowej usłudze, akcji albo wydarzeniu.</li>
+          <li>Wszędzie podawaj tę samą nazwę, adres i telefon. Wtedy nie ma wątpliwości, że to ta sama firma.</li>
+        </ol>
+        <Zrodlo><a href="https://support.google.com/business/answer/7091" {...ZEW}>Google, „Tips to improve your local ranking on Google”</a></Zrodlo>
+
+        <h2 id="kod-strony">Kroki 6–8: to, czego nie widać, czyli kod strony</h2>
+        <p>Klient widzi zdjęcia, teksty i przyciski. Google widzi coś innego: kod, czyli zapis, z którego przeglądarka składa Twoją stronę.</p>
+        <Kod podpis="Tak mniej więcej wygląda strona dla Google. Ten przykład ma kłopot już w trzeciej linijce: każe Google pominąć stronę.">{KOD_STRONY}</Kod>
+        <p>Z kodu Google dowiaduje się, czy strona jest szybka, które podstrony ma przeczytać i czym zajmuje się Twoja firma. Możesz mieć świetne usługi, a Google i tak wybierze konkurencję, jeśli jej strona jest szybsza i łatwiejsza do przeczytania. Dlatego kroki 6–8 to najważniejsza część poradnika.</p>
+
+        <Krok id="krok-6" nr={6} trudne>Strona, która otwiera się od razu</Krok>
+        <p>Google mierzy, jak Twoja strona działa u prawdziwych osób, które ją odwiedzają. Sprawdza trzy rzeczy:</p>
+        <Tabela caption="Dobre wyniki według Google (strona Google zaktualizowana 10 grudnia 2025, przeczytana 1 października 2026)."
+          head={['Co mierzy Google', 'Dobry wynik']} liczby={[1]}
+          rows={[
+            ['Jak szybko pojawia się najważniejsza część strony', 'do 2,5 s'],
+            ['Jak szybko strona reaguje na dotknięcie palcem', 'poniżej 0,2 s'],
+            ['Czy nic nie skacze podczas wczytywania, np. przycisk, który ucieka spod palca', 'wynik poniżej 0,1'],
+          ]} />
+        <p><strong>Jak to sobie wyobrazić?</strong> To sklep, w którym drzwi otwierają się dopiero po kilku sekundach, a półki przesuwają się, gdy sięgasz po towar. Klient nie czeka, tylko idzie do sąsiada.</p>
+        <p><strong>Co Ci to daje?</strong> Google pisze, że właśnie takie strony chcą nagradzać jego główne systemy oceniające. Do tego mniej klientów zamyka Twoją stronę i klika konkurencję.</p>
+        <h3>Sprawdź sam w 2 minuty</h3>
+        <p>Wejdź na <a href="https://pagespeed.web.dev/" {...ZEW}>pagespeed.web.dev</a> i wpisz adres swojej strony. Patrz na wynik dla telefonu. Zielony jest dobry. Pomarańczowy albo czerwony oznacza, że Google widzi problem.</p>
+        <h3>Co trzeba zrobić, żeby było zielono</h3>
+        <ul>
+          <li>Przerobić każde zdjęcie: zmniejszyć je i zapisać w lżejszym formacie tak, żeby nie straciło jakości.</li>
+          <li>Ustawić kolejność wczytywania: najpierw to, co klient widzi, reszta później.</li>
+          <li>Wyciąć z kodu wszystko, czego strona nie używa, a co i tak musi wczytać.</li>
+          <li>Zarezerwować miejsce na zdjęcia i przyciski, żeby nic nie skakało.</li>
+          <li>Ustawić, żeby przeglądarka zapamiętywała stronę i przy kolejnej wizycie nie pobierała jej od nowa.</li>
+          <li>Mierzyć i poprawiać, aż wszystkie trzy wyniki będą zielone.</li>
+        </ul>
+        <Uczciwie>to praca w kodzie strony. Każdą zmianę trzeba sprawdzić na telefonie i komputerze, bo jedna pomyłka potrafi popsuć wygląd całej strony.</Uczciwie>
+        <Zrodlo><a href="https://developers.google.com/search/docs/appearance/core-web-vitals" {...ZEW}>Google, „Understanding Core Web Vitals and Google search results”</a></Zrodlo>
+
+        <Krok id="krok-7" nr={7} trudne>Google musi przeczytać każdą podstronę</Krok>
+        <p>Google nie ogląda stron jak człowiek. Wysyła automatycznego czytelnika, czyli robota. Robot przechodzi po Twojej stronie od linku do linku i zapamiętuje, co znalazł. Czego nie przeczyta, tego Google nie pokaże klientom.</p>
+        <p><strong>Jak to sobie wyobrazić?</strong> Robot jest jak listonosz, który chodzi tylko tam, gdzie prowadzą ścieżki. Podstrona, do której nie prowadzi żaden link, to dom bez adresu. Listonosz do niego nie trafi.</p>
+        <h3>Co zatrzymuje robota</h3>
+        <ul>
+          <li>Podstrona, do której nie prowadzi żaden link.</li>
+          <li>Ustawienie w kodzie, które każe robotowi omijać stronę. Potrafi zostać przez pomyłkę po budowie strony.</li>
+          <li>Ta sama treść pod kilkoma adresami. Google nie wie, którą wersję pokazać.</li>
+          <li>Linki do podstron, których już nie ma.</li>
+        </ul>
+        <p><strong>Co Ci to daje?</strong> W Google może pojawić się każda usługa, którą opisałeś, a nie tylko strona główna. Google sprawniej przegląda stronę i szybciej zauważa nowe usługi i ceny.</p>
+        <h3>Sprawdź sam</h3>
+        <p>Wróć do testu z <a href="#krok-1">kroku 1</a>. Masz 10 podstron, a Google zna 3? Robot nie dociera do reszty. Dokładną listę pokazuje raport „Indeksowanie stron” w bezpłatnym narzędziu <a href="https://search.google.com/search-console" {...ZEW}>Google Search Console</a>. Przy każdej pominiętej podstronie jest powód, na przykład:</p>
+        <ul>
+          <li>URL zawiera tag „noindex”</li>
+          <li>URL zablokowany przez plik robots.txt</li>
+          <li>Duplikat, użytkownik nie oznaczył strony kanonicznej</li>
+          <li>Strona zeskanowana, ale jeszcze niezindeksowana</li>
+          <li>Nie znaleziono (404)</li>
+        </ul>
+        <h3>Co trzeba zrobić</h3>
+        <ul>
+          <li>Przygotować mapę strony, czyli spis podstron dla robota, i zgłosić ją Google.</li>
+          <li>Sprawdzić ustawienia, które mówią robotom, gdzie mogą wchodzić, a gdzie nie.</li>
+          <li>Wskazać Google główną wersję każdej podstrony, która ma kopie.</li>
+          <li>Przekierować stare adresy na nowe i połączyć podstrony linkami tak, żeby robot doszedł do każdej.</li>
+        </ul>
+        <Uczciwie>każdy powód z raportu to inna poprawka w kodzie albo w ustawieniach strony. Jedna źle ustawiona blokada potrafi ukryć przed Google całą stronę.</Uczciwie>
+        <Zrodlo><a href="https://developers.google.com/search/docs/crawling-indexing/sitemaps/overview" {...ZEW}>Google, „Learn about sitemaps”</a>; <a href="https://support.google.com/webmasters/answer/7440203?hl=pl" {...ZEW}>Pomoc Google Search Console, „Raport Indeksowanie stron”</a></Zrodlo>
+
+        <Krok id="krok-8" nr={8} trudne>Podaj Google dane firmy czarno na białym</Krok>
+        <p>Na stronie piszesz dla ludzi: zdania, zdjęcia, cennik. Google musi z tego sam wyłowić, jak się nazywasz, gdzie jesteś i kiedy masz otwarte.</p>
+        <p>Można mu to podać wprost. W kodzie strony zapisuje się dane firmy w specjalnym, uporządkowanym formacie. Klient go nie widzi, a Google czyta bez zgadywania.</p>
+        <p><strong>Jak to sobie wyobrazić?</strong> To różnica między listem pisanym odręcznie a formularzem wypełnionym drukowanymi literami. Treść ta sama, ale formularz każdy odczyta bez pomyłki.</p>
+        <p><strong>Co Ci to daje?</strong> Google pisze, że w ten sposób przekażesz mu godziny otwarcia, działy firmy i inne informacje. Gdy ktoś szuka firm, wyniki mogą pokazać wyróżnioną ramkę z danymi Twojej firmy.</p>
+        <Kod podpis="Tak wygląda początek takiego zapisu dla salonu fryzjerskiego.">{KOD_FIRMY}</Kod>
+        <h3>Sprawdź sam</h3>
+        <p>Wejdź na <a href="https://search.google.com/test/rich-results" {...ZEW}>search.google.com/test/rich-results</a> i wpisz adres strony. Jeśli test nie znajdzie u Ciebie danych firmy, Google musi zgadywać.</p>
+        <h3>Co trzeba zrobić</h3>
+        <ul>
+          <li>Dobrać właściwy rodzaj firmy spośród kilkuset dostępnych.</li>
+          <li>Zapisać bez błędu nazwę, adres, telefon, godziny, obszar działania i usługi.</li>
+          <li>Sprawdzić w teście Google i pilnować, żeby dane zgadzały się z Profilem Firmy.</li>
+        </ul>
+        <Uczciwie>jeden brakujący przecinek albo cudzysłów i Google nie odczyta całego zapisu.</Uczciwie>
+        <Zrodlo><a href="https://developers.google.com/search/docs/appearance/structured-data/local-business" {...ZEW}>Google, „Local Business structured data”</a></Zrodlo>
+
+        <h2 id="efekty">Kiedy zobaczysz efekty?</h2>
+        <p>Według Google jedne zmiany widać po kilku godzinach, inne po kilku miesiącach. Daj sobie kilka tygodni, zanim ocenisz wynik.</p>
+        <Zrodlo><a href="https://developers.google.com/search/docs/fundamentals/seo-starter-guide" {...ZEW}>Google, „SEO Starter Guide”</a></Zrodlo>
+        <h3>Czego nie ma w tym poradniku</h3>
+        <p>Te 8 kroków to fundament. Na mocną pozycję w Google pracuje jeszcze między innymi:</p>
+        <ul>
+          <li>tytuł i opis każdej podstrony, dobrane do haseł, które naprawdę wpisują Twoi klienci,</li>
+          <li>teksty usług, które odpowiadają na pytania klientów, zanim zadzwonią,</li>
+          <li>przygotowanie strony tak, żeby czaty AI polecały właśnie Twoją firmę.</li>
+        </ul>
+        <p>Tym wszystkim zajmujemy się w <a href="/optymalizacja-seo">optymalizacji SEO</a>.</p>
+
+        <h2 id="lista">Lista do odhaczenia</h2>
+        <p>Zaznaczaj, co masz już zrobione.</p>
+        <ListaDoOdhaczenia />
+
+        <section aria-labelledby="zostaw-nam" className="not-prose mt-14 rounded-[24px] bg-brand-soft p-6 sm:p-8">
+          <h2 id="zostaw-nam" className="mt-0 text-[26px] sm:text-[30px] font-bold leading-tight tracking-[-0.02em]">Kroki 6–8 zostaw nam</h2>
+          <p className="mt-3 text-[17px] leading-[1.6] text-body">Poprawimy kod Twojej strony tak, żeby otwierała się od razu, a Google czytał każdą podstronę i znał dane Twojej firmy. Do tego zadbamy, żeby czaty AI polecały właśnie Ciebie.</p>
+          <p className="mt-4 text-[30px] font-bold text-ink">od 300 zł</p>
+          <a href="/optymalizacja-seo" className="mt-3 inline-flex items-center gap-2 font-semibold text-brand-deep no-underline">Zobacz, co obejmuje optymalizacja SEO <span aria-hidden="true">→</span></a>
+        </section>
+
+        <h2 id="pytania">Częste pytania</h2>
+        <div className="faq not-prose mt-4">
+          {PYTANIA_GOOGLE.map(([q, a]) => (
+            <details key={q}><summary>{q}</summary><div className="a">{a}</div></details>
+          ))}
+        </div>
+      </Wpis>
+      <CtaBand title="Chcesz być wyżej w Google?" text="Napisz, czym zajmuje się Twoja firma, i podaj adres strony. Podpowiemy, od którego kroku zacząć." label="Napisz do nas" />
     </>
   )
 }

@@ -247,9 +247,18 @@ export const ROUTES = {
   '/poradniki/': {
     title: 'Poradniki o stronach internetowych dla firm | Mastalex',
     description:
-      'Poradniki dla właścicieli firm: ile kosztuje strona internetowa, co jest w cenie i na co patrzeć w cenniku. Każda liczba ma źródło i datę sprawdzenia.',
+      'Poradniki dla właścicieli firm: jak być wyżej w Google, ile kosztuje strona internetowa i na co patrzeć w cenniku. Każda liczba ma źródło i datę sprawdzenia.',
     crumb: 'Poradniki',
     type: 'CollectionPage',
+  },
+  '/poradniki/jak-byc-wyzej-w-google': {
+    title: 'Jak być wyżej w Google? 8 kroków dla firmy z okolicy',
+    h1: ['Twoja firma wyżej w Google:', '8 kroków, z których pięć zrobisz sam od razu'],
+    description:
+      '8 kroków opartych na oficjalnych poradach Google, dzięki którym Twoja firma pojawi się wyżej w wynikach i w Mapach. Pięć z nich zrobisz sam, nawet dziś.',
+    crumb: 'Twoja firma wyżej w Google',
+    parent: '/poradniki/',
+    article: { published: '2026-10-01', modified: '2026-10-01', author: 'kosma-mastalerz' },
   },
   '/poradniki/ile-kosztuje-strona-internetowa': {
     // title: krótki, do wyników Google (do 60 znaków); h1: nagłówek na stronie i w danych wpisu.

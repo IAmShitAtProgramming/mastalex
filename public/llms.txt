@@ -13,6 +13,7 @@ Bezpłatny projekt strony i przejrzysta wycena są gotowe w 3 dni. Jeśli strona
 
 ## Poradniki
 
+- [Twoja firma wyżej w Google: 8 kroków](https://mastalex.pl/poradniki/jak-byc-wyzej-w-google): jak lokalna firma może pojawić się wyżej w Google i w Mapach, według oficjalnych porad Google. Kroki 1–5 właściciel zrobi sam (Profil Firmy w Google, zdjęcia, opinie, wpisy w katalogach); kroki 6–8 dotyczą kodu strony (szybkość, czytanie każdej podstrony przez Google, dane firmy zapisane w kodzie). Każda porada ma źródło.
 - [Ile kosztuje strona internetowa w 2026?](https://mastalex.pl/poradniki/ile-kosztuje-strona-internetowa): ceny z cenników 52 polskich firm sprawdzonych we wrześniu 2026 (strona wizytówka, strona firmowa, przebudowa, SEO), co jest w cenie, a za co płaci się osobno, i ile co roku kosztują domena i hosting. Każda cena ma źródło.
 
 ## Firma
