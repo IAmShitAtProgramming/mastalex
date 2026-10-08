@@ -1,6 +1,7 @@
 import { AFTER, EMAIL, FOUNDERS, SHOP_ON, STEPS } from '../data.js'
 import { ContactForm, DevSlot, Eyebrow, Faq, Process, ServiceCards } from '../ui.jsx'
 import { Founders } from './shared.jsx'
+import RelatedGuides from './RelatedGuides.jsx'
 
 // Teksty przepisane 30.09.2026 (Claude, bez Codexa): każdy fakt raz na stronę. Karty usług mówią,
 // co robimy, proces mówi o terminie, płatności i własności, a pytania tylko o resztę.
@@ -77,6 +78,7 @@ export default function Home() {
         <DevSlot title="Opinie i studium przypadku: zakończona realizacja">Problem klienta → co zrobiliśmy → efekt (tylko udokumentowany). Do tego czasu sekcja jest ukryta.</DevSlot>
       </section>
 
+      <RelatedGuides path="/" title="Poradniki o cenach stron i widoczności w Google" />
       <Faq items={FAQ} />
 
       <section id="kontakt" className="mx-auto max-w-[1200px] px-4 sm:px-6 mt-24 grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-10" aria-labelledby="kontakt-h">

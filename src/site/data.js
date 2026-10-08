@@ -186,6 +186,7 @@ export const ROUTES = {
     description:
       'Strona internetowa dla firmy od 500 zł, zaprojektowana od zera, bez szablonów. Przebudowa strony i SEO. Bezpłatny projekt w 3 dni, płacisz po akceptacji.',
     crumb: 'Strona główna',
+    relatedGuides: ['/poradniki/ile-kosztuje-strona-internetowa', '/poradniki/jak-byc-wyzej-w-google'],
   },
   '/tworzenie-stron-internetowych': {
     title: 'Tworzenie stron internetowych dla Twojej firmy | Mastalex',
@@ -258,7 +259,8 @@ export const ROUTES = {
       '8 kroków opartych na oficjalnych poradach Google, dzięki którym Twoja firma pojawi się wyżej w wynikach i w Mapach. Pięć z nich zrobisz sam, nawet dziś.',
     crumb: 'Twoja firma wyżej w Google',
     parent: '/poradniki/',
-    article: { published: '2026-10-01', modified: '2026-10-01', author: 'kosma-mastalerz' },
+    article: { published: '2026-10-01', modified: '2026-10-08', author: 'kosma-mastalerz' },
+    relatedGuides: ['/poradniki/ile-kosztuje-strona-internetowa'],
   },
   '/poradniki/ile-kosztuje-strona-internetowa': {
     // title: krótki, do wyników Google (do 60 znaków); h1: nagłówek na stronie i w danych wpisu.
@@ -268,7 +270,8 @@ export const ROUTES = {
       'Sprawdziliśmy 52 cenniki polskich firm. Zobacz, ile kosztuje wizytówka, strona firmowa i przebudowa oraz co jest w cenie, a za co płacisz osobno.',
     crumb: 'Ile kosztuje strona internetowa',
     parent: '/poradniki/',
-    article: { published: '2026-09-30', modified: '2026-09-30', author: 'kosma-mastalerz' },
+    article: { published: '2026-09-30', modified: '2026-10-08', author: 'kosma-mastalerz' },
+    relatedGuides: ['/poradniki/jak-byc-wyzej-w-google'],
   },
 }
 

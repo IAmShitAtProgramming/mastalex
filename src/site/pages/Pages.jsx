@@ -5,9 +5,6 @@ import { Founders } from './shared.jsx'
 // Teksty przepisane 30.09.2026 (Claude, bez Codexa) po uwagach właściciela: mówimy, co robimy,
 // piszemy tylko o korzyściach klienta i każdy fakt podajemy na danej podstronie raz.
 
-const GOOGLE_DO_I_NEED_SEO = 'https://developers.google.com/search/docs/fundamentals/do-i-need-seo?hl=pl'
-const GOOGLE_SEO_STARTER = 'https://developers.google.com/search/docs/fundamentals/seo-starter-guide?hl=pl'
-
 function Body({ children, aside }) {
   return (
     <div className="mx-auto max-w-[1200px] px-4 sm:px-6 mt-10 grid lg:grid-cols-[1fr_320px] gap-12">
@@ -145,10 +142,12 @@ export function Tworzenie() {
 
         <h2 id="jak-powstaje">Jak powstaje Twoja strona — krok po kroku</h2>
         <StepsDetailed steps={STEPS_TWORZENIE} />
+        <p>Po uruchomieniu ważne jest, żeby wyszukiwarka mogła dotrzeć do każdej usługi. W poradniku pokazujemy, <a href="/poradniki/jak-byc-wyzej-w-google#krok-7">jak ułatwić Google odczytanie podstron</a>.</p>
 
         <h2>Wizytówka czy strona z podstronami?</h2>
         <p>Wybierz, ile miejsca potrzebuje Twoja oferta.</p>
         <PriceCards items={plans} />
+        <p>Porównujesz oferty? Zobacz, <a href="/poradniki/ile-kosztuje-strona-internetowa#firmowa">ile kosztuje strona firmowa</a> i od czego zależy jej cena w przeanalizowanych cennikach.</p>
         <p>Potrzebujesz więcej niż 5 podstron? Każda kolejna kosztuje {AFTER.podstrona} zł. Domenę i hosting opłacasz osobno — ile kosztują, sprawdzisz w <a href="/cennik-stron-internetowych#domena-i-hosting">cenniku</a>.</p>
       </Body>
       <section className="mx-auto max-w-[1200px] px-4 sm:px-6 mt-16">
@@ -254,7 +253,7 @@ export function Przebudowa() {
         <ul>
           <li>Strona źle wygląda albo jest niewygodna na telefonie.</li>
           <li>Oferta, ceny lub zdjęcia są nieaktualne.</li>
-          <li>Strona długo się wczytuje.</li>
+          <li>Strona długo się wczytuje. Zobacz, <a href="/poradniki/jak-byc-wyzej-w-google#krok-6">jak sprawdzić szybkość swojej strony</a>.</li>
           <li>Konkurencja jest wyżej w Google.</li>
           <li>Wolisz nie podawać klientom adresu swojej strony.</li>
         </ul>
@@ -272,6 +271,7 @@ export function Przebudowa() {
 
         <h2>Ile kosztuje przebudowa strony</h2>
         <p>Przebudowa wizytówki kosztuje 400 zł, a strony firmowej do 5 podstron 1200 zł. To zawsze mniej niż nowa strona tej samej wielkości. Większą stronę wycenimy razem z projektem nowej wersji. Ceny wszystkich usług znajdziesz w <a href="/cennik-stron-internetowych">cenniku</a>.</p>
+        <p>W analizie cen pokazujemy też, <a href="/poradniki/ile-kosztuje-strona-internetowa#przebudowa">ile kosztuje przebudowa strony</a> w innych firmach i na co zwrócić uwagę przy porównywaniu zakresu prac.</p>
       </Body>
       <Process steps={STEPS_PRZEBUDOWA} title="Jak wygląda przebudowa" />
       <Faq items={[
@@ -309,18 +309,19 @@ export function Seo() {
         <p>SEO (od angielskiego <i>search engine optimization</i>, czyli optymalizacja pod wyszukiwarki) to praca nad stroną, dzięki której Google pokazuje ją wyżej. Nazywa się ją też pozycjonowaniem strony.</p>
         <p>Strona bez SEO jest jak sklep na zapleczu budynku: może mieć świetną ofertę, ale mało kto do niego trafia. SEO przenosi go na główną ulicę, którą klienci przechodzą codziennie.</p>
         <p>Coraz więcej osób prosi też o polecenie firmy czaty AI, np. ChatGPT. SEO sprawia, że Twoja firma częściej pojawia się również w ich odpowiedziach.</p>
-        <p>Jeśli chcesz poczytać więcej, Google opisuje SEO w <a href={GOOGLE_SEO_STARTER} rel="noopener" target="_blank">poradniku dla początkujących</a> i wyjaśnia, <a href={GOOGLE_DO_I_NEED_SEO} rel="noopener" target="_blank">kiedy warto je zlecić</a>.</p>
+        <p>Chcesz wiedzieć, od czego zacząć? W poradniku Mastalex wyjaśniamy, <a href="/poradniki/jak-byc-wyzej-w-google">jak poprawić widoczność firmy w Google krok po kroku</a>. Pokazujemy, co możesz zrobić samodzielnie, a które działania warto zlecić.</p>
 
         <h2>Co wykonujemy w ramach usługi</h2>
         <Numbered items={SEO_WORK} />
 
         <h2>Jak sprawdzisz efekty</h2>
         <p>Podłączamy do strony bezpłatne narzędzie Google Search Console. Zobaczysz w nim, na jakie hasła pojawia się Twoja strona, na którym miejscu i ile osób w nią klika. Dostęp do niego należy do Ciebie.</p>
+        <p>Przed oceną wyników sprawdź, <a href="/poradniki/jak-byc-wyzej-w-google#efekty">kiedy można zobaczyć efekty zmian SEO</a> i dlaczego nie każda poprawka jest widoczna od razu.</p>
       </Body>
       <Faq items={[
         { q: 'Czy wykonacie SEO strony zrobionej przez inną firmę?', a: 'Tak. SEO wykonujemy dla każdej strony, bez względu na to, kto ją zrobił.' },
         { q: 'Czym różni się SEO od reklamy w Google?', a: 'Reklama działa, dopóki płacisz za każde kliknięcie. SEO podnosi stronę w zwykłych wynikach wyszukiwania, a za kliknięcia w nie nie płacisz.' },
-        { q: 'Od czego zależy cena SEO?', a: 'Od wielkości strony i tego, ile trzeba na niej poprawić. Dokładną cenę poznasz w przejrzystej wycenie, zanim zdecydujesz się na dalszą współpracę.' },
+        { q: 'Od czego zależy cena SEO?', a: <>Od wielkości strony i tego, ile trzeba na niej poprawić. Dokładną cenę poznasz w przejrzystej wycenie, zanim zdecydujesz się na dalszą współpracę. W analizie cenników pokazujemy, <a href="/poradniki/ile-kosztuje-strona-internetowa#seo">ile kosztuje SEO i jak porównywać oferty</a>.</> },
       ]} />
       <Related exclude="/optymalizacja-seo" />
       <CtaBand title="Sprawdź, co podniesie Twoją stronę w Google" text="Sprawdzimy Twoją stronę i przygotujemy przejrzystą wycenę SEO." label="Zapytaj o SEO" />
@@ -340,7 +341,7 @@ export function Cennik() {
       <section className="mx-auto max-w-[1200px] px-4 sm:px-6 mt-10" aria-labelledby="ceny-h">
         <h2 id="ceny-h" className="text-[28px] sm:text-[34px] leading-[1.1] font-bold tracking-[-0.02em]">Ceny usług</h2>
         <PriceCards items={PRICES} wide />
-        <p className="mt-6 max-w-[68ch] text-[16px] leading-[1.6] text-body">Dla porównania: w ponad połowie z {MARKET_WIZYTOWKA.cenniki} cenników innych firm, które sprawdziliśmy we wrześniu 2026, strona wizytówka kosztuje co najmniej {MARKET_WIZYTOWKA.prog}.</p>
+        <p className="mt-6 max-w-[68ch] text-[16px] leading-[1.6] text-body">Dla porównania: w ponad połowie z {MARKET_WIZYTOWKA.cenniki} cenników innych firm, które sprawdziliśmy we wrześniu 2026, strona wizytówka kosztuje co najmniej {MARKET_WIZYTOWKA.prog}. Pełne porównanie i opis zakresu ofert znajdziesz w naszej <a href="/poradniki/ile-kosztuje-strona-internetowa" className="text-brand-deep underline underline-offset-4">analizie cen stron internetowych w Polsce</a>.</p>
         {SHOP_ON && <>
           <h2 id="sklepy" className="mt-16 text-[28px] sm:text-[34px] leading-[1.1] font-bold tracking-[-0.02em]">Ceny sklepów internetowych</h2>
           <PriceCards items={SHOP.plans} />
@@ -359,6 +360,7 @@ export function Cennik() {
           <li><strong>Hosting małej strony:</strong> w pierwszym roku <span className="whitespace-nowrap">ok. 60–100 zł</span>, w kolejnych latach <span className="whitespace-nowrap">ok. 160–310 zł</span> rocznie.</li>
         </ul>
         <p>Nie mamy podpisanej współpracy reklamowej z żadną firmą, która sprzedaje domeny lub hosting. Dlatego dobieramy je wyłącznie pod kątem korzyści dla Ciebie, np. hosting z bezpłatną kłódką bezpieczeństwa przy adresie strony (certyfikatem SSL).</p>
+        <p>Szczegółowe <a href="/poradniki/ile-kosztuje-strona-internetowa#domena-i-hosting">porównanie kosztów domeny i hostingu</a>, wraz z datą sprawdzenia cen, znajdziesz w naszym poradniku.</p>
 
         <h2>Kiedy płacisz</h2>
         <p>Dopiero po akceptacji projektu. Do tego momentu nic nie płacisz i niczym się nie zobowiązujesz. Cena z wyceny się nie zmienia: bez Twojej zgody nic do niej nie dopiszemy.</p>
@@ -370,7 +372,7 @@ export function Cennik() {
         <p>Przez {AFTER.wsparcie} miesięcy od uruchomienia bezpłatnie naprawiamy każdy błąd strony. Drobną zmianę, np. nowy numer telefonu, cenę albo zdjęcie, wprowadzimy za {AFTER.zmiana} zł. Zmiany możesz też zlecić, komu chcesz — to Ty decydujesz, kto zajmuje się Twoją stroną.</p>
       </Body>
       <Faq items={[
-        { q: 'Czy SEO jest w cenie strony?', a: <>SEO to osobna usługa. Zaproponujemy ją po uruchomieniu strony, a decyzja należy do Ciebie. Więcej: <a href="/optymalizacja-seo">optymalizacja SEO</a>.</> },
+        { q: 'Czy SEO jest w cenie strony?', a: <>SEO to osobna usługa. Zaproponujemy ją po uruchomieniu strony, a decyzja należy do Ciebie. Więcej: <a href="/optymalizacja-seo">optymalizacja SEO</a>. W poradniku wyjaśniamy, <a href="/poradniki/jak-byc-wyzej-w-google#kod-strony">co warto poprawić w kodzie strony pod Google</a>.</> },
         { q: 'Czy przebudowa jest tańsza niż nowa strona?', a: <>Tak. Przebudowa zawsze kosztuje mniej niż nowa strona tej samej wielkości. Więcej: <a href="/przebudowa-strony-internetowej">przebudowa strony internetowej</a>.</> },
       ]} />
       <CtaBand title="Poznaj dokładną cenę swojej strony" />
@@ -395,10 +397,11 @@ export function ONas() {
           <li><strong>Najpierw projekt, potem płatność.</strong> Projekt i wycenę dostajesz za darmo, a płacisz dopiero po akceptacji.</li>
           <li><strong>Odpowiadamy za efekt.</strong> Prowadzimy projekt od pierwszej wiadomości do uruchomienia strony.</li>
           <li><strong>Strona jest Twoja.</strong> Po uruchomieniu strona i wszystkie dostępy do niej należą do Ciebie.</li>
-          <li><strong>Przejrzyste ceny.</strong> Strona wizytówka kosztuje 500 zł, a ceny pozostałych usług znajdziesz w <a href="/cennik-stron-internetowych">cenniku</a>.</li>
+          <li><strong>Przejrzyste ceny.</strong> Strona wizytówka kosztuje 500 zł, a ceny pozostałych usług znajdziesz w <a href="/cennik-stron-internetowych">cenniku</a>. Pokazujemy też, <a href="/poradniki/ile-kosztuje-strona-internetowa#jak-zebralismy-dane">jak przeanalizowaliśmy 52 cenniki polskich firm</a>.</li>
         </ul>
         <h2>Nasze usługi</h2>
         <p><a href="/tworzenie-stron-internetowych">Tworzymy strony internetowe</a>, <a href="/przebudowa-strony-internetowej">przebudowujemy istniejące</a> i <a href="/optymalizacja-seo">wykonujemy SEO</a> dla firm z całej Polski. Całą współpracę prowadzimy online.</p>
+        <p>Chcesz zacząć od samodzielnych działań? Przeczytaj <a href="/poradniki/jak-byc-wyzej-w-google">nasz poradnik poprawy widoczności firmy w Google</a>.</p>
       </Body>
       <CtaBand title="Opowiedz nam o swojej firmie" />
     </>
@@ -448,6 +451,12 @@ export function Kontakt() {
           </ol>
         </div>
       </section>
+      <div className="mx-auto max-w-[1200px] px-4 sm:px-6 mt-10">
+        <div className="prose-m max-w-[68ch]">
+          <p>Przygotowujesz zapytanie? <a href="/cennik-stron-internetowych">Sprawdź zakres i ceny naszych usług</a>, żeby łatwiej określić, czego potrzebujesz.</p>
+          <p>Jeśli chcesz poznać szczegóły współpracy, zobacz, <a href="/tworzenie-stron-internetowych#jak-powstaje">jak powstaje Twoja strona w Mastalex</a>, od bezpłatnego projektu do uruchomienia.</p>
+        </div>
+      </div>
     </>
   )
 }
