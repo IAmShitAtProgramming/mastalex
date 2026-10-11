@@ -258,7 +258,7 @@ export const ROUTES = {
       'Jak być wyżej w Google? 8 kroków dla lokalnej firmy: Profil Firmy, opinie, szybkość i indeksowanie strony. Poradnik oparty na oficjalnych źródłach Google.',
     crumb: 'Twoja firma wyżej w Google',
     parent: '/poradniki/',
-    article: { published: '2026-10-01', modified: '2026-10-01', author: 'kosma-mastalerz' },
+    article: { published: '2026-10-01', modified: '2026-10-11', author: 'kosma-mastalerz' },
   },
   '/poradniki/ile-kosztuje-strona-internetowa-2026': {
     // title: krótki, do wyników Google (do 60 znaków); h1: nagłówek na stronie i w danych wpisu.
@@ -280,10 +280,10 @@ export const ROUTES = {
     article: { published: '2026-10-11', modified: '2026-10-11', author: 'kosma-mastalerz' },
   },
   '/poradniki/najlepsze-firmy-tworzace-strony-internetowe-polska': {
-    title: 'Najlepsze firmy tworzące strony internetowe w Polsce — wybór',
-    h1: ['Najlepsze firmy tworzące strony internetowe w Polsce', 'Jak wybrać wykonawcę dla swojej firmy?'],
+    title: 'Jak wybrać firmę tworzącą strony internetowe? Kryteria i pytania',
+    h1: ['Jak wybrać firmę tworzącą strony internetowe?', 'Kryteria i pytania do wykonawcy'],
     description:
-      'Najlepsze firmy tworzące strony internetowe w Polsce: jak porównać realizacje, opinie, zakres i ceny. Lista pytań do agencji oraz wykonawcy strony.',
+      'Jak wybrać firmę tworzącą strony internetowe? Sprawdź realizacje, opinie, zakres prac, ceny i pytania do wyceny. Poradnik dla firm z całej Polski.',
     crumb: 'Jak wybrać firmę tworzącą strony',
     parent: '/poradniki/',
     article: { published: '2026-10-11', modified: '2026-10-11', author: 'kosma-mastalerz' },

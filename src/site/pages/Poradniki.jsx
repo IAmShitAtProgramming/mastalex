@@ -421,8 +421,8 @@ export function WpisWyborFirmy() {
   return (
     <>
       <Wpis path={path} title={ROUTES[path].title} toc={toc}
-        lead="Najlepsze firmy tworzące strony internetowe w Polsce — jak je wybrać? Zacznij od zakresu swojego projektu, obejrzyj działające realizacje i porównaj opinie klientów. Następnie poproś wykonawców o wycenę tej samej strony, z tekstami, poprawkami i kosztami utrzymania opisanymi osobno.">
-        <h2 id="kryteria" className="!mt-0">Najlepsze firmy tworzące strony internetowe w Polsce — kryteria wyboru</h2>
+        lead="Jak wybrać firmę tworzącą strony internetowe? Zacznij od zakresu swojego projektu, obejrzyj działające realizacje i porównaj opinie klientów. Następnie poproś wykonawców o wycenę tej samej strony, z tekstami, poprawkami i kosztami utrzymania opisanymi osobno.">
+        <h2 id="kryteria" className="!mt-0">Jak wybrać firmę tworzącą strony internetowe — kryteria</h2>
         <p>Dobry wybór zależy od tego, jakiej strony potrzebujesz. Przy wizytówce ważne są czytelna oferta i łatwy kontakt. Przy stronie z wieloma usługami sprawdź też sposób organizacji podstron i późniejszej rozbudowy. Poniższe kryteria traktujemy jako zalecenia Mastalex przy porównywaniu wykonawców.</p>
         <Tabela caption="Kryteria porównania firmy lub agencji tworzącej strony internetowe."
           head={['Kryterium', 'Co sprawdzić', 'Pytanie do wykonawcy']}
@@ -596,11 +596,11 @@ export function WpisWyzejWGoogle() {
         <p><strong>Dlaczego?</strong> Jeśli Google nie ma Twojej strony w swoich zbiorach, nikt jej tam nie znajdzie, nawet najładniejszej.</p>
         <ol>
           <li>Wpisz w Google: <strong>site:twojastrona.pl</strong> (z adresem swojej strony, bez spacji po dwukropku).</li>
-          <li>Policz wyniki. To są podstrony, które Google zna.</li>
-          <li>Porównaj z tym, ile podstron naprawdę masz: usługi, cennik, kontakt.</li>
+          <li>Sprawdź, czy pojawiają się podstrony Twojej witryny. To orientacyjny test, a nie kompletna lista stron zapisanych przez Google.</li>
+          <li>Status konkretnej podstrony sprawdź w <a href="https://search.google.com/search-console" {...ZEW}>Google Search Console</a>: wklej jej adres do narzędzia „Inspekcja adresu URL”.</li>
         </ol>
-        <p>Pusto albo brakuje ważnych podstron? To znak, że Google ma kłopot z czytaniem Twojej strony. Więcej o tym w <a href="#krok-7">kroku 7</a>. Nie masz jeszcze strony? Zobacz, jak <a href="/strony-internetowe-od-500-zl">tworzymy strony internetowe</a>: najpierw dostajesz bezpłatny projekt.</p>
-        <Zrodlo><a href="https://developers.google.com/search/docs/fundamentals/seo-starter-guide" {...ZEW}>Google, „SEO Starter Guide”</a></Zrodlo>
+        <p>Pusto albo brakuje ważnej podstrony? Sam wynik tego testu nie dowodzi, że Google nie ma jej w swoich zbiorach lub że robot do niej nie dociera. Sprawdź jej adres w Search Console, zanim zaczniesz szukać problemu. Więcej o tym w <a href="#krok-7">kroku 7</a>. Nie masz jeszcze strony? Zobacz, jak <a href="/strony-internetowe-od-500-zl">tworzymy strony internetowe</a>: najpierw dostajesz bezpłatny projekt.</p>
+        <Zrodlo><a href="https://developers.google.com/search/docs/monitor-debug/search-operators/all-search-site" {...ZEW}>Google, „Operator wyszukiwania site:”</a>; <a href="https://support.google.com/webmasters/answer/9012289?hl=pl" {...ZEW}>Pomoc Google Search Console, „Inspekcja adresu URL”</a></Zrodlo>
 
         <Krok id="krok-2" nr={2}>Załóż i uzupełnij Profil Firmy w Google</Krok>
         <p><strong>Dlaczego?</strong> To wizytówka, którą klient widzi w Mapach i obok wyników wyszukiwania. Google pisze wprost: firmy z pełnymi i dokładnymi informacjami częściej pojawiają się w lokalnych wynikach.</p>
@@ -684,7 +684,7 @@ export function WpisWyzejWGoogle() {
         </ul>
         <p><strong>Co Ci to daje?</strong> W Google może pojawić się każda usługa, którą opisałeś, a nie tylko strona główna. Google sprawniej przegląda stronę i szybciej zauważa nowe usługi i ceny.</p>
         <h3>Sprawdź sam</h3>
-        <p>Wróć do testu z <a href="#krok-1">kroku 1</a>. Masz 10 podstron, a Google zna 3? Robot nie dociera do reszty. Dokładną listę pokazuje raport „Indeksowanie stron” w bezpłatnym narzędziu <a href="https://search.google.com/search-console" {...ZEW}>Google Search Console</a>. Przy każdej pominiętej podstronie jest powód, na przykład:</p>
+        <p>Jeśli test z <a href="#krok-1">kroku 1</a> pokazuje mniej podstron, niż masz, nie oznacza to jeszcze, że robot nie dociera do pozostałych. W bezpłatnym narzędziu <a href="https://search.google.com/search-console" {...ZEW}>Google Search Console</a> sprawdź konkretny adres w „Inspekcji adresu URL”. Raport „Indeksowanie stron” pokazuje ogólny stan adresów znanych Google w Twojej witrynie oraz powody, dla których część z nich nie została zapisana w indeksie. Przykładowe powody to:</p>
         <ul>
           <li>URL zawiera tag „noindex”</li>
           <li>URL zablokowany przez plik robots.txt</li>
