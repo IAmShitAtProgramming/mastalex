@@ -102,7 +102,7 @@ function Numbered({ items }) {
   )
 }
 
-/* ---------- /tworzenie-stron-internetowych ---------- */
+/* ---------- /strony-internetowe-od-500-zl ---------- */
 const STEPS_TWORZENIE = [
   { title: 'Opowiadasz nam o firmie', rows: [
     ['Ty', 'W formularzu opisujesz, czym się zajmujesz, kim są Twoi klienci, co chcesz im pokazać i jakie strony Ci się podobają.'],
@@ -130,12 +130,12 @@ export function Tworzenie() {
   const plans = PRICES.filter((p) => p.id === 'wizytowka' || p.id === 'firmowa').map(({ href, link, ...p }) => p)
   return (
     <>
-      <PageHero eyebrow="Usługa" title="Tworzenie stron internetowych" accent="dla Twojej firmy"
-        lead="Zaprojektujemy stronę, na której klient od razu widzi, czym się zajmujesz, i szybko się z Tobą kontaktuje. Teksty napiszemy za Ciebie. Strona wizytówka kosztuje 500 zł, a projekt zobaczysz za darmo.">
-        <Cta secondary={{ href: '/cennik-stron-internetowych', label: 'Zobacz cennik' }} />
+      <PageHero eyebrow="Tworzenie stron internetowych" title="Strony internetowe" accent="od 500 zł dla firm"
+        lead="Strony internetowe od 500 zł wykonujemy w Mastalex dla firm z całej Polski. Wizytówka kosztuje 500 zł, a strona firmowa do 5 podstron 1500 zł. Przygotowujemy indywidualny wygląd i teksty. Bezpłatny projekt i wycenę otrzymujesz przed decyzją o współpracy. Domenę i hosting opłacasz osobno.">
+        <Cta secondary={{ href: '/cennik-tworzenia-stron-internetowych-2026', label: 'Zobacz cennik' }} />
       </PageHero>
       <Body aside={<StickyCard title="Projekt Twojej strony za darmo" />}>
-        <h2>Co zyskujesz dzięki nowej stronie</h2>
+        <h2>Tworzenie stron internetowych dla firm — co zyskujesz?</h2>
         <ul>
           <li><strong>Klienci szybciej wybierają Ciebie.</strong> Od razu widzą, co oferujesz i dlaczego warto zadzwonić właśnie do Ciebie.</li>
           <li><strong>Firma budzi zaufanie.</strong> Nowoczesna strona pokazuje, że traktujesz klientów poważnie.</li>
@@ -146,10 +146,11 @@ export function Tworzenie() {
         <h2 id="jak-powstaje">Jak powstaje Twoja strona — krok po kroku</h2>
         <StepsDetailed steps={STEPS_TWORZENIE} />
 
-        <h2>Wizytówka czy strona z podstronami?</h2>
+        <h2>Strony internetowe od 500 zł — co obejmuje cena?</h2>
         <p>Wybierz, ile miejsca potrzebuje Twoja oferta.</p>
         <PriceCards items={plans} />
-        <p>Potrzebujesz więcej niż 5 podstron? Każda kolejna kosztuje {AFTER.podstrona} zł. Domenę i hosting opłacasz osobno — ile kosztują, sprawdzisz w <a href="/cennik-stron-internetowych#domena-i-hosting">cenniku</a>.</p>
+        <p>Chcesz sprawdzić, co obejmuje strona za 500 zł? Przeczytaj poradnik <a href="/poradniki/strona-internetowa-od-500-zl">Strona internetowa od 500 zł — zakres i koszty</a>.</p>
+        <p>Potrzebujesz więcej niż 5 podstron? Każda kolejna kosztuje {AFTER.podstrona} zł. Domenę i hosting opłacasz osobno — ile kosztują, sprawdzisz w <a href="/cennik-tworzenia-stron-internetowych-2026#domena-i-hosting">cenniku</a>.</p>
       </Body>
       <section className="mx-auto max-w-[1200px] px-4 sm:px-6 mt-16">
         <DevSlot title="realizacje">Gdy będzie pierwsza realizacja, tu trafi jej opis z linkiem do /realizacje.</DevSlot>
@@ -158,7 +159,7 @@ export function Tworzenie() {
         { q: 'Czy zrobicie stronę dla firmy z mojej branży?', a: 'Tak. Każdą stronę projektujemy od podstaw pod konkretną firmę, bez względu na branżę.' },
         { q: 'Czy za projekt trzeba zapłacić, jeśli nie zdecyduję się na stronę?', a: 'Nie. Jeśli projekt Ci się nie spodoba, nic nie płacisz i niczym się nie zobowiązujesz.' },
       ]} />
-      <Related exclude="/tworzenie-stron-internetowych" />
+      <Related exclude="/strony-internetowe-od-500-zl" />
       <CtaBand title="Zobacz projekt swojej strony za darmo" />
     </>
   )
@@ -197,7 +198,7 @@ export function Sklep() {
     <>
       <PageHero eyebrow="Usługa" title="Sklep internetowy" accent="dla Twojej firmy"
         lead={`Zaprojektujemy sklep, w którym klient szybko znajduje produkt, płaci online i czeka na przesyłkę. Sklep kosztuje od ${SHOP.from} zł, a projekt zobaczysz za darmo.`}>
-        <Cta secondary={{ href: '/cennik-stron-internetowych', label: 'Zobacz cennik' }} />
+        <Cta secondary={{ href: '/cennik-tworzenia-stron-internetowych-2026', label: 'Zobacz cennik' }} />
       </PageHero>
       <Body aside={<StickyCard title="Projekt Twojego sklepu za darmo" />}>
         <h2>Co zyskujesz dzięki sklepowi internetowemu</h2>
@@ -247,7 +248,7 @@ export function Przebudowa() {
     <>
       <PageHero eyebrow="Usługa" title="Przebudowa i odświeżenie" accent="strony internetowej"
         lead="Stara strona odstrasza klientów. Przebudujemy ją tak, żeby ich przyciągała — od 400 zł. Projekt nowej wersji zobaczysz za darmo.">
-        <Cta secondary={{ href: '/cennik-stron-internetowych', label: 'Zobacz cennik' }} />
+        <Cta secondary={{ href: '/cennik-tworzenia-stron-internetowych-2026', label: 'Zobacz cennik' }} />
       </PageHero>
       <Body aside={<StickyCard eyebrow="Zacznij od adresu strony" title="Projekt nowej wersji Twojej strony za darmo" />}>
         <h2>Kiedy warto przebudować stronę</h2>
@@ -271,7 +272,7 @@ export function Przebudowa() {
         </ul>
 
         <h2>Ile kosztuje przebudowa strony</h2>
-        <p>Przebudowa wizytówki kosztuje 400 zł, a strony firmowej do 5 podstron 1200 zł. To zawsze mniej niż nowa strona tej samej wielkości. Większą stronę wycenimy razem z projektem nowej wersji. Ceny wszystkich usług znajdziesz w <a href="/cennik-stron-internetowych">cenniku</a>.</p>
+        <p>Przebudowa wizytówki kosztuje 400 zł, a strony firmowej do 5 podstron 1200 zł. To zawsze mniej niż nowa strona tej samej wielkości. Większą stronę wycenimy razem z projektem nowej wersji. Ceny wszystkich usług znajdziesz w <a href="/cennik-tworzenia-stron-internetowych-2026">cenniku</a>.</p>
       </Body>
       <Process steps={STEPS_PRZEBUDOWA} title="Jak wygląda przebudowa" />
       <Faq items={[
@@ -328,17 +329,17 @@ export function Seo() {
   )
 }
 
-/* ---------- /cennik-stron-internetowych ---------- */
+/* ---------- /cennik-tworzenia-stron-internetowych-2026 ---------- */
 export function Cennik() {
   return (
     <>
-      <PageHero eyebrow={`Aktualizacja: ${UPDATED_LABEL}`} title="Ile kosztuje strona internetowa?"
-        lead="Strona wizytówka kosztuje 500 zł. Sprawdź ceny wszystkich usług i to, co dostajesz w cenie.">
+      <PageHero eyebrow={`Ceny sprawdzone: ${UPDATED_LABEL}`} title="Cennik tworzenia stron internetowych" accent="2026"
+        lead="Cennik tworzenia stron internetowych Mastalex na 2026 rok obejmuje wizytówkę za 500 zł i stronę firmową do 5 podstron za 1500 zł. Cena wykonania obejmuje indywidualny projekt, przygotowanie tekstów, poprawki projektu i uruchomienie strony. Domenę i hosting opłacasz osobno. Współpracujemy online z firmami z całej Polski.">
         <Cta />
       </PageHero>
       {/* Karty na pełną szerokość, reszta w Body z kartą boczną: bez pustego pasa po prawej (uwaga właściciela 30.09.2026). */}
       <section className="mx-auto max-w-[1200px] px-4 sm:px-6 mt-10" aria-labelledby="ceny-h">
-        <h2 id="ceny-h" className="text-[28px] sm:text-[34px] leading-[1.1] font-bold tracking-[-0.02em]">Ceny usług</h2>
+        <h2 id="ceny-h" className="text-[28px] sm:text-[34px] leading-[1.1] font-bold tracking-[-0.02em]">Cennik tworzenia stron internetowych 2026</h2>
         <PriceCards items={PRICES} wide />
         <p className="mt-6 max-w-[68ch] text-[16px] leading-[1.6] text-body">Dla porównania: w ponad połowie z {MARKET_WIZYTOWKA.cenniki} cenników innych firm, które sprawdziliśmy we wrześniu 2026, strona wizytówka kosztuje co najmniej {MARKET_WIZYTOWKA.prog}.</p>
         {SHOP_ON && <>
@@ -348,10 +349,14 @@ export function Cennik() {
         </>}
       </section>
       <Body aside={<StickyCard />}>
-        <h2>Co jest w cenie strony</h2>
+        <h2>Ile kosztuje profesjonalna strona internetowa?</h2>
+        <p>Profesjonalna strona internetowa dla firmy w Mastalex kosztuje 1500 zł za zakres do 5 podstron, np. z osobnym opisem każdej usługi. Cena obejmuje indywidualny projekt i teksty. Każda kolejna podstrona kosztuje {AFTER.podstrona} zł, a domenę i hosting opłacasz osobno.</p>
+        <p>Ceny innych wykonawców i zakres porównania znajdziesz w poradniku <a href="/poradniki/ile-kosztuje-strona-internetowa-2026">Ile kosztuje strona internetowa w 2026?</a>.</p>
+
+        <h2>Strona internetowa — cena i zakres wykonania</h2>
         <Included items={['Bezpłatny projekt i przejrzysta wycena w 3 dni', 'Wygląd zaprojektowany od zera, bez gotowych szablonów', 'Teksty napisane za Ciebie', 'Poprawki projektu, aż będzie taki, jak chcesz', 'Uruchomienie strony pod Twoim adresem', 'Strona i wszystkie dostępy należą do Ciebie']} />
 
-        <h2 id="domena-i-hosting">Domena i hosting przy nowej stronie</h2>
+        <h2 id="domena-i-hosting">Ile kosztują domena i hosting?</h2>
         <p>Nowa strona potrzebuje własnego adresu, czyli domeny (np. twojafirma.pl), i hostingu, czyli miejsca w internecie, w którym działa. Domenę i hosting opłacasz osobno i to jedyne coroczne koszty strony. Przy przebudowie i SEO korzystasz z tych, które już masz.</p>
         <p>Orientacyjne ceny z VAT według cenników popularnych polskich firm (wrzesień 2026):</p>
         <ul>
@@ -395,10 +400,10 @@ export function ONas() {
           <li><strong>Najpierw projekt, potem płatność.</strong> Projekt i wycenę dostajesz za darmo, a płacisz dopiero po akceptacji.</li>
           <li><strong>Odpowiadamy za efekt.</strong> Prowadzimy projekt od pierwszej wiadomości do uruchomienia strony.</li>
           <li><strong>Strona jest Twoja.</strong> Po uruchomieniu strona i wszystkie dostępy do niej należą do Ciebie.</li>
-          <li><strong>Przejrzyste ceny.</strong> Strona wizytówka kosztuje 500 zł, a ceny pozostałych usług znajdziesz w <a href="/cennik-stron-internetowych">cenniku</a>.</li>
+          <li><strong>Przejrzyste ceny.</strong> Strona wizytówka kosztuje 500 zł, a ceny pozostałych usług znajdziesz w <a href="/cennik-tworzenia-stron-internetowych-2026">cenniku</a>.</li>
         </ul>
         <h2>Nasze usługi</h2>
-        <p><a href="/tworzenie-stron-internetowych">Tworzymy strony internetowe</a>, <a href="/przebudowa-strony-internetowej">przebudowujemy istniejące</a> i <a href="/optymalizacja-seo">wykonujemy SEO</a> dla firm z całej Polski. Całą współpracę prowadzimy online.</p>
+        <p><a href="/strony-internetowe-od-500-zl">Tworzymy strony internetowe</a>, <a href="/przebudowa-strony-internetowej">przebudowujemy istniejące</a> i <a href="/optymalizacja-seo">wykonujemy SEO</a> dla firm z całej Polski. Całą współpracę prowadzimy online.</p>
       </Body>
       <CtaBand title="Opowiedz nam o swojej firmie" />
     </>
@@ -484,7 +489,7 @@ export function NotFound() {
     <PageHero eyebrow="Zły adres" title="Nie ma takiej strony." lead="Adres mógł się zmienić albo zawierać literówkę. Sprawdź nasze usługi albo wróć na stronę główną.">
       <div className="mt-8 flex flex-wrap gap-3">
         <a href="/" className="btn btn-primary">Strona główna</a>
-        <a href="/tworzenie-stron-internetowych" className="btn btn-secondary">Tworzenie stron</a>
+        <a href="/strony-internetowe-od-500-zl" className="btn btn-secondary">Tworzenie stron</a>
         <a href="/kontakt" className="btn btn-secondary">Kontakt</a>
       </div>
     </PageHero>
