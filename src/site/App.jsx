@@ -1,28 +1,31 @@
-import { ROUTES } from './data.js'
+import { REDIRECTS, ROUTES } from './data.js'
 import { Breadcrumbs, Footer, Header } from './ui.jsx'
 import Home from './pages/Home.jsx'
 import { Cennik, Kontakt, NotFound, ONas, Polityka, Przebudowa, Seo, Sklep, Tworzenie } from './pages/Pages.jsx'
-import { Poradniki, WpisIleKosztuje, WpisWyzejWGoogle } from './pages/Poradniki.jsx'
+import { Poradniki, WpisIleKosztuje, WpisWyzejWGoogle, WpisStrona500, WpisWyborFirmy } from './pages/Poradniki.jsx'
 
 const PAGES = {
   '/': Home,
-  '/tworzenie-stron-internetowych': Tworzenie,
+  '/strony-internetowe-od-500-zl': Tworzenie,
   '/tworzenie-sklepow-internetowych': Sklep,
   '/przebudowa-strony-internetowej': Przebudowa,
   '/optymalizacja-seo': Seo,
-  '/cennik-stron-internetowych': Cennik,
+  '/cennik-tworzenia-stron-internetowych-2026': Cennik,
   '/o-nas': ONas,
   '/kontakt': Kontakt,
   '/polityka-prywatnosci': Polityka,
   '/poradniki/': Poradniki,
   '/poradniki/jak-byc-wyzej-w-google': WpisWyzejWGoogle,
-  '/poradniki/ile-kosztuje-strona-internetowa': WpisIleKosztuje,
+  '/poradniki/ile-kosztuje-strona-internetowa-2026': WpisIleKosztuje,
+  '/poradniki/strona-internetowa-od-500-zl': WpisStrona500,
+  '/poradniki/najlepsze-firmy-tworzace-strony-internetowe-polska': WpisWyborFirmy,
 }
 
 // Działy (np. /poradniki/) mają adres z ukośnikiem na końcu, pozostałe podstrony bez.
 export function normalize(path) {
   const p = (path || '/').replace(/\.html$/, '').replace(/\/index$/, '/').replace(/\/+$/, '') || '/'
-  return ROUTES[`${p}/`] ? `${p}/` : p
+  const route = REDIRECTS[p] || p
+  return ROUTES[`${route}/`] ? `${route}/` : route
 }
 
 export default function App({ path }) {

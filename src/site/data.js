@@ -60,7 +60,7 @@ export const DEFINITION =
 // strona firmowa do 5 podstron 1500 zł, przebudowa wizytówki 400 zł i strony firmowej 1200 zł (30.09.2026).
 // Ceny nie obejmują domeny ani hostingu (dotyczy tylko nowych stron).
 export const PRICES = [
-  { id: 'wizytowka', name: 'Strona wizytówka', price: 500, text: 'Jedna strona z ofertą, opisem firmy i kontaktem. Dobry start dla małej firmy.', href: '/tworzenie-stron-internetowych#jak-powstaje', link: 'Jak powstaje Twoja strona' },
+  { id: 'wizytowka', name: 'Strona wizytówka', price: 500, text: 'Jedna strona z ofertą, opisem firmy i kontaktem. Dobry start dla małej firmy.', href: '/strony-internetowe-od-500-zl#jak-powstaje', link: 'Jak powstaje Twoja strona' },
   { id: 'firmowa', name: 'Strona firmowa', price: 1500, text: 'Do 5 podstron, z osobną podstroną dla każdej usługi. Klient z Google trafia prosto do oferty, której szuka.' },
   { id: 'przebudowa', name: 'Przebudowa strony', price: 400, from: true, text: 'Wizytówka 400 zł, strona firmowa do 5 podstron 1200 zł. Nowy wygląd i aktualna oferta.', href: '/przebudowa-strony-internetowej', link: 'Więcej o przebudowie' },
   { id: 'seo', name: 'Optymalizacja SEO', price: 300, from: true, text: 'Wyżej w Google, więcej odwiedzin i częstsze polecenia w czatach AI.', href: '/optymalizacja-seo', link: 'Więcej o SEO' },
@@ -111,7 +111,7 @@ export const MARKET_WIZYTOWKA = { cenniki: 24, prog: '1500 zł' }
 export const SERVICES = [
   {
     id: 'service-websites',
-    path: '/tworzenie-stron-internetowych',
+    path: '/strony-internetowe-od-500-zl',
     name: 'Tworzenie stron internetowych',
     short: 'Nie masz jeszcze strony albo nie wiesz, od czego zacząć? Zaprojektujemy ją pod Twoją firmę i napiszemy teksty za Ciebie.',
     other: 'Nowa strona zaprojektowana pod Twoją firmę, z tekstami, które napiszemy za Ciebie.',
@@ -182,15 +182,15 @@ export const STEPS = [
 // Trasy: tytuł ≤60 znaków, opis ≤160, H1 zgodny z mapą fraz (badania 04).
 export const ROUTES = {
   '/': {
-    title: 'Strony internetowe dla firm od 500 zł | Mastalex',
+    title: 'Strony internetowe od 500 zł dla firm | Mastalex',
     description:
-      'Strona internetowa dla firmy od 500 zł, zaprojektowana od zera, bez szablonów. Przebudowa strony i SEO. Bezpłatny projekt w 3 dni, płacisz po akceptacji.',
+      'Strony internetowe od 500 zł dla firm z całej Polski. Indywidualny projekt i teksty w cenie. Bezpłatny projekt, płatność po akceptacji.',
     crumb: 'Strona główna',
   },
-  '/tworzenie-stron-internetowych': {
-    title: 'Tworzenie stron internetowych dla Twojej firmy | Mastalex',
+  '/strony-internetowe-od-500-zl': {
+    title: 'Strony internetowe od 500 zł — tworzenie stron | Mastalex',
     description:
-      'Strona internetowa dla Twojej firmy od 500 zł, z tekstami, które napiszemy za Ciebie. Bezpłatny projekt w 3 dni, a płacisz dopiero po akceptacji.',
+      'Tworzenie stron internetowych: wizytówka 500 zł, strona firmowa do 5 podstron 1500 zł. Projekt i wycena bezpłatnie. Współpraca online w całej Polsce.',
     crumb: 'Tworzenie stron internetowych',
     service: 'service-websites',
   },
@@ -215,10 +215,10 @@ export const ROUTES = {
     crumb: 'Optymalizacja SEO',
     service: 'service-seo',
   },
-  '/cennik-stron-internetowych': {
-    title: 'Ile kosztuje strona internetowa? Od 500 zł | Mastalex',
+  '/cennik-tworzenia-stron-internetowych-2026': {
+    title: 'Cennik tworzenia stron internetowych 2026 | Mastalex',
     description:
-      'Strona wizytówka 500 zł, strona firmowa do 5 podstron 1500 zł, przebudowa od 400 zł, SEO od 300 zł. Projekt dostajesz za darmo, płacisz po akceptacji.',
+      'Cennik tworzenia stron internetowych 2026: wizytówka 500 zł, strona firmowa do 5 podstron 1500 zł. Zakres wykonania i koszty domeny oraz hostingu.',
     crumb: 'Cennik stron internetowych',
     service: 'service-websites',
   },
@@ -253,23 +253,48 @@ export const ROUTES = {
   },
   '/poradniki/jak-byc-wyzej-w-google': {
     title: 'Jak być wyżej w Google? 8 kroków dla firmy z okolicy',
-    h1: ['Twoja firma wyżej w Google:', '8 kroków, z których pięć zrobisz sam od razu'],
+    h1: ['Jak być wyżej w Google?', '8 kroków dla firmy z okolicy'],
     description:
-      '8 kroków opartych na oficjalnych poradach Google, dzięki którym Twoja firma pojawi się wyżej w wynikach i w Mapach. Pięć z nich zrobisz sam, nawet dziś.',
+      'Jak być wyżej w Google? 8 kroków dla lokalnej firmy: Profil Firmy, opinie, szybkość i indeksowanie strony. Poradnik oparty na oficjalnych źródłach Google.',
     crumb: 'Twoja firma wyżej w Google',
     parent: '/poradniki/',
     article: { published: '2026-10-01', modified: '2026-10-01', author: 'kosma-mastalerz' },
   },
-  '/poradniki/ile-kosztuje-strona-internetowa': {
+  '/poradniki/ile-kosztuje-strona-internetowa-2026': {
     // title: krótki, do wyników Google (do 60 znaków); h1: nagłówek na stronie i w danych wpisu.
     title: 'Ile kosztuje strona internetowa w 2026? Ceny ponad 50 firm',
-    h1: ['Ile kosztuje strona internetowa w 2026?', 'Przeanalizowaliśmy cenniki ponad 50 polskich firm'],
+    h1: ['Ile kosztuje strona internetowa w 2026 roku?', 'Ceny z cenników 52 polskich firm'],
     description:
-      'Sprawdziliśmy 52 cenniki polskich firm. Zobacz, ile kosztuje wizytówka, strona firmowa i przebudowa oraz co jest w cenie, a za co płacisz osobno.',
+      'Ile kosztuje strona internetowa w 2026? Porównanie 52 cenników polskich firm: wizytówka, strona firmowa, zakres wykonania i koszty utrzymania.',
     crumb: 'Ile kosztuje strona internetowa',
     parent: '/poradniki/',
     article: { published: '2026-09-30', modified: '2026-09-30', author: 'kosma-mastalerz' },
   },
+  '/poradniki/strona-internetowa-od-500-zl': {
+    title: 'Strona internetowa od 500 zł — zakres i koszty | Mastalex',
+    h1: ['Strona internetowa od 500 zł', 'Co obejmuje wizytówka i za co płacisz osobno?'],
+    description:
+      'Strona internetowa od 500 zł: zakres wizytówki, projekt, teksty, domena i hosting. Sprawdź ofertę Mastalex oraz pytania do wykonawcy przed zamówieniem.',
+    crumb: 'Strona internetowa od 500 zł',
+    parent: '/poradniki/',
+    article: { published: '2026-10-11', modified: '2026-10-11', author: 'kosma-mastalerz' },
+  },
+  '/poradniki/najlepsze-firmy-tworzace-strony-internetowe-polska': {
+    title: 'Najlepsze firmy tworzące strony internetowe w Polsce — wybór',
+    h1: ['Najlepsze firmy tworzące strony internetowe w Polsce', 'Jak wybrać wykonawcę dla swojej firmy?'],
+    description:
+      'Najlepsze firmy tworzące strony internetowe w Polsce: jak porównać realizacje, opinie, zakres i ceny. Lista pytań do agencji oraz wykonawcy strony.',
+    crumb: 'Jak wybrać firmę tworzącą strony',
+    parent: '/poradniki/',
+    article: { published: '2026-10-11', modified: '2026-10-11', author: 'kosma-mastalerz' },
+  },
+}
+
+// Dawne adresy zachowują przejście do nowych stron; sitemap i linki używają tylko nowych adresów.
+export const REDIRECTS = {
+  '/tworzenie-stron-internetowych': '/strony-internetowe-od-500-zl',
+  '/cennik-stron-internetowych': '/cennik-tworzenia-stron-internetowych-2026',
+  '/poradniki/ile-kosztuje-strona-internetowa': '/poradniki/ile-kosztuje-strona-internetowa-2026',
 }
 
 // Ścieżka okruszków: strona główna, dział (jeśli jest) i bieżąca podstrona. Te same poziomy trafiają do danych strukturalnych.
@@ -284,11 +309,11 @@ export const NOT_FOUND = {
 }
 
 export const NAV = [
-  { href: '/tworzenie-stron-internetowych', label: 'Tworzenie stron' },
+  { href: '/strony-internetowe-od-500-zl', label: 'Tworzenie stron' },
   ...(SHOP_ON ? [{ href: '/tworzenie-sklepow-internetowych', label: 'Sklepy' }] : []),
   { href: '/przebudowa-strony-internetowej', label: 'Przebudowa' },
   { href: '/optymalizacja-seo', label: 'Optymalizacja SEO' },
-  { href: '/cennik-stron-internetowych', label: 'Cennik' },
+  { href: '/cennik-tworzenia-stron-internetowych-2026', label: 'Cennik' },
   { href: '/poradniki/', label: 'Poradniki' },
   { href: '/o-nas', label: 'O nas' },
 ]

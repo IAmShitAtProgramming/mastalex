@@ -14,15 +14,15 @@ const WPISY = Object.entries(ROUTES).filter(([, r]) => r.parent === '/poradniki/
 export function Poradniki() {
   return (
     <>
-      <PageHero eyebrow="Poradniki" title="Poradniki dla firm," accent="które zamawiają stronę"
-        lead="Sprawdzamy ceny na rynku i tłumaczymy, jak być wyżej w Google, żeby łatwiej było Ci zdecydować, co zrobić ze stroną. Każda liczba ma źródło i datę sprawdzenia." />
+      <PageHero eyebrow="Poradniki" title="Poradniki o stronach internetowych" accent="ceny i wybór wykonawcy"
+        lead="Poradniki o stronach internetowych pomagają sprawdzić ceny w 2026 roku, zakres strony od 500 zł i ofertę wykonawcy. Wyjaśniamy też, jak być wyżej w Google. Porównanie cen zawiera źródła i datę ich sprawdzenia." />
       <section className="mx-auto max-w-[1200px] px-4 sm:px-6 mt-6" aria-labelledby="wpisy-h">
-        <h2 id="wpisy-h" className="sr-only">Wpisy</h2>
+        <h2 id="wpisy-h" className="sr-only">Poradniki o cenach stron internetowych, wyborze firmy i SEO</h2>
         <ul className="grid gap-4 md:grid-cols-2">
           {WPISY.map((w) => (
             <li key={w.path}>
               <a href={w.path} className="group block h-full rounded-[28px] bg-paper border border-line p-7 no-underline text-ink transition-transform hover:-translate-y-1">
-                <p className="text-[14px] text-body"><time dateTime={w.article.modified}>{dataPL(w.article.modified)}</time></p>
+                <p className="text-[14px] text-body"><time dateTime={w.article.published}>{dataPL(w.article.published)}</time></p>
                 <h3 className="mt-2 text-[24px] font-bold leading-tight tracking-[-0.01em]">{w.h1 ? w.h1.join(' ') : w.title}</h3>
                 <p className="mt-3 text-[16px] leading-[1.6] text-body">{w.description}</p>
                 <span className="mt-6 inline-flex items-center gap-2 font-semibold text-brand-deep">Czytaj poradnik <span aria-hidden="true" className="transition-transform group-hover:translate-x-1">→</span></span>
@@ -109,7 +109,7 @@ function Wpis({ path, title, lead, toc, children }) {
   )
 }
 
-/* ---------- /poradniki/ile-kosztuje-strona-internetowa ---------- */
+/* ---------- /poradniki/ile-kosztuje-strona-internetowa-2026 ---------- */
 // Liczby: opieka/raporty/2026-09-30/weryfikacja-cen-2026.md (ceny sprawdzone u źródła 30.09.2026),
 // domena i hosting: badania/wyniki/05-domena-hosting-ceny.md. Nasze ceny jak w PRICES (data.js), poza statystyką.
 const KOLUMNY = [['w', 'Wizytówka'], ['f', 'Strona firmowa'], ['p', 'Przebudowa'], ['s', 'SEO bez abonamentu'], ['a', 'SEO w abonamencie']]
@@ -209,7 +209,7 @@ function NaszeCeny() {
       </ul>
       <WykresNaTle />
       <p className="mt-5 text-[17px] leading-[1.6] text-body">Najpierw dostajesz bezpłatny projekt, a płacisz dopiero po jego akceptacji. Teksty piszemy za Ciebie. Przy nowej stronie domenę i hosting opłacasz osobno.</p>
-      <a href="/cennik-stron-internetowych" className="mt-5 inline-flex items-center gap-2 font-semibold text-brand-deep no-underline">Zobacz cennik stron internetowych <span aria-hidden="true">→</span></a>
+      <a href="/cennik-tworzenia-stron-internetowych-2026" className="mt-5 inline-flex items-center gap-2 font-semibold text-brand-deep no-underline">Zobacz cennik stron internetowych <span aria-hidden="true">→</span></a>
     </section>
   )
 }
@@ -223,7 +223,7 @@ const PYTANIA = [
 ]
 
 export function WpisIleKosztuje() {
-  const path = '/poradniki/ile-kosztuje-strona-internetowa'
+  const path = '/poradniki/ile-kosztuje-strona-internetowa-2026'
   const toc = [
     ['w-skrocie', 'W skrócie'], ['tabela', 'Ceny w tabeli'], ['wizytowka', 'Strona wizytówka'], ['firmowa', 'Strona firmowa'],
     ['przebudowa', 'Przebudowa strony'], ['seo', 'SEO'], ['w-cenie', 'Co jest w cenie'], ['domena-i-hosting', 'Domena i hosting'],
@@ -233,8 +233,8 @@ export function WpisIleKosztuje() {
   return (
     <>
       <Wpis path={path} title={ROUTES[path].title} toc={toc}
-        lead="Strona internetowa kosztuje w 2026 roku od kilkuset do kilku tysięcy złotych. Sprawdziliśmy cenniki 52 polskich firm, żeby pokazać, ile najczęściej kosztuje strona, co jest w cenie i za co płacisz osobno.">
-        <h2 id="w-skrocie" className="!mt-0">W skrócie</h2>
+        lead="Ile kosztuje strona internetowa w 2026 roku? W sprawdzonych cennikach polskich firm wizytówki najczęściej kosztują 1200–2000 zł, a strony firmowe 2000–4000 zł. To ceny wejścia z ofert sprawdzonych 30 września 2026 roku. Zakres i sposób podania VAT różnią się między wykonawcami; szczegóły oraz źródła pokazujemy poniżej.">
+        <h2 id="w-skrocie" className="!mt-0">Ile kosztuje strona internetowa w 2026? Najważniejsze ceny</h2>
         <p>Strona wizytówka kosztuje najczęściej od 1200 do 2000 zł, a strona firmowa od 2000 do 4000 zł. W tych przedziałach mieści się 16 z 24 cenników wizytówek i 17 z 25 cenników stron firmowych, które sprawdziliśmy 30 września 2026 roku. To ceny wejścia, czyli najniższe kwoty z cenników. Ile zapłacisz, zależy od zakresu Twojej strony.</p>
         <nav aria-label="Na skróty" className="not-prose mt-5">
           <p className="text-[15px] font-semibold text-ink">Przejdź od razu do:</p>
@@ -246,7 +246,7 @@ export function WpisIleKosztuje() {
           </ul>
         </nav>
 
-        <h2 id="tabela">Ceny stron internetowych 2026 w tabeli</h2>
+        <h2 id="tabela">Cennik stron internetowych 2026 w Polsce</h2>
         <p>Środkowa cena to mediana: połowa cenników jest od niej tańsza, a połowa droższa. Typową cenę pokazuje lepiej niż średnia, bo nie podnoszą jej pojedyncze bardzo drogie oferty.</p>
         <Tabela caption="Ceny wejścia w cennikach polskich firm, sprawdzone 30 września 2026. Kwoty jak w cennikach: część netto, część brutto."
           head={['Usługa', 'Cenniki', 'Najniższa', 'Środkowa', 'Najwyższa']} liczby={[1, 2, 3, 4]}
@@ -259,15 +259,15 @@ export function WpisIleKosztuje() {
           ]} />
         <p>Przy przebudowie środkowej ceny nie liczymy, bo cenników jest za mało. Kwoty za SEO w abonamencie są miesięczne, pozostałe płacisz raz.</p>
 
-        <h2 id="wizytowka">Ile kosztuje strona wizytówka</h2>
+        <h2 id="wizytowka">Ile kosztuje strona internetowa wizytówka?</h2>
         <p>Strona wizytówka to najprostsza strona firmy. Mówi, czym się zajmujesz, i pozwala szybko się z Tobą skontaktować. Tylko 3 z 24 sprawdzonych cenników schodzą poniżej 1200 zł, a 5 przekracza 2000 zł.</p>
         <p>Sama nazwa niewiele mówi o tym, co dostajesz. W części cenników wizytówka to jedna strona, w innych nawet 5 podstron. Porównuj więc zakres, a nie nazwę pakietu.</p>
         <p>Cenę zmienia też wygląd. W jednym z cenników strona do 5 podstron kosztuje 2400 zł na gotowym szablonie i 3900 zł z projektem przygotowanym od zera. Szablon to gotowy wygląd, z którego mogą korzystać też inne strony.</p>
 
-        <h2 id="firmowa">Ile kosztuje strona firmowa</h2>
+        <h2 id="firmowa">Ile kosztuje profesjonalna strona internetowa dla firmy?</h2>
         <p>Strona firmowa ma kilka podstron, np. osobną dla każdej usługi. Poniżej 2000 zł kosztuje w 3 z 25 sprawdzonych cenników, a powyżej 4000 zł w 5.</p>
         <p>Koszt strony internetowej dla firmy rośnie razem z liczbą podstron. W jednym z cenników strona do 5 podstron kosztuje 1500 zł, a do 10 podstron z blogiem 3500 zł. Drugą dużą pozycją są teksty, jeśli nie masz ich gotowych (więcej niżej).</p>
-        <p><strong>Wniosek:</strong> prosząc o wycenę, podaj liczbę podstron i napisz, czy masz własne teksty. Wtedy oferty różnych firm da się porównać. Jak powstaje strona u nas, od bezpłatnego projektu do uruchomienia, pokazujemy na stronie o <a href="/tworzenie-stron-internetowych">tworzeniu stron internetowych</a>.</p>
+        <p><strong>Wniosek:</strong> prosząc o wycenę, podaj liczbę podstron i napisz, czy masz własne teksty. Wtedy oferty różnych firm da się porównać. Jak powstaje strona u nas, od bezpłatnego projektu do uruchomienia, pokazujemy na stronie o <a href="/strony-internetowe-od-500-zl">tworzeniu stron internetowych</a>.</p>
 
         <h2 id="przebudowa">Ile kosztuje przebudowa strony</h2>
         <p>Przebudowa to nowy wygląd i aktualna treść na stronie, którą już masz. Cenę przebudowy znaleźliśmy tylko w 4 cennikach: 500, 2000, 3500 i 3500 zł. Najniższa kwota dotyczy samego odświeżenia wyglądu.</p>
@@ -279,7 +279,7 @@ export function WpisIleKosztuje() {
         <p><strong>W abonamencie.</strong> W 8 z 12 cenników abonament kosztuje do 1000 zł miesięcznie. Przy środkowej cenie 700 zł miesięcznie rok abonamentu kosztuje 8400 zł.</p>
         <p><strong>Wniosek:</strong> abonament ma sens, gdy firma co miesiąc wykonuje przy stronie konkretne prace. Zanim go wybierzesz, zapytaj, co konkretnie dostajesz każdego miesiąca. Zobacz też, co obejmuje nasza <a href="/optymalizacja-seo">optymalizacja SEO</a>.</p>
 
-        <h2 id="w-cenie">Co jest w cenie, a za co płacisz osobno</h2>
+        <h2 id="w-cenie">Co obejmuje cena wykonania strony?</h2>
         <p>Znaleźliśmy 9 cenników, które wprost piszą, czy domena, hosting albo teksty są w cenie. Tak to wygląda:</p>
         <Tabela caption="Liczba cenników, które wprost opisują dany koszt (9 cenników, 30 września 2026)."
           head={['Koszt', 'W cenie', 'Płatne osobno']} liczby={[1, 2]}
@@ -292,7 +292,7 @@ export function WpisIleKosztuje() {
         <p>Płatne bywają też drobne dodatki. W jednym z cenników formularz kontaktowy kosztuje dodatkowo 300 zł, a możliwość samodzielnej zmiany treści 500 zł.</p>
         <p><strong>Wniosek:</strong> poproś o wycenę, która wymienia wszystko, co dostajesz. Jeśli czegoś w niej brakuje, zapytaj, czy to dopłata.</p>
 
-        <h2 id="domena-i-hosting">Domena i hosting: ile kosztują co roku</h2>
+        <h2 id="domena-i-hosting">Ile kosztuje utrzymanie strony internetowej?</h2>
         <p>Przy nowej stronie za domenę i hosting płacisz co roku. Ceny z VAT według cenników{' '}
           <a href="https://www.ovhcloud.com/pl/domains/tld/pl/" rel="nofollow noopener noreferrer" target="_blank">OVHcloud</a>,{' '}
           <a href="https://cyberfolks.pl/domeny/cennik/" rel="nofollow noopener noreferrer" target="_blank">cyber_Folks</a>,{' '}
@@ -327,8 +327,9 @@ export function WpisIleKosztuje() {
         </ol>
 
         <NaszeCeny />
+        <p>Zakres naszej najtańszej oferty opisujemy w poradniku <a href="/poradniki/strona-internetowa-od-500-zl">Strona internetowa od 500 zł</a>. Jeśli porównujesz wykonawców, zobacz też <a href="/poradniki/najlepsze-firmy-tworzace-strony-internetowe-polska">jak wybrać firmę tworzącą strony internetowe w Polsce</a>.</p>
 
-        <h2 id="jak-zebralismy-dane">Jak zebraliśmy dane</h2>
+        <h2 id="jak-zebralismy-dane">Cenniki stron internetowych w Polsce — źródła i metoda porównania</h2>
         <p>Ceny sprawdziliśmy 30 września 2026 roku na stronach 52 polskich firm, które publikują cennik. Firmy znaleźliśmy, szukając w internecie cenników stron internetowych i SEO. Każdą cenę odczytaliśmy bezpośrednio z cennika firmy.</p>
         <ul>
           <li>Cena wejścia to kwota „od” albo najniższa kwota z przedziału. Liczymy ceny regularne, nie promocyjne.</li>
@@ -338,7 +339,7 @@ export function WpisIleKosztuje() {
         </ul>
         <ListaCennikow />
 
-        <h2 id="pytania">Częste pytania</h2>
+        <h2 id="pytania">Cena strony internetowej — częste pytania</h2>
         <div className="faq not-prose mt-4">
           {PYTANIA.map(([q, a]) => (
             <details key={q}><summary>{q}</summary><div className="a">{a}</div></details>
@@ -346,6 +347,121 @@ export function WpisIleKosztuje() {
         </div>
       </Wpis>
       <CtaBand title="Zobacz projekt swojej strony za darmo" />
+    </>
+  )
+}
+
+/* ---------- /poradniki/strona-internetowa-od-500-zl ---------- */
+export function WpisStrona500() {
+  const path = '/poradniki/strona-internetowa-od-500-zl'
+  const toc = [
+    ['zakres', 'Zakres strony za 500 zł'], ['wizytowka-firmowa', 'Wizytówka czy strona firmowa'],
+    ['koszty', 'Wykonanie i utrzymanie'], ['pytania-do-firmy', 'Pytania do wykonawcy'],
+    ['zamowienie', 'Jak zamówić stronę'],
+  ]
+  return (
+    <>
+      <Wpis path={path} title={ROUTES[path].title} toc={toc}
+        lead="Strona internetowa od 500 zł w ofercie Mastalex to wizytówka za 500 zł: jedna strona z ofertą, opisem firmy i kontaktem. Cena obejmuje indywidualny projekt oraz teksty. Domenę i hosting opłacasz osobno, a za wykonanie strony płacisz po akceptacji projektu.">
+        <h2 id="zakres" className="!mt-0">Strona internetowa od 500 zł — zakres wizytówki w Mastalex</h2>
+        <p>Wizytówka zbiera informacje o firmie na jednej stronie. To zakres dla firmy, która potrzebuje pokazać ofertę i umożliwić kontakt bez osobnej podstrony dla każdej usługi. W Mastalex cena 500 zł obejmuje:</p>
+        <ul>
+          <li>Wygląd przygotowany od zera dla Twojej firmy.</li>
+          <li>Teksty o firmie, jej ofercie i sposobie kontaktu.</li>
+          <li>Poprawki projektu przed jego akceptacją.</li>
+          <li>Uruchomienie strony pod Twoim adresem.</li>
+          <li>Przekazanie strony i dostępów do niej.</li>
+        </ul>
+        <p>Opis dotyczy oferty Mastalex. U innego wykonawcy ta sama cena może oznaczać inny zakres, dlatego przed zamówieniem poproś o listę elementów w cenie.</p>
+
+        <h2 id="wizytowka-firmowa">Strona wizytówka czy strona firmowa — co wybrać?</h2>
+        <p>Jeśli oferta mieści się w jednym krótkim opisie, wizytówka może wystarczyć. Gdy kilka usług wymaga osobnych opisów, porównaj ją ze stroną firmową. Nasze pakiety różnią się zakresem:</p>
+        <Tabela caption="Zakres wykonania strony w ofercie Mastalex. Domena i hosting są płatne osobno."
+          head={['Pakiet', 'Cena wykonania', 'Zakres']} liczby={[1]}
+          rows={[
+            ['Strona wizytówka', '500 zł', 'Jedna strona z ofertą, opisem firmy i kontaktem'],
+            ['Strona firmowa', '1500 zł', 'Do 5 podstron, np. osobna podstrona dla każdej usługi'],
+          ]} />
+        <p>Każda kolejna podstrona kosztuje 150 zł. Pełny zakres, wsparcie i zasady płatności znajdziesz w <a href="/cennik-tworzenia-stron-internetowych-2026">cenniku tworzenia stron internetowych 2026</a>.</p>
+
+        <h2 id="koszty">Strona internetowa — cena wykonania a koszty utrzymania</h2>
+        <p>Cena wykonania strony jest jednorazowa. Domena, czyli adres strony, i hosting, czyli miejsce, w którym działa, są osobnymi kosztami opłacanymi co roku. Przed wyborem dostawcy sprawdź cenę pierwszego roku i odnowienia.</p>
+        <p>Orientacyjne koszty domeny i hostingu, z datą odczytu i linkami do cenników dostawców, pokazujemy w poradniku <a href="/poradniki/ile-kosztuje-strona-internetowa-2026#domena-i-hosting">Ile kosztuje utrzymanie strony internetowej?</a>. SEO jest w Mastalex osobną usługą: jego zakres i cenę znajdziesz na stronie <a href="/optymalizacja-seo">optymalizacja SEO</a>.</p>
+
+        <h2 id="pytania-do-firmy">Wykonanie strony wizytówki — o co zapytać wykonawcę?</h2>
+        <p>Zanim porównasz dwie oferty strony od 500 zł, poproś obie firmy o odpowiedzi na te same pytania:</p>
+        <ol>
+          <li>Ile stron lub podstron obejmuje cena?</li>
+          <li>Kto przygotowuje teksty i czy są w cenie?</li>
+          <li>Czy wygląd jest projektowany od zera, czy oparty na szablonie?</li>
+          <li>Jakie poprawki projektu obejmuje oferta?</li>
+          <li>Kiedy płacisz i co się dzieje, jeśli nie akceptujesz projektu?</li>
+          <li>Jakie koszty ponosisz po uruchomieniu i kto otrzymuje dostępy?</li>
+          <li>Czy podana kwota jest netto czy brutto i jaka jest pełna kwota do zapłaty?</li>
+        </ol>
+        <p>Odpowiedzi pozwolą porównać zakres zamiast samej liczby w reklamie. Więcej kryteriów znajdziesz w poradniku o <a href="/poradniki/najlepsze-firmy-tworzace-strony-internetowe-polska">wyborze firmy tworzącej strony internetowe</a>.</p>
+
+        <h2 id="zamowienie">Jak zamówić stronę internetową od 500 zł?</h2>
+        <p>W Mastalex zaczynasz od opisu firmy: czym się zajmuje, jakie usługi oferuje i jak klient ma się z Tobą skontaktować. W 3 dni otrzymujesz bezpłatny projekt i wycenę. Jeśli projekt wymaga więcej pracy, podajemy termin i powód. Zgłaszasz poprawki, a płacisz po akceptacji.</p>
+        <p>Przebieg współpracy i pakiety opisujemy na stronie <a href="/strony-internetowe-od-500-zl">Strony internetowe od 500 zł dla firm</a>. Aby otrzymać projekt, <a href="/kontakt">opisz nam swoją firmę</a>.</p>
+      </Wpis>
+      <CtaBand title="Strona internetowa od 500 zł — zobacz bezpłatny projekt" />
+    </>
+  )
+}
+
+/* ---------- /poradniki/najlepsze-firmy-tworzace-strony-internetowe-polska ---------- */
+export function WpisWyborFirmy() {
+  const path = '/poradniki/najlepsze-firmy-tworzace-strony-internetowe-polska'
+  const toc = [
+    ['kryteria', 'Kryteria wyboru firmy'], ['portfolio', 'Realizacje i opinie'],
+    ['clutch', 'Ranking Clutch'], ['porownanie-cen', 'Porównanie cen i zakresu'],
+    ['wycena', 'Pytania do wyceny'], ['mastalex', 'Oferta Mastalex'],
+  ]
+  return (
+    <>
+      <Wpis path={path} title={ROUTES[path].title} toc={toc}
+        lead="Najlepsze firmy tworzące strony internetowe w Polsce — jak je wybrać? Zacznij od zakresu swojego projektu, obejrzyj działające realizacje i porównaj opinie klientów. Następnie poproś wykonawców o wycenę tej samej strony, z tekstami, poprawkami i kosztami utrzymania opisanymi osobno.">
+        <h2 id="kryteria" className="!mt-0">Najlepsze firmy tworzące strony internetowe w Polsce — kryteria wyboru</h2>
+        <p>Dobry wybór zależy od tego, jakiej strony potrzebujesz. Przy wizytówce ważne są czytelna oferta i łatwy kontakt. Przy stronie z wieloma usługami sprawdź też sposób organizacji podstron i późniejszej rozbudowy. Poniższe kryteria traktujemy jako zalecenia Mastalex przy porównywaniu wykonawców.</p>
+        <Tabela caption="Kryteria porównania firmy lub agencji tworzącej strony internetowe."
+          head={['Kryterium', 'Co sprawdzić', 'Pytanie do wykonawcy']}
+          rows={[
+            ['Zakres', 'Liczba podstron, teksty, formularz i dodatki', 'Co dokładnie otrzymuję za podaną kwotę?'],
+            ['Realizacje', 'Działające strony podobne do Twojego projektu', 'Które realizacje pokazują zakres, którego potrzebuję?'],
+            ['Współpraca', 'Etapy, termin, poprawki i moment płatności', 'Kiedy zobaczę projekt i kiedy płacę?'],
+            ['Własność', 'Domena, pliki i dostęp do hostingu', 'Jakie dostępy otrzymam po uruchomieniu?'],
+            ['Utrzymanie', 'Odnowienia, wsparcie i rozbudowa', 'Ile zapłacę w kolejnych latach?'],
+          ]} />
+
+        <h2 id="portfolio">Firmy tworzące strony internetowe w Polsce — realizacje i opinie</h2>
+        <p>Otwórz kilka stron z portfolio na telefonie i komputerze. Sprawdź, czy możesz szybko znaleźć ofertę, cenę lub kontakt. Zapytaj, co wykonawca przygotował w danej realizacji: wygląd, teksty, kod czy utrzymanie.</p>
+        <p>Przy opiniach zwróć uwagę na datę, opis projektu i konkretne doświadczenia ze współpracy. Pytaj o kontakt podczas prac, poprawki, termin oraz pomoc po uruchomieniu. Im dokładniejszy opis, tym łatwiej odnieść go do swojego zamówienia.</p>
+
+        <h2 id="clutch">Ranking Clutch — jak sprawdzić agencję tworzącą strony?</h2>
+        <p>Katalogi takie jak <a href="https://clutch.co/web-developers/pl" target="_blank" rel="nofollow noopener noreferrer">Clutch</a> możesz wykorzystać do znalezienia wykonawców w Polsce. W profilu firmy sprawdź opis usług, realizacje i opinie dotyczące projektów podobnych do Twojego.</p>
+        <p>Przy wyszukiwaniu „najlepsze agencje tworzące strony internetowe w Polsce 2026” sprawdź datę zestawienia, kryteria wyboru oraz oznaczenia reklamowe. Potem potwierdź aktualną cenę i zakres bezpośrednio u wykonawcy.</p>
+
+        <h2 id="porownanie-cen">Tworzenie stron internetowych — jak porównać cenniki firm?</h2>
+        <p>W naszym porównaniu 52 polskich firm, sprawdzonym 30 września 2026, wizytówki najczęściej kosztowały 1200–2000 zł, a strony firmowe 2000–4000 zł. To ceny wejścia podawane przez wykonawców; zakres i sposób podania VAT różnią się między ofertami.</p>
+        <p>Tabelę, liczebność próby i źródła znajdziesz w poradniku <a href="/poradniki/ile-kosztuje-strona-internetowa-2026">Ile kosztuje strona internetowa w 2026?</a>. Przy porównywaniu ustal liczbę podstron, autorstwo tekstów, sposób przygotowania wyglądu, poprawki i koszty płatne osobno.</p>
+
+        <h2 id="wycena">Wykonanie strony internetowej — co podać do wyceny?</h2>
+        <p>Wyślij wszystkim wybranym firmom ten sam opis:</p>
+        <ul>
+          <li>Czym zajmuje się firma i kto jest jej klientem.</li>
+          <li>Jakie usługi chcesz pokazać i ile podstron potrzebujesz.</li>
+          <li>Czy masz teksty, zdjęcia, domenę i hosting.</li>
+          <li>Jakie funkcje są potrzebne, np. formularz kontaktowy.</li>
+          <li>Jaki jest oczekiwany termin i budżet.</li>
+        </ul>
+        <p>Poproś o pełną kwotę do zapłaty, zakres poprawek, zasady płatności i koszt zmian po uruchomieniu. Zachowaj odpowiedzi, żeby porównywać oferty na tych samych warunkach.</p>
+
+        <h2 id="mastalex">Strony internetowe od 500 zł — oferta Mastalex</h2>
+        <p>Mastalex współpracuje online z firmami z całej Polski. Wizytówka kosztuje 500 zł, a strona firmowa do 5 podstron 1500 zł. W cenie przygotowujemy indywidualny wygląd i teksty. Najpierw otrzymujesz bezpłatny projekt oraz wycenę, a płacisz po akceptacji.</p>
+        <p>Zakres i osobne koszty domeny oraz hostingu opisujemy w <a href="/cennik-tworzenia-stron-internetowych-2026">cenniku tworzenia stron internetowych 2026</a>. Dla najmniejszego pakietu przygotowaliśmy też poradnik <a href="/poradniki/strona-internetowa-od-500-zl">Strona internetowa od 500 zł — zakres i koszty</a>.</p>
+      </Wpis>
+      <CtaBand title="Porównaj zakres — zamów bezpłatny projekt i wycenę" />
     </>
   )
 }
@@ -439,7 +555,7 @@ const PYTANIA_GOOGLE = [
   ['Czy mogę sam poprawić pozycję firmy w Google?', 'Tak, w dużej części. Kroki 1–5 z tego poradnika zrobisz sam, bez wiedzy technicznej: Profil Firmy, zdjęcia, opinie i wpisy w katalogach. Kroki 6–8 to praca w kodzie strony.'],
   ['Po jakim czasie zobaczę efekty?', 'Według Google jedne zmiany widać po kilku godzinach, a inne dopiero po kilku miesiącach. Daj sobie kilka tygodni, zanim ocenisz wynik.'],
   ['Czy mogę dać klientowi rabat za opinię?', 'Nie. Zasady Map Google zabraniają płacenia za opinie i dawania za nie rabatów, prezentów ani darmowych usług. Takie opinie Google usuwa.'],
-  ['Ile kosztuje poprawa kodu strony pod Google?', <>U nas optymalizacja SEO kosztuje od 300 zł. W 16 cennikach polskich firm, które sprawdziliśmy 30 września 2026, środkowa cena SEO bez abonamentu to 1500 zł. Więcej liczb znajdziesz w poradniku <a href="/poradniki/ile-kosztuje-strona-internetowa">Ile kosztuje strona internetowa w 2026?</a></>],
+  ['Ile kosztuje poprawa kodu strony pod Google?', <>U nas optymalizacja SEO kosztuje od 300 zł. W 16 cennikach polskich firm, które sprawdziliśmy 30 września 2026, środkowa cena SEO bez abonamentu to 1500 zł. Więcej liczb znajdziesz w poradniku <a href="/poradniki/ile-kosztuje-strona-internetowa-2026">Ile kosztuje strona internetowa w 2026?</a></>],
   ['Moja strona ma kilka lat i w teście wypada na czerwono. Poprawiać czy zmienić?', <><strong>Wniosek:</strong> gdy strona jest stara, a test z kroku 6 pokazuje czerwone wyniki, często prościej jest ją przebudować, niż poprawiać po kawałku. Zobacz, jak wygląda <a href="/przebudowa-strony-internetowej">przebudowa strony internetowej</a>.</>],
 ]
 
@@ -454,8 +570,8 @@ export function WpisWyzejWGoogle() {
   return (
     <>
       <Wpis path={path} title={ROUTES[path].title} toc={toc}
-        lead="Google pokazuje wyżej firmy, które pasują do tego, czego ktoś szuka, i są dobrze znane. Oto 8 kroków opartych na oficjalnych poradach Google. Pięć zrobisz sam od razu, a trzy pozostałe dotyczą kodu strony: wyjaśniamy, co dają i co trzeba w nich zrobić.">
-        <h2 id="w-skrocie" className="!mt-0">W skrócie</h2>
+        lead="Jak być wyżej w Google? Zadbaj o zgodność strony z ofertą firmy, Profil Firmy w Google oraz szybkość i indeksowanie podstron. Poniżej opisujemy 8 kroków opartych na oficjalnych poradach Google. Pięć zrobisz sam, a trzy pozostałe dotyczą kodu strony.">
+        <h2 id="w-skrocie" className="!mt-0">Jak być wyżej w Google — najważniejsze działania dla firmy</h2>
         <p>Na to, czy klient z okolicy znajdzie Twoją firmę, wpływają trafność, odległość i renoma. Na odległość nie masz wpływu, na pozostałe dwie masz. Kroki 1–5 zrobisz sam, nawet dziś. Kroki 6–8 to kod strony: najważniejsza część, bo od niego zależy, czy strona jest szybka i czy Google dobrze ją rozumie.</p>
         <nav aria-label="Na skróty" className="not-prose mt-5">
           <p className="text-[15px] font-semibold text-ink">Przejdź od razu do:</p>
@@ -483,7 +599,7 @@ export function WpisWyzejWGoogle() {
           <li>Policz wyniki. To są podstrony, które Google zna.</li>
           <li>Porównaj z tym, ile podstron naprawdę masz: usługi, cennik, kontakt.</li>
         </ol>
-        <p>Pusto albo brakuje ważnych podstron? To znak, że Google ma kłopot z czytaniem Twojej strony. Więcej o tym w <a href="#krok-7">kroku 7</a>. Nie masz jeszcze strony? Zobacz, jak <a href="/tworzenie-stron-internetowych">tworzymy strony internetowe</a>: najpierw dostajesz bezpłatny projekt.</p>
+        <p>Pusto albo brakuje ważnych podstron? To znak, że Google ma kłopot z czytaniem Twojej strony. Więcej o tym w <a href="#krok-7">kroku 7</a>. Nie masz jeszcze strony? Zobacz, jak <a href="/strony-internetowe-od-500-zl">tworzymy strony internetowe</a>: najpierw dostajesz bezpłatny projekt.</p>
         <Zrodlo><a href="https://developers.google.com/search/docs/fundamentals/seo-starter-guide" {...ZEW}>Google, „SEO Starter Guide”</a></Zrodlo>
 
         <Krok id="krok-2" nr={2}>Załóż i uzupełnij Profil Firmy w Google</Krok>

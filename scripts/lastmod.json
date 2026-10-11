@@ -1,46 +1,54 @@
 {
   "/": {
-    "hash": "cb8aceeb1cff301526c85bf91a4499726a38b6a09746b3c302e916d140215763",
-    "date": "2026-09-30"
+    "hash": "c8a6b25d59107238fc0a3294386d447fd4c9b35a1397c86e99a34e6e0dad0da9",
+    "date": "2026-10-11"
   },
-  "/tworzenie-stron-internetowych": {
-    "hash": "3989b9afd9e7335c2cae2a62da60f07228bed6859477bfde4a63b6176c801185",
-    "date": "2026-09-30"
+  "/strony-internetowe-od-500-zl": {
+    "hash": "86d4cc02dedf2d21ef179d57a8bd29854c859eb4a4c22581c7f43c6609b400ec",
+    "date": "2026-10-11"
   },
   "/przebudowa-strony-internetowej": {
-    "hash": "0237da5943d1225a934427d8be787937a8de8dd85272baec4a724f509de170da",
-    "date": "2026-09-30"
+    "hash": "cce004729d30563608baca4523fe9a6dc8348384597ee563b3fc30c7f61c56da",
+    "date": "2026-10-11"
   },
   "/optymalizacja-seo": {
-    "hash": "1742eabcf1877b01f1cae61b7b8503b96c76b217eda8febe494838d1ff5ac410",
-    "date": "2026-09-30"
+    "hash": "f4bbbbea24dd0eb54c9ddfa4f044fb0488752f3fc9a52f206a56d460c159ef6f",
+    "date": "2026-10-11"
   },
-  "/cennik-stron-internetowych": {
-    "hash": "45a8cced03fce962a4f381ede43830685d9689698d68c2cd17c4bf7abc01e371",
-    "date": "2026-09-30"
+  "/cennik-tworzenia-stron-internetowych-2026": {
+    "hash": "c8d5d81a7253be0edf53197e8f581ae7c5e95346a684635cc9ff5ee07c8b125d",
+    "date": "2026-10-11"
   },
   "/o-nas": {
-    "hash": "7a1b0bc6d6cbc2a3192091e206bba2b1a0c004d616555d8f061e8238433d50ec",
-    "date": "2026-09-30"
+    "hash": "b025cf7901988feeb9ada3451754f5b8c0cb78f331a86c8c299b18a9ed124825",
+    "date": "2026-10-11"
   },
   "/kontakt": {
-    "hash": "64793d7225fdaa63ce6ddc34f26348afed5f51b37eedb38a8aefb09d65794cb7",
-    "date": "2026-09-30"
+    "hash": "5b7bfd2059b3a00e575074333a3dd7d8ba0709772c294d067357294a77c2affc",
+    "date": "2026-10-11"
   },
   "/polityka-prywatnosci": {
-    "hash": "4da8af94c3b174dbac8e3c90e59609c23a3e26f3a9c471e6172f57325cefd345",
-    "date": "2026-09-30"
+    "hash": "7121dd5a624270090321fe9e50c2ad6fd77c1ef28f9138484b80c4a0104c2c97",
+    "date": "2026-10-11"
   },
   "/poradniki/": {
-    "hash": "09e588c6de0611f25fce86e960e284a5482609e7259ddbec87b4c8e079e4132c",
-    "date": "2026-10-01"
+    "hash": "41119183cbaaf4dba29fb45a7478398d78812c5a063d15a107bde3ce0043b37d",
+    "date": "2026-10-11"
   },
   "/poradniki/jak-byc-wyzej-w-google": {
-    "hash": "d67cf8108bdafb7e0b93f11d1dfef91820dec10956d1e1ec3a9a41c7b922039b",
-    "date": "2026-10-01"
+    "hash": "75f907e4b811ad8a05e3121c26b7822639b0b7cf65b8b30bebdb3fa27744868d",
+    "date": "2026-10-11"
   },
-  "/poradniki/ile-kosztuje-strona-internetowa": {
-    "hash": "69441f7e179a009999561cfe94143c2faee0de9ffac8de0f269854bbafdbfe45",
-    "date": "2026-09-30"
+  "/poradniki/ile-kosztuje-strona-internetowa-2026": {
+    "hash": "40048892fcae9c7090418381e496a2b74e79f39de0e876b33a6b955d08618396",
+    "date": "2026-10-11"
+  },
+  "/poradniki/strona-internetowa-od-500-zl": {
+    "hash": "3dc40e8e732a789b1d679ad90a12b2eb7347b57000b2b83b83543d635be03535",
+    "date": "2026-10-11"
+  },
+  "/poradniki/najlepsze-firmy-tworzace-strony-internetowe-polska": {
+    "hash": "15f009748d6fa7dbb2716166bcd7590c6040714c77138172ebc467a11be28c2d",
+    "date": "2026-10-11"
   }
 }

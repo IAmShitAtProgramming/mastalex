@@ -8,7 +8,7 @@ import { pathToFileURL } from 'node:url'
 
 const SITE = 'https://mastalex.pl'
 const dist = path.resolve('dist')
-const { render, routes } = await import(pathToFileURL(path.resolve('dist-ssr/entry-server.js')).href)
+const { render, routes, redirects } = await import(pathToFileURL(path.resolve('dist-ssr/entry-server.js')).href)
 const template = fs.readFileSync(path.join(dist, 'index.html'), 'utf8')
 for (const mark of ['<!--app-head-->', '<div id="root"></div>']) {
   if (!template.includes(mark)) throw new Error(`prerender: brak ${mark} w dist/index.html`)
@@ -59,6 +59,23 @@ for (const route of routes) {
 }
 fs.writeFileSync(LASTMOD, `${JSON.stringify(lastmod, null, 2)}\n`)
 fs.writeFileSync(path.join(dist, '404.html'), page('/404'))
+
+// GitHub Pages nie ma konfiguracji przekierowań HTTP. Stare pliki kierują do nowych adresów
+// przez location.replace (z zachowaniem parametrów i kotwicy) oraz meta refresh jako fallback.
+for (const [oldPath, newPath] of Object.entries(redirects)) {
+  if (!routes.includes(newPath) || routes.includes(oldPath)) throw new Error(`prerender: błędne przekierowanie ${oldPath}`)
+  const html = `<!doctype html>
+<html lang="pl"><head><meta charset="UTF-8">
+<title>Nowy adres strony | Mastalex</title>
+<link rel="canonical" href="${SITE}${newPath}">
+<meta http-equiv="refresh" content="0;url=${newPath}">
+<script>location.replace(${JSON.stringify(newPath)} + location.search + location.hash)</script>
+</head><body><p>Ta strona ma nowy adres. <a href="${newPath}">Przejdź do strony</a>.</p></body></html>`
+  const file = path.join(dist, `${oldPath.slice(1)}.html`)
+  fs.mkdirSync(path.dirname(file), { recursive: true })
+  fs.writeFileSync(file, html)
+  console.log(`prerender: przekierowanie ${oldPath} -> ${newPath}`)
+}
 
 const urls = routes.map((r) => `  <url><loc>${SITE}${r}</loc><lastmod>${lastmod[r].date}</lastmod></url>`)
 fs.writeFileSync(path.join(dist, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.join('\n')}\n</urlset>\n`)
