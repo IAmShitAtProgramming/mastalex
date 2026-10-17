@@ -1,4 +1,4 @@
-import { ADMIN, AFTER, EMAIL, FOUNDERS, MARKET_WIZYTOWKA, PRICES, SHOP, SHOP_ON, UPDATED_LABEL } from '../data.js'
+import { ADMIN, AFTER, AUDYT_ON, AUDYT_PRICE, AUDYT_URL, EMAIL, FOUNDERS, MARKET_WIZYTOWKA, PRICES, SHOP, SHOP_ON, UPDATED_LABEL } from '../data.js'
 import { ContactForm, Cta, CtaBand, DevSlot, Faq, PageHero, Process, ServiceCards } from '../ui.jsx'
 import { Founders } from './shared.jsx'
 
@@ -317,6 +317,12 @@ export function Seo() {
 
         <h2>Jak sprawdzisz efekty</h2>
         <p>Podłączamy do strony bezpłatne narzędzie Google Search Console. Zobaczysz w nim, na jakie hasła pojawia się Twoja strona, na którym miejscu i ile osób w nią klika. Dostęp do niego należy do Ciebie.</p>
+
+        {AUDYT_ON && <>
+          <h2 id="audyt-seo-online">Audyt SEO online za {AUDYT_PRICE} zł</h2>
+          <p>Chcesz najpierw sam sprawdzić stronę? Zamów automatyczny audyt SEO online. Podajesz adres strony i płacisz {AUDYT_PRICE} zł. Audyt trwa zwykle od kilku do kilkudziesięciu minut, a raport zostaje w historii Twojego konta.</p>
+          <p><a href={AUDYT_URL} rel="noopener">Zamów audyt SEO online</a></p>
+        </>}
       </Body>
       <Faq items={[
         { q: 'Czy wykonacie SEO strony zrobionej przez inną firmę?', a: 'Tak. SEO wykonujemy dla każdej strony, bez względu na to, kto ją zrobił.' },

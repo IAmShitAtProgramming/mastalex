@@ -6,6 +6,12 @@ export const SITE = 'https://mastalex.pl'
 export const EMAIL = 'kontakt@mastalex.pl'
 // Administrator danych w polityce prywatności (od właściciela, 29.09.2026)
 export const ADMIN = { name: 'Kosma Mastalerz', email: 'ten.kosma.mastalerz2@gmail.com' }
+// Aplikacja audytu SEO (osobna usługa w Google Cloud, decyzja właściciela 17.10.2026). Po podpięciu subdomeny zmień tylko ten adres.
+// true pokazuje sekcję na /optymalizacja-seo i link w stopce. Włącz dopiero, gdy aplikacja przyjmuje prawdziwe płatności
+// (Stripe live, SITE_MODE=live): w trybie testowym prawdziwa karta nie przejdzie, a karta testowa dałaby audyt za darmo.
+export const AUDYT_ON = false
+export const AUDYT_URL = 'https://audyt-api-475079953024.europe-central2.run.app/'
+export const AUDYT_PRICE = 299
 export const UPDATED = '2026-09-30'
 export const UPDATED_LABEL = 'wrzesień 2026'
 
