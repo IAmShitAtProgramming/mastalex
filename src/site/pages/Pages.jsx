@@ -1,4 +1,4 @@
-import { ADMIN, AFTER, AUDYT_ON, AUDYT_PRICE, AUDYT_URL, EMAIL, FOUNDERS, MARKET_WIZYTOWKA, PRICES, SHOP, SHOP_ON, UPDATED_LABEL } from '../data.js'
+import { ADMIN, AFTER, AUDYT_ON, AUDYT_PAGE, AUDYT_PRICE, EMAIL, FOUNDERS, MARKET_WIZYTOWKA, PRICES, SHOP, SHOP_ON, UPDATED_LABEL } from '../data.js'
 import { ContactForm, Cta, CtaBand, DevSlot, Faq, PageHero, Process, ServiceCards } from '../ui.jsx'
 import { Founders } from './shared.jsx'
 
@@ -321,7 +321,7 @@ export function Seo() {
         {AUDYT_ON && <>
           <h2 id="audyt-seo-online">Audyt SEO online za {AUDYT_PRICE} zł</h2>
           <p>Chcesz najpierw sam sprawdzić stronę? Zamów automatyczny audyt SEO online. Podajesz adres strony i płacisz {AUDYT_PRICE} zł. Audyt trwa zwykle od kilku do kilkudziesięciu minut, a raport zostaje w historii Twojego konta.</p>
-          <p><a href={AUDYT_URL} rel="noopener">Zamów audyt SEO online</a></p>
+          <p><a href={AUDYT_PAGE}>Zobacz, jak działa audyt SEO online</a></p>
         </>}
       </Body>
       <Faq items={[

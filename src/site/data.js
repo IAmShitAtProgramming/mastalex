@@ -7,11 +7,15 @@ export const EMAIL = 'kontakt@mastalex.pl'
 // Administrator danych w polityce prywatności (od właściciela, 29.09.2026)
 export const ADMIN = { name: 'Kosma Mastalerz', email: 'ten.kosma.mastalerz2@gmail.com' }
 // Aplikacja audytu SEO (osobna usługa w Google Cloud, decyzja właściciela 17.10.2026). Po podpięciu subdomeny zmień tylko ten adres.
-// true pokazuje sekcję na /optymalizacja-seo i link w stopce. Włącz dopiero, gdy aplikacja przyjmuje prawdziwe płatności
+// true pokazuje sekcję na /optymalizacja-seo. Włącz dopiero, gdy aplikacja przyjmuje prawdziwe płatności
 // (Stripe live, SITE_MODE=live): w trybie testowym prawdziwa karta nie przejdzie, a karta testowa dałaby audyt za darmo.
 export const AUDYT_ON = false
 export const AUDYT_URL = 'https://audyt-api-475079953024.europe-central2.run.app/'
 export const AUDYT_PRICE = 299
+// Strona Aplikacji na mastalex.pl (17.10.2026): opis, regulamin i polityka prywatności w zweryfikowanej domenie,
+// bo tego wymaga weryfikacja aplikacji przez Google. Jest zawsze dostępna, niezależnie od AUDYT_ON.
+// Logowanie i zamówienia włącza się w samej Aplikacji (zmienna APP_OPEN w Cloud Run), nie tutaj.
+export const AUDYT_PAGE = '/audyt-seo/'
 export const UPDATED = '2026-09-30'
 export const UPDATED_LABEL = 'wrzesień 2026'
 
@@ -247,6 +251,31 @@ export const ROUTES = {
     description:
       'Dowiedz się, jakie dane zbieramy przez formularz kontaktowy i e-mail, po co je wykorzystujemy, jak długo je przechowujemy i jakie prawa Ci przysługują.',
     crumb: 'Polityka prywatności',
+  },
+  // Aplikacja Audyt SEO: strona główna Aplikacji i jej dokumenty (treść dokumentów: audyt-docs.js, generowany).
+  '/audyt-seo/': {
+    title: 'Audyt SEO strony online za 299 zł | Mastalex',
+    description:
+      'Automatyczny audyt SEO Twojej strony za 299 zł: raport z wynikiem SEO Health Score i plan poprawek. Opcjonalnie z danymi z Search Console i GA4.',
+    crumb: 'Audyt SEO online',
+  },
+  '/audyt-seo/regulamin': {
+    title: 'Regulamin aplikacji Audyt SEO | Mastalex',
+    description: 'Regulamin aplikacji Audyt SEO: zakres usługi, zamówienie i płatność, połączenie z kontem Google, reklamacje i prawa konsumenta.',
+    crumb: 'Regulamin',
+    parent: '/audyt-seo/',
+  },
+  '/audyt-seo/polityka-prywatnosci': {
+    title: 'Polityka prywatności aplikacji Audyt SEO | Mastalex',
+    description: 'Jakie dane przetwarza aplikacja Audyt SEO, w tym dane z Google Search Console i Google Analytics, komu je powierzamy i jakie masz prawa.',
+    crumb: 'Polityka prywatności',
+    parent: '/audyt-seo/',
+  },
+  '/audyt-seo/formularz-odstapienia': {
+    title: 'Formularz odstąpienia od umowy – Audyt SEO | Mastalex',
+    description: 'Wzór formularza odstąpienia od umowy o audyt SEO, z załącznika nr 2 do ustawy o prawach konsumenta.',
+    crumb: 'Formularz odstąpienia',
+    parent: '/audyt-seo/',
   },
   // Poradniki (blog). Adres działu kończy się ukośnikiem, bo GitHub Pages serwuje go z poradniki/index.html.
   // Wpis: parent daje trzeci poziom okruszków, article daje daty i autora (widoczne na stronie i w danych strukturalnych).

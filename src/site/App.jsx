@@ -1,6 +1,7 @@
 import { REDIRECTS, ROUTES } from './data.js'
 import { Breadcrumbs, Footer, Header } from './ui.jsx'
 import Home from './pages/Home.jsx'
+import { Audyt, AudytOdstapienie, AudytPolityka, AudytRegulamin } from './pages/Audyt.jsx'
 import { Cennik, Kontakt, NotFound, ONas, Polityka, Przebudowa, Seo, Sklep, Tworzenie } from './pages/Pages.jsx'
 import { Poradniki, WpisIleKosztuje, WpisWyzejWGoogle, WpisStrona500, WpisWyborFirmy } from './pages/Poradniki.jsx'
 
@@ -14,6 +15,10 @@ const PAGES = {
   '/o-nas': ONas,
   '/kontakt': Kontakt,
   '/polityka-prywatnosci': Polityka,
+  '/audyt-seo/': Audyt,
+  '/audyt-seo/regulamin': AudytRegulamin,
+  '/audyt-seo/polityka-prywatnosci': AudytPolityka,
+  '/audyt-seo/formularz-odstapienia': AudytOdstapienie,
   '/poradniki/': Poradniki,
   '/poradniki/jak-byc-wyzej-w-google': WpisWyzejWGoogle,
   '/poradniki/ile-kosztuje-strona-internetowa-2026': WpisIleKosztuje,

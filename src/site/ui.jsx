@@ -1,4 +1,4 @@
-import { AUDYT_ON, AUDYT_URL, EMAIL, NAV, SERVICES, SHOP_ON, trail } from './data.js'
+import { AUDYT_PAGE, EMAIL, NAV, SERVICES, SHOP_ON, trail } from './data.js'
 
 export function Logo({ className = '' }) {
   return (
@@ -70,7 +70,7 @@ export function Footer() {
           <p className="mt-2"><a className="inline-flex min-h-12 items-center text-white underline underline-offset-4" href={`mailto:${EMAIL}`}>{EMAIL}</a></p>
         </div>
         <FooterCol title="Usługi" links={SERVICES.map((s) => ({ href: s.path, label: s.name }))} />
-        <FooterCol title="Informacje" links={[{ href: '/cennik-tworzenia-stron-internetowych-2026', label: 'Ile kosztuje strona?' }, ...(AUDYT_ON ? [{ href: AUDYT_URL, label: 'Audyt SEO online' }] : []), { href: '/o-nas', label: 'O nas' }, { href: '/kontakt', label: 'Kontakt' }]} />
+        <FooterCol title="Informacje" links={[{ href: '/cennik-tworzenia-stron-internetowych-2026', label: 'Ile kosztuje strona?' }, { href: AUDYT_PAGE, label: 'Audyt SEO online' }, { href: '/o-nas', label: 'O nas' }, { href: '/kontakt', label: 'Kontakt' }]} />
         <FooterCol title="Zespół" links={[{ href: 'https://www.linkedin.com/in/karolmastalerz', label: 'Karol Mastalerz · LinkedIn' }, { href: 'https://www.linkedin.com/in/aleks-popkowski', label: 'Aleks Popkowski · LinkedIn' }]} />
       </div>
       <div className="border-t border-white/10">

@@ -76,6 +76,26 @@
   .prose-m > ol:not(.not-prose) > li { color: var(--color-body); font-size: 18px; line-height: 1.55; padding-left: 40px; position: relative; counter-increment: krok; }
   .prose-m > ol:not(.not-prose) > li::before { content: counter(krok); position: absolute; left: 0; top: 0; width: 28px; height: 28px; border-radius: 9px; background: var(--color-brand-soft); color: var(--color-brand-deep); font-size: 15px; font-weight: 700; display: grid; place-items: center; }
 
+  /* Dokumenty aplikacji Audyt SEO (regulamin, polityka): HTML z audyt-docs.js, numeracja paragrafów jak w oryginale. */
+  .legal-m { max-width: 76ch; font-size: 17px; line-height: 1.7; }
+  .legal-m p, .legal-m li { color: var(--color-body); margin: 0 0 10px; }
+  .legal-m h2 { color: var(--color-ink); font-size: clamp(22px, 2.6vw, 26px); line-height: 1.2; letter-spacing: -0.02em; font-weight: 700; margin: 44px 0 12px; scroll-margin-top: 88px; }
+  .legal-m b, .legal-m strong { color: var(--color-ink); font-weight: 650; }
+  .legal-m a { color: var(--color-brand-deep); text-decoration: underline; text-underline-offset: 3px; overflow-wrap: anywhere; }
+  .legal-m ol { list-style: decimal; padding-left: 24px; }
+  .legal-m ul { list-style: disc; padding-left: 24px; }
+  .legal-m li::marker { color: var(--color-brand); font-weight: 600; }
+  .legal-m .meta { font-size: 15px; }
+  .legal-m code { background: var(--color-brand-soft); color: var(--color-brand-deep); padding: 1px 6px; border-radius: 6px; font-size: .9em; }
+  .legal-m .toc { background: var(--color-paper); border: 1px solid var(--color-line); border-radius: 24px; padding: 18px 24px; margin: 24px 0; font-size: 16px; }
+  .legal-m .toc ol { margin: 0; }
+  .legal-m .toc li { margin: 0 0 4px; }
+  .legal-m table { width: 100%; border-collapse: collapse; font-size: 15px; margin: 12px 0 16px; display: block; overflow-x: auto; background: var(--color-paper); border: 1px solid var(--color-line); border-radius: 16px; }
+  .legal-m th, .legal-m td { text-align: left; vertical-align: top; padding: 10px 14px; border-top: 1px solid var(--color-line); color: var(--color-body); }
+  .legal-m tr:first-child th, .legal-m tr:first-child td { border-top: 0; }
+  .legal-m th { background: var(--color-cream); color: var(--color-ink); font-weight: 650; }
+  .prose-m code { background: var(--color-brand-soft); color: var(--color-brand-deep); padding: 1px 6px; border-radius: 6px; font-size: .9em; overflow-wrap: anywhere; }
+
   /* Tabele w poradnikach: na telefonie przewija się sama tabela, nie cała strona. */
   .tabela { margin-top: 20px; overflow-x: auto; border: 1px solid var(--color-line); border-radius: 20px; background: var(--color-paper); container-type: inline-size; }
   .tabela table { width: 100%; border-collapse: collapse; font-size: 16px; }
