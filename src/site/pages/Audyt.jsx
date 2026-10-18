@@ -26,21 +26,21 @@ export function Audyt() {
           <p>Takich problemów zwykle nie widać na pierwszy rzut oka. Strona może wyglądać dobrze, a Google i tak pomija część podstron albo źle rozumie, czym się zajmujesz. Audyt wyszukuje te problemy i tłumaczy, jak je usunąć.</p>
 
           <h2 id="co-sprawdzamy">Co sprawdza audyt</h2>
-          <p>Audyt przegląda podstrony Twojej strony i ocenia ją w siedmiu obszarach. Każdy obszar dostaje własną ocenę, a cała strona ocenę od 0 do 100.</p>
-          <h3>Dostęp Google do strony</h3>
-          <p>Czy Google może wejść na wszystkie podstrony i czy coś go nie blokuje. Czy mapa strony, z której Google dowiaduje się o podstronach, jest kompletna. Czy nie ma zdublowanych podstron, które konkurują ze sobą w wynikach, i czy strona ma podstawowe zabezpieczenia.</p>
+          <p>Audyt patrzy na Twoją stronę tak, jak robi to Google, i ocenia ją w siedmiu sprawach. Każda dostaje swoją ocenę, a cała strona wynik od 0 do 100.</p>
+          <h3>Czy Google widzi całą stronę</h3>
+          <p>Czasem Google nie zagląda do części strony, na przykład do zakładki z cennikiem. Tej zakładki nikt wtedy nie znajdzie w wyszukiwarce. Audyt sprawdza, czy Google dociera wszędzie i czy dwie zakładki nie opisują tego samego, bo wtedy Google nie wie, którą pokazać. Sprawdza też, czy strona jest bezpieczna dla osób, które ją odwiedzają.</p>
           <h3>Teksty</h3>
-          <p>Czy teksty są czytelne, wystarczająco obszerne i nie powtarzają się na różnych podstronach. Czy pokazują Twoje doświadczenie i budzą zaufanie, bo Google bierze to pod uwagę.</p>
-          <h3>Tytuły, nagłówki i linki</h3>
-          <p>Tytuły i opisy, które Google pokazuje w wynikach wyszukiwania, układ nagłówków na podstronach i to, jak podstrony linkują do siebie nawzajem.</p>
-          <h3>Informacje o firmie zapisane dla Google</h3>
-          <p>Czy dane o firmie, usługach i kontakcie są zapisane w formie, którą Google potrafi odczytać, i czy nie ma w nich błędów.</p>
+          <p>Google chętniej poleca strony, na których widać, że firma zna się na swojej pracy. Audyt czyta Twoje teksty i ocenia, czy łatwo się je czyta i czy mówią o ofercie dość, żeby klient Ci zaufał. Zwraca też uwagę, czy ten sam tekst nie powtarza się w kilku miejscach.</p>
+          <h3>Wygląd w wynikach Google</h3>
+          <p>Kiedy klient szuka usługi, widzi w Google tylko tytuł strony i krótki opis pod nim. Na tej podstawie decyduje, czy kliknie. Audyt sprawdza, czy te teksty zachęcają i jasno mówią, czym się zajmujesz. Ocenia też, czy strona jest przejrzyście ułożona i czy łatwo przejść z jednej zakładki do drugiej.</p>
+          <h3>Dane firmy</h3>
+          <p>Google potrafi pokazać przy wyniku dodatkowe informacje o firmie, jeśli strona poda mu je w formie, którą rozumie. Audyt sprawdza, czy takie informacje są na stronie i czy nie ma w nich błędów.</p>
           <h3>Szybkość</h3>
-          <p>Jak szybko strona się wczytuje, jak szybko reaguje na kliknięcie i czy nie przesuwa się podczas ładowania. Co ją spowalnia, np. zbyt ciężkie pliki albo dodatki innych firm.</p>
-          <h3>Czaty AI</h3>
-          <p>Czy ChatGPT i inne czaty AI mogą odczytać Twoją stronę i zacytować ją, gdy ktoś pyta o usługi takie jak Twoje.</p>
+          <p>Gdy strona długo się otwiera, część osób nie czeka i wraca do wyników wyszukiwania. Audyt mierzy, jak szybko strona się wczytuje i czy działa płynnie, a potem wskazuje, co ją spowalnia.</p>
+          <h3>ChatGPT i inne czaty AI</h3>
+          <p>Część osób pyta o usługi ChatGPT zamiast Google. Audyt sprawdza, czy taki czat może przeczytać Twoją stronę i wspomnieć o niej w odpowiedzi.</p>
           <h3>Zdjęcia</h3>
-          <p>Czy zdjęcia mają opisy, które czyta Google, i czy nie są za duże albo w formacie, który spowalnia stronę.</p>
+          <p>Duże zdjęcia potrafią mocno spowolnić stronę. Audyt sprawdza, czy zdjęcia nie są za ciężkie i czy mają krótkie opisy, z których Google dowie się, co przedstawiają.</p>
 
           <h2 id="co-dostajesz">Co dostajesz</h2>
           <p>Raport zaczyna się od podsumowania: ocena strony, 5 najpilniejszych problemów i 5 poprawek, które zrobisz najszybciej. Dalej są wyniki każdego obszaru i plan poprawek podzielony na etapy, od pilnych napraw po dalsze ulepszenia. Przy każdej poprawce raport wyjaśnia, czego dotyczy i co zmienić.</p>
