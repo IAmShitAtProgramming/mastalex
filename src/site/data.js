@@ -348,6 +348,7 @@ export const NAV = [
   ...(SHOP_ON ? [{ href: '/tworzenie-sklepow-internetowych', label: 'Sklepy' }] : []),
   { href: '/przebudowa-strony-internetowej', label: 'Przebudowa' },
   { href: '/optymalizacja-seo', label: 'Optymalizacja SEO' },
+  { href: AUDYT_PAGE, label: 'Audyt SEO' },
   { href: '/cennik-tworzenia-stron-internetowych-2026', label: 'Cennik' },
   { href: '/poradniki/', label: 'Poradniki' },
   { href: '/o-nas', label: 'O nas' },

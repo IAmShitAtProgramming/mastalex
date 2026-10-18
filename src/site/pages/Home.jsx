@@ -1,4 +1,4 @@
-import { AFTER, EMAIL, FOUNDERS, STEPS } from '../data.js'
+import { AFTER, AUDYT_PAGE, AUDYT_PRICE, EMAIL, FOUNDERS, STEPS } from '../data.js'
 import { ContactForm, DevSlot, Eyebrow, Faq, Process, ServiceCards } from '../ui.jsx'
 import { Founders } from './shared.jsx'
 
@@ -47,6 +47,7 @@ export default function Home() {
             <h2 id="seo-h" className="text-[32px] sm:text-[40px] leading-[1.1] font-bold tracking-[-0.03em]">Sama strona to za mało. <span className="serif text-brand">Klienci muszą ją znaleźć.</span></h2>
             <p className="mt-5 text-[18px] leading-[1.7] text-body">Kto szuka usługi, wpisuje ją w Google albo pyta czat AI, np. ChatGPT, i wybiera spośród pierwszych odpowiedzi. SEO sprawia, że Twoja firma pojawia się wyżej w wynikach i częściej w odpowiedziach czatów, więc trafia do Ciebie więcej klientów.</p>
             <p className="mt-5"><a href="/optymalizacja-seo#czym-jest-seo" className="inline-flex min-h-12 items-center gap-2 text-brand-deep font-semibold underline underline-offset-4">Czym jest SEO? Wyjaśniamy po ludzku <span aria-hidden="true">→</span></a></p>
+            <p className="mt-2"><a href={AUDYT_PAGE} className="inline-flex min-h-12 items-center gap-2 text-brand-deep font-semibold underline underline-offset-4">Sprawdź swoją stronę: audyt SEO za {AUDYT_PRICE} zł <span aria-hidden="true">→</span></a></p>
           </div>
           <SearchVisual />
         </div>

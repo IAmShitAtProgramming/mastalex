@@ -26,8 +26,8 @@ export function Header({ path }) {
     <header className="sticky top-0 z-40 bg-cream/85 backdrop-blur-md border-b border-line/70">
       <div className="mx-auto max-w-[1200px] px-4 sm:px-6 h-16 flex items-center justify-between gap-4">
         <Logo />
-        {/* 7 pozycji (ze sklepami) nie mieści się w 1024 px, dlatego pełne menu dopiero od 1280 px */}
-        <nav aria-label="Główna" className={SHOP_ON ? 'hidden xl:block' : 'hidden lg:block'}>
+        {/* 7 pozycji nie mieści się w 1024 px, dlatego pełne menu dopiero od 1280 px */}
+        <nav aria-label="Główna" className={NAV.length > 6 ? 'hidden xl:block' : 'hidden lg:block'}>
           <ul className="flex items-center gap-1">
             {NAV.map((n) => (
               <li key={n.href}>
@@ -41,7 +41,7 @@ export function Header({ path }) {
         </nav>
         <div className="flex items-center gap-2">
           <a href="/kontakt" className="btn btn-primary btn-sm hidden sm:inline-flex">Bezpłatny projekt</a>
-          <details className={`mnav ${SHOP_ON ? 'xl:hidden' : 'lg:hidden'} relative`}>
+          <details className={`mnav ${NAV.length > 6 ? 'xl:hidden' : 'lg:hidden'} relative`}>
             <summary className="w-12 h-12 grid place-items-center rounded-xl border-2 border-line bg-paper cursor-pointer" aria-label="Menu">
               <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 6h14M3 10h14M3 14h14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" /></svg>
             </summary>
