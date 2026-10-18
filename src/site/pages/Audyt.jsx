@@ -13,25 +13,29 @@ export function Audyt() {
   return (
     <>
       <PageHero eyebrow="Audyt SEO online" title="Sprawdź, co blokuje" accent="Twoją stronę w Google"
-        lead={`Wpisz adres swojej strony, a audyt sprawdzi, co przeszkadza jej w Google. Dostaniesz raport z listą poprawek, napisany prostym językiem. Audyt kosztuje ${AUDYT_PRICE} zł.`}>
+        lead={`Gdy ktoś szuka usługi, wpisuje ją w Google i zwykle wybiera jedną z pierwszych stron. Audyt pokaże, co sprawia, że Twoja strona jest niżej, niż mogłaby być, i od czego zacząć poprawki. Kosztuje ${AUDYT_PRICE} zł.`}>
         <div className="mt-8 flex flex-wrap items-center gap-3">
           <a href={AUDYT_URL} className="btn btn-primary">Zamów audyt</a>
-          <a href="#jak-zamowic" className="btn btn-secondary">Jak to działa</a>
+          <a href="#dlaczego" className="btn btn-secondary">Dlaczego to ważne</a>
         </div>
       </PageHero>
       <div className="mx-auto max-w-[1200px] px-4 sm:px-6 mt-10">
         <div className="prose-m">
+          <h2 id="dlaczego">Dlaczego warto sprawdzić stronę</h2>
+          <p>Google pokazuje wyżej strony, które potrafi łatwo odczytać i które jasno odpowiadają na to, czego szuka klient. Gdy coś mu w tym przeszkadza, Twoja strona spada niżej w wynikach albo w ogóle się w nich nie pojawia. Klient trafia wtedy do konkurencji, nawet jeśli Twoja oferta jest lepsza.</p>
+          <p>Takich problemów zwykle nie widać na pierwszy rzut oka. Strona może wyglądać dobrze, a Google i tak pomija część podstron albo źle rozumie, czym się zajmujesz. Audyt wyszukuje te problemy i tłumaczy, jak je usunąć.</p>
+
           <h2 id="co-sprawdzamy">Co sprawdza audyt</h2>
           <ul>
-            <li>Czy Google widzi wszystkie Twoje podstrony i czy nic go przed nimi nie blokuje.</li>
-            <li>Czy strona działa bez błędów, które przeszkadzają Google albo klientom.</li>
-            <li>Czy tytuły i teksty mówią jasno, czym się zajmujesz, tak żeby klienci znaleźli Cię po słowach, które wpisują w Google.</li>
-            <li>Czy Google dobrze rozumie, co oferujesz, np. adres firmy i godziny otwarcia.</li>
+            <li>Czy Google widzi wszystkie Twoje podstrony i czy coś go przed nimi nie blokuje.</li>
+            <li>Czy na stronie są błędy, które przeszkadzają Google albo zniechęcają klientów.</li>
+            <li>Czy tytuły i teksty jasno mówią, czym się zajmujesz, żeby klienci znaleźli Cię po słowach, które sami wpisują w Google.</li>
+            <li>Czy Google poprawnie odczytuje informacje o firmie, np. adres i godziny otwarcia.</li>
           </ul>
 
           <h2 id="co-dostajesz">Co dostajesz</h2>
-          <p>Raport z ogólną oceną strony i listą poprawek ułożoną od najważniejszej. Przeczytasz go w aplikacji albo pobierzesz w PDF. Każdy audyt zostaje w historii Twojego konta, więc po poprawkach łatwo porównasz wyniki.</p>
-          <p>Audyt tylko przegląda stronę. Niczego na niej nie zmienia.</p>
+          <p>Raport z oceną strony i listą poprawek ułożoną od najważniejszej. Przy każdej poprawce raport wyjaśnia, czego dotyczy i co zmienić.</p>
+          <p>Raport przeczytasz w aplikacji albo pobierzesz w PDF. Każdy audyt zostaje na Twoim koncie, więc po poprawkach sprawdzisz, co się zmieniło. Sam audyt niczego na stronie nie zmienia.</p>
 
           <h2 id="jak-zamowic">Jak zamówić</h2>
           <ol>
@@ -40,13 +44,13 @@ export function Audyt() {
             <li>Płacisz online {AUDYT_PRICE} zł. To jednorazowa opłata, bez abonamentu.</li>
             <li>Po kilku, czasem kilkudziesięciu minutach raport jest gotowy.</li>
           </ol>
-          <p>Jeśli korzystasz z Google Search Console albo Google Analytics, możesz je podłączyć przy zamówieniu. Raport pokaże wtedy także, po jakich hasłach ludzie trafiają na Twoją stronę i ile osób przychodzi z Google. Bez tego audyt też działa.</p>
+          <p>Jeśli korzystasz z Google Search Console albo Google Analytics, możesz je podłączyć przy zamówieniu. Raport pokaże wtedy także, po jakich hasłach ludzie trafiają na Twoją stronę i ile osób przychodzi z Google.</p>
         </div>
       </div>
       <Faq items={[
-        { q: 'Czy muszę podłączać konto Google?', a: 'Nie. Bez tego audyt sprawdza wszystko, co widać na Twojej stronie. Search Console i Google Analytics dodają tylko dane o tym, jak ludzie znajdują ją w Google.' },
-        { q: 'Kto wprowadzi poprawki?', a: <>Możesz zrobić to sam albo zlecić nam. Ceny znajdziesz na stronie <a href="/optymalizacja-seo">Optymalizacja SEO</a>.</> },
-        { q: 'Ile trwa audyt?', a: 'Zwykle od kilku do kilkudziesięciu minut. Gdy raport będzie gotowy, zobaczysz go na swoim koncie.' },
+        { q: 'Czym jest SEO?', a: <>To praca nad stroną, dzięki której Google pokazuje ją wyżej, gdy ktoś szuka Twojej usługi. Więcej przeczytasz na stronie <a href="/optymalizacja-seo">Optymalizacja SEO</a>.</> },
+        { q: 'Czy muszę podłączać konto Google?', a: 'Nie. Bez tego audyt sprawdza wszystko, co widać na Twojej stronie. Search Console i Google Analytics dodają dane o tym, jak ludzie znajdują ją w Google.' },
+        { q: 'Kto wprowadzi poprawki?', a: <>Możesz zrobić to sam, przekazać raport osobie, która zajmuje się Twoją stroną, albo zlecić poprawki nam. Ceny znajdziesz na stronie <a href="/optymalizacja-seo">Optymalizacja SEO</a>.</> },
       ]} />
       <p className="mx-auto max-w-[1200px] px-4 sm:px-6 mt-10 text-[15px] text-body">
         <a href={TERMS} className="underline underline-offset-2">Regulamin</a>
