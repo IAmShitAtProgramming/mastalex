@@ -29,21 +29,29 @@ export function Audyt() {
           <p>Audyt patrzy na Twoją stronę tak, jak robi to Google, i ocenia ją w siedmiu sprawach. Każda dostaje swoją ocenę, a cała strona wynik od 0 do 100.</p>
           <h3>Czy Google widzi całą stronę</h3>
           <p>Czasem Google nie zagląda do części strony, na przykład do zakładki z cennikiem. Tej zakładki nikt wtedy nie znajdzie w wyszukiwarce. Audyt sprawdza, czy Google dociera wszędzie i czy dwie zakładki nie opisują tego samego, bo wtedy Google nie wie, którą pokazać. Sprawdza też, czy strona jest bezpieczna dla osób, które ją odwiedzają.</p>
+          <p>Gdy Google widzi każdą zakładkę, klient znajdzie w wyszukiwarce także Twój cennik albo opis konkretnej usługi, a przeglądarka nie odstraszy go ostrzeżeniem o niebezpiecznej stronie.</p>
           <h3>Teksty</h3>
           <p>Google chętniej poleca strony, na których widać, że firma zna się na swojej pracy. Audyt czyta Twoje teksty i ocenia, czy łatwo się je czyta i czy mówią o ofercie dość, żeby klient Ci zaufał. Zwraca też uwagę, czy ten sam tekst nie powtarza się w kilku miejscach.</p>
+          <p>Po poprawkach Google ma więcej powodów, żeby pokazać Twoją stronę. Klientowi, który na nią trafi, łatwiej będzie zadzwonić albo napisać.</p>
           <h3>Wygląd w wynikach Google</h3>
           <p>Kiedy klient szuka usługi, widzi w Google tylko tytuł strony i krótki opis pod nim. Na tej podstawie decyduje, czy kliknie. Audyt sprawdza, czy te teksty zachęcają i jasno mówią, czym się zajmujesz. Ocenia też, czy strona jest przejrzyście ułożona i czy łatwo przejść z jednej zakładki do drugiej.</p>
+          <p>Dobry tytuł i opis pomagają klientowi wybrać właśnie Ciebie spośród kilku podobnych wyników. Kiedy już wejdzie, szybko znajdzie to, po co przyszedł.</p>
           <h3>Dane firmy</h3>
           <p>Google potrafi pokazać przy wyniku dodatkowe informacje o firmie, jeśli strona poda mu je w formie, którą rozumie. Audyt sprawdza, czy takie informacje są na stronie i czy nie ma w nich błędów.</p>
+          <p>Dzięki temu klient może zobaczyć ważne informacje o Twojej firmie już w Google, zanim w ogóle wejdzie na stronę.</p>
           <h3>Szybkość</h3>
           <p>Gdy strona długo się otwiera, część osób nie czeka i wraca do wyników wyszukiwania. Audyt mierzy, jak szybko strona się wczytuje i czy działa płynnie, a potem wskazuje, co ją spowalnia.</p>
+          <p>Szybsza strona zatrzyma klientów, którzy dziś zamykają ją, zanim się otworzy, i wybierają konkurencję.</p>
           <h3>ChatGPT i inne czaty AI</h3>
           <p>Część osób pyta o usługi ChatGPT zamiast Google. Audyt sprawdza, czy taki czat może przeczytać Twoją stronę i wspomnieć o niej w odpowiedzi.</p>
+          <p>Jeśli czat może ją przeczytać, ma szansę wymienić Twoją firmę, gdy ktoś zapyta go o usługi takie jak Twoje.</p>
           <h3>Zdjęcia</h3>
           <p>Duże zdjęcia potrafią mocno spowolnić stronę. Audyt sprawdza, czy zdjęcia nie są za ciężkie i czy mają krótkie opisy, z których Google dowie się, co przedstawiają.</p>
+          <p>Lżejsze zdjęcia przyspieszą stronę, a z dobrymi opisami klienci znajdą je również w wyszukiwarce grafik Google.</p>
 
           <h2 id="co-dostajesz">Co dostajesz</h2>
           <p>Raport zaczyna się od podsumowania: ocena strony, 5 najpilniejszych problemów i 5 poprawek, które zrobisz najszybciej. Dalej są wyniki każdego obszaru i plan poprawek podzielony na etapy, od pilnych napraw po dalsze ulepszenia. Przy każdej poprawce raport wyjaśnia, czego dotyczy i co zmienić.</p>
+          <p>Od razu wiesz, od czego zacząć, i nie wydajesz pieniędzy na poprawki, które niewiele zmienią.</p>
           <p>Raport przeczytasz w aplikacji albo pobierzesz w PDF. Każdy audyt zostaje na Twoim koncie, więc po poprawkach sprawdzisz, co się zmieniło. Sam audyt niczego na stronie nie zmienia.</p>
 
           <h2 id="jak-zamowic">Jak zamówić</h2>
