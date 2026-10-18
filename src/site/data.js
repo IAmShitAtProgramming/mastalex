@@ -256,7 +256,7 @@ export const ROUTES = {
   '/audyt-seo/': {
     title: 'Audyt SEO strony online za 299 zł | Mastalex',
     description:
-      'Automatyczny audyt SEO Twojej strony za 299 zł: raport z wynikiem SEO Health Score i plan poprawek. Opcjonalnie z danymi z Search Console i GA4.',
+      'Sprawdź, co przeszkadza Twojej stronie w Google. Audyt online za 299 zł: raport z listą poprawek, napisany prostym językiem.',
     crumb: 'Audyt SEO online',
   },
   '/audyt-seo/regulamin': {
