@@ -40,7 +40,7 @@ export function Audyt() {
           <p>Google potrafi pokazać przy wyniku dodatkowe informacje o firmie, jeśli strona poda mu je w formie, którą rozumie. Audyt sprawdza, czy takie informacje są na stronie i czy nie ma w nich błędów.</p>
           <p>Dzięki temu klient może zobaczyć ważne informacje o Twojej firmie już w Google, zanim w ogóle wejdzie na stronę.</p>
           <h3>Szybkość</h3>
-          <p>Gdy strona długo się otwiera, część osób nie czeka i wraca do wyników wyszukiwania. Audyt mierzy, jak szybko strona się wczytuje i czy działa płynnie, a potem wskazuje, co ją spowalnia.</p>
+          <p>Gdy strona długo się otwiera, część osób nie czeka i wraca do wyników wyszukiwania. Audyt sprawdza, ile waży Twoja strona i jak szybko zaczyna się otwierać. Wskazuje też, co może ją spowalniać, na przykład za duże zdjęcia.</p>
           <p>Szybsza strona zatrzyma klientów, którzy dziś zamykają ją, zanim się otworzy, i wybierają konkurencję.</p>
           <h3>ChatGPT i inne czaty AI</h3>
           <p>Część osób pyta o usługi ChatGPT zamiast Google. Audyt sprawdza, czy taki czat może przeczytać Twoją stronę i wspomnieć o niej w odpowiedzi.</p>
