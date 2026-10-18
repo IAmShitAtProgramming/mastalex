@@ -26,15 +26,24 @@ export function Audyt() {
           <p>Takich problemów zwykle nie widać na pierwszy rzut oka. Strona może wyglądać dobrze, a Google i tak pomija część podstron albo źle rozumie, czym się zajmujesz. Audyt wyszukuje te problemy i tłumaczy, jak je usunąć.</p>
 
           <h2 id="co-sprawdzamy">Co sprawdza audyt</h2>
-          <ul>
-            <li>Czy Google widzi wszystkie Twoje podstrony i czy coś go przed nimi nie blokuje.</li>
-            <li>Czy na stronie są błędy, które przeszkadzają Google albo zniechęcają klientów.</li>
-            <li>Czy tytuły i teksty jasno mówią, czym się zajmujesz, żeby klienci znaleźli Cię po słowach, które sami wpisują w Google.</li>
-            <li>Czy Google poprawnie odczytuje informacje o firmie, np. adres i godziny otwarcia.</li>
-          </ul>
+          <p>Audyt przegląda podstrony Twojej strony i ocenia ją w siedmiu obszarach. Każdy obszar dostaje własną ocenę, a cała strona ocenę od 0 do 100.</p>
+          <h3>Dostęp Google do strony</h3>
+          <p>Czy Google może wejść na wszystkie podstrony i czy coś go nie blokuje. Czy mapa strony, z której Google dowiaduje się o podstronach, jest kompletna. Czy nie ma zdublowanych podstron, które konkurują ze sobą w wynikach, i czy strona ma podstawowe zabezpieczenia.</p>
+          <h3>Teksty</h3>
+          <p>Czy teksty są czytelne, wystarczająco obszerne i nie powtarzają się na różnych podstronach. Czy pokazują Twoje doświadczenie i budzą zaufanie, bo Google bierze to pod uwagę.</p>
+          <h3>Tytuły, nagłówki i linki</h3>
+          <p>Tytuły i opisy, które Google pokazuje w wynikach wyszukiwania, układ nagłówków na podstronach i to, jak podstrony linkują do siebie nawzajem.</p>
+          <h3>Informacje o firmie zapisane dla Google</h3>
+          <p>Czy dane o firmie, usługach i kontakcie są zapisane w formie, którą Google potrafi odczytać, i czy nie ma w nich błędów.</p>
+          <h3>Szybkość</h3>
+          <p>Jak szybko strona się wczytuje, jak szybko reaguje na kliknięcie i czy nie przesuwa się podczas ładowania. Co ją spowalnia, np. zbyt ciężkie pliki albo dodatki innych firm.</p>
+          <h3>Czaty AI</h3>
+          <p>Czy ChatGPT i inne czaty AI mogą odczytać Twoją stronę i zacytować ją, gdy ktoś pyta o usługi takie jak Twoje.</p>
+          <h3>Zdjęcia</h3>
+          <p>Czy zdjęcia mają opisy, które czyta Google, i czy nie są za duże albo w formacie, który spowalnia stronę.</p>
 
           <h2 id="co-dostajesz">Co dostajesz</h2>
-          <p>Raport z oceną strony i listą poprawek ułożoną od najważniejszej. Przy każdej poprawce raport wyjaśnia, czego dotyczy i co zmienić.</p>
+          <p>Raport zaczyna się od podsumowania: ocena strony, 5 najpilniejszych problemów i 5 poprawek, które zrobisz najszybciej. Dalej są wyniki każdego obszaru i plan poprawek podzielony na etapy, od pilnych napraw po dalsze ulepszenia. Przy każdej poprawce raport wyjaśnia, czego dotyczy i co zmienić.</p>
           <p>Raport przeczytasz w aplikacji albo pobierzesz w PDF. Każdy audyt zostaje na Twoim koncie, więc po poprawkach sprawdzisz, co się zmieniło. Sam audyt niczego na stronie nie zmienia.</p>
 
           <h2 id="jak-zamowic">Jak zamówić</h2>
